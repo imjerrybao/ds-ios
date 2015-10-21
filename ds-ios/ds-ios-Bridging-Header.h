@@ -13,5 +13,9 @@
 
 #import <VGParallaxHeader/UIScrollView+VGParallaxHeader.h>
 
+#import <APParallaxHeader/UIScrollView+APParallaxHeader.h>
+
+
+ 
 
 

@@ -11,3 +11,6 @@ pod 'MJRefresh'
 pod 'SDCycleScrollView','~> 1.3'
 
 pod 'VGParallaxHeader'
+
+
+pod 'APParallaxHeader'

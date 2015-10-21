@@ -14,6 +14,10 @@
 		AB03C8131BD6A09A00F0A37C /* ds_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB03C8111BD6A09A00F0A37C /* ds_ios.xcdatamodeld */; };
 		AB03C8151BD6A09A00F0A37C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8141BD6A09A00F0A37C /* Assets.xcassets */; };
 		AB03C8181BD6A09A00F0A37C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8161BD6A09A00F0A37C /* LaunchScreen.storyboard */; };
+		AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AB1493F61BD72A60004A9F43 /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1493F51BD72A60004A9F43 /* FindTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1494061BD74721004A9F43 /* PeriscopyNavBarExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		AB1494091BD74721004A9F43 /* PeriscopyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1494071BD74721004A9F43 /* PeriscopyTitleView.swift */; settings = {ASSET_TAGS = (); }; };
 		AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF801BD6A19A00E2B428 /* CAPSPageMenu.swift */; settings = {ASSET_TAGS = (); }; };
 		AB58EF8D1BD6A19A00E2B428 /* HotVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF821BD6A19A00E2B428 /* FindViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -42,7 +46,7 @@
 		AB58EFC51BD6A41A00E2B428 /* KrVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */; settings = {ASSET_TAGS = (); }; };
 		AB58EFC61BD6A41A00E2B428 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB71BD6A41A00E2B428 /* README.md */; settings = {ASSET_TAGS = (); }; };
 		AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFC91BD6A51800E2B428 /* MapKit.framework */; };
-		AB58EFCC1BD6A55A00E2B428 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFCB1BD6A55A00E2B428 /* StoreKit.framework */; };
+		AB58EFCE1BD6A89F00E2B428 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,10 @@
 		AB03C8141BD6A09A00F0A37C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB03C8171BD6A09A00F0A37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB03C8191BD6A09A00F0A37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMainTableViewController.swift; sourceTree = "<group>"; };
+		AB1493F51BD72A60004A9F43 /* FindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
+		AB1494061BD74721004A9F43 /* PeriscopyNavBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriscopyNavBarExtension.swift; sourceTree = "<group>"; };
+		AB1494071BD74721004A9F43 /* PeriscopyTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriscopyTitleView.swift; sourceTree = "<group>"; };
 		AB58EF801BD6A19A00E2B428 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotVideoTableViewController.swift; sourceTree = "<group>"; };
 		AB58EF821BD6A19A00E2B428 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +95,7 @@
 		AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KrVideoPlayerControlView.m; sourceTree = "<group>"; };
 		AB58EFB71BD6A41A00E2B428 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AB58EFC91BD6A51800E2B428 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		AB58EFCB1BD6A55A00E2B428 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D9C98F2E301BB341C3C310AC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB58EFCC1BD6A55A00E2B428 /* StoreKit.framework in Frameworks */,
+				AB58EFCE1BD6A89F00E2B428 /* StoreKit.framework in Frameworks */,
 				4D27B1C84096D8EC738422AE /* Pods.framework in Frameworks */,
 				AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */,
 			);
@@ -108,7 +116,7 @@
 		10EBB73AC5FA1091404FD628 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB58EFCB1BD6A55A00E2B428 /* StoreKit.framework */,
+				AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */,
 				AB58EFC91BD6A51800E2B428 /* MapKit.framework */,
 				D9C98F2E301BB341C3C310AC /* Pods.framework */,
 			);
@@ -138,19 +146,36 @@
 			children = (
 				AB58EF9D1BD6A24100E2B428 /* Extension */,
 				AB58EF9C1BD6A23500E2B428 /* NetWork */,
+				AB1493F21BD71EDC004A9F43 /* Storyboard */,
 				AB58EF9F1BD6A25900E2B428 /* Views */,
-				AB58EFA01BD6A26800E2B428 /* Utils */,
 				AB58EF981BD6A1F800E2B428 /* Controllers */,
+				AB58EFA01BD6A26800E2B428 /* Utils */,
 				AB58EF9E1BD6A24B00E2B428 /* Model */,
 				AB03C80A1BD6A09A00F0A37C /* AppDelegate.swift */,
-				AB03C80E1BD6A09A00F0A37C /* Main.storyboard */,
 				AB03C8141BD6A09A00F0A37C /* Assets.xcassets */,
-				AB03C8161BD6A09A00F0A37C /* LaunchScreen.storyboard */,
 				AB03C8191BD6A09A00F0A37C /* Info.plist */,
 				AB03C8111BD6A09A00F0A37C /* ds_ios.xcdatamodeld */,
 				AB58EFA11BD6A2D500E2B428 /* ds-ios-Bridging-Header.h */,
 			);
 			path = "ds-ios";
+			sourceTree = "<group>";
+		};
+		AB1493F21BD71EDC004A9F43 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AB03C80E1BD6A09A00F0A37C /* Main.storyboard */,
+				AB03C8161BD6A09A00F0A37C /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		AB1494051BD74718004A9F43 /* Periscopy */ = {
+			isa = PBXGroup;
+			children = (
+				AB1494061BD74721004A9F43 /* PeriscopyNavBarExtension.swift */,
+				AB1494071BD74721004A9F43 /* PeriscopyTitleView.swift */,
+			);
+			name = Periscopy;
 			sourceTree = "<group>";
 		};
 		AB58EF981BD6A1F800E2B428 /* Controllers */ = {
@@ -166,8 +191,8 @@
 		AB58EF991BD6A21200E2B428 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */,
 				AB58EF831BD6A19A00E2B428 /* HomeViewController.swift */,
+				AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */,
 				AB58EF861BD6A19A00E2B428 /* PlayVideoViewController.swift */,
 				AB58EF871BD6A19A00E2B428 /* PopVideoTableViewController.swift */,
 			);
@@ -178,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				AB58EF821BD6A19A00E2B428 /* FindViewController.swift */,
+				AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */,
 			);
 			name = Find;
 			sourceTree = "<group>";
@@ -220,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				AB58EF8B1BD6A19A00E2B428 /* VideoTableViewCell.swift */,
+				AB1493F51BD72A60004A9F43 /* FindTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -227,6 +254,7 @@
 		AB58EFA01BD6A26800E2B428 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AB1494051BD74718004A9F43 /* Periscopy */,
 				AB58EFA41BD6A41A00E2B428 /* KrVideoPlayer */,
 				AB58EF801BD6A19A00E2B428 /* CAPSPageMenu.swift */,
 			);
@@ -432,6 +460,7 @@
 				AB58EF951BD6A19A00E2B428 /* UIViewController-Extension.swift in Sources */,
 				AB58EFC51BD6A41A00E2B428 /* KrVideoPlayerControlView.m in Sources */,
 				AB03C80D1BD6A09A00F0A37C /* ViewController.swift in Sources */,
+				AB1494091BD74721004A9F43 /* PeriscopyTitleView.swift in Sources */,
 				AB58EF901BD6A19A00E2B428 /* HttpClient.swift in Sources */,
 				AB58EF911BD6A19A00E2B428 /* MainTabBarViewController.swift in Sources */,
 				AB58EFC61BD6A41A00E2B428 /* README.md in Sources */,
@@ -440,11 +469,14 @@
 				AB58EF931BD6A19A00E2B428 /* PopVideoTableViewController.swift in Sources */,
 				AB03C80B1BD6A09A00F0A37C /* AppDelegate.swift in Sources */,
 				AB58EFC41BD6A41A00E2B428 /* KrVideoPlayerController.m in Sources */,
+				AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */,
 				AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */,
 				AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */,
+				AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */,
 				AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */,
 				AB58EF941BD6A19A00E2B428 /* UIColorExtension.swift in Sources */,
 				AB58EF961BD6A19A00E2B428 /* VideoInfo.swift in Sources */,
+				AB1493F61BD72A60004A9F43 /* FindTableViewCell.swift in Sources */,
 				AB58EF971BD6A19A00E2B428 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

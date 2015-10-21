@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJQ-vI-DxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2053" y="1930"/>
+            <point key="canvasLocation" x="-2053" y="2678"/>
         </scene>
         <!--Play Video View Controller-->
         <scene sceneID="oFQ-Pr-6xE">
@@ -132,14 +132,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="OxP-gU-fvi" kind="relationship" relationship="viewControllers" id="f12-47-oy7"/>
-                        <segue destination="7Jd-7s-ykO" kind="relationship" relationship="viewControllers" id="n0x-7i-9US"/>
+                        <segue destination="v0A-F1-Kkg" kind="relationship" relationship="viewControllers" id="jHT-B5-Kck"/>
                         <segue destination="fY8-1v-gVA" kind="relationship" relationship="viewControllers" id="EAA-1l-4Kq"/>
                         <segue destination="XRW-vi-9xd" kind="relationship" relationship="viewControllers" id="iCD-YV-jVc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1D-i5-lQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5305" y="2069"/>
+            <point key="canvasLocation" x="-7285" y="2629"/>
         </scene>
         <!--精华-->
         <scene sceneID="12Y-qd-b9s">
@@ -341,42 +341,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00r-7D-qvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2933" y="1930"/>
-        </scene>
-        <!--发现-->
-        <scene sceneID="ad8-to-RhS">
-            <objects>
-                <viewController id="2wk-VL-tAK" customClass="FindViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nvS-sc-kW9"/>
-                        <viewControllerLayoutGuide type="bottom" id="O6e-a1-pMR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hqt-2w-R2m">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WB-no-hmH">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
-                            </scrollView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9WB-no-hmH" secondAttribute="trailing" id="0yy-tQ-7qC"/>
-                            <constraint firstAttribute="bottom" secondItem="9WB-no-hmH" secondAttribute="bottom" id="jj1-mP-RM2"/>
-                            <constraint firstItem="9WB-no-hmH" firstAttribute="top" secondItem="nvS-sc-kW9" secondAttribute="bottom" constant="-64" id="keW-WN-reD"/>
-                            <constraint firstItem="9WB-no-hmH" firstAttribute="leading" secondItem="hqt-2w-R2m" secondAttribute="leading" id="tC5-so-YTh"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="发现" id="djc-O5-RtE"/>
-                    <connections>
-                        <outlet property="scrollView" destination="9WB-no-hmH" id="ZoJ-Mp-2mL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rBc-PV-gru" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1981" y="2730"/>
+            <point key="canvasLocation" x="-2933" y="2678"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0TJ-BC-BBP">
@@ -399,24 +364,85 @@
             <point key="canvasLocation" x="-1981" y="3610"/>
         </scene>
         <!--发现-->
-        <scene sceneID="34H-z2-R2H">
+        <scene sceneID="fxk-B3-05P">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Jd-7s-ykO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发现" image="find" id="MCE-WH-eE1"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gKV-gF-wcC">
+                <tableViewController id="eLz-ah-jyg" userLabel="发现" customClass="FindMainTableViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="cbF-sb-Ge4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="findTableCell" textLabel="URt-sN-uMq" imageView="oOY-Qp-rJg" rowHeight="90" style="IBUITableViewCellStyleDefault" id="4ws-AF-427" customClass="FindTableViewCell" customModule="ds_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ws-AF-427" id="VXm-B0-Fmw">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="URt-sN-uMq">
+                                            <rect key="frame" x="62" y="0.0" width="503" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="add" id="oOY-Qp-rJg">
+                                            <rect key="frame" x="15" y="28" width="32" height="32"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="cellImageView" destination="oOY-Qp-rJg" id="AoO-xZ-nL0"/>
+                                    <outlet property="titleLabel" destination="URt-sN-uMq" id="akw-U1-eXN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eLz-ah-jyg" id="32g-oF-VDa"/>
+                            <outlet property="delegate" destination="eLz-ah-jyg" id="SQ1-is-kgv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="发现" id="qgJ-yU-SPu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnE-AY-dtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="WAc-Uk-4f1">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="restart" translatesAutoresizingMaskIntoConstraints="NO" id="WZ9-fD-DJj">
+                            <rect key="frame" x="104" y="48" width="32" height="32"/>
+                            <animations/>
+                        </imageView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="-2058" y="1842"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="vcN-Dv-3CV">
+            <objects>
+                <navigationController id="v0A-F1-Kkg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="find" id="TMG-eV-gaT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w8z-Jx-yRk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2wk-VL-tAK" kind="relationship" relationship="rootViewController" id="LRd-hV-KUw"/>
+                        <segue destination="eLz-ah-jyg" kind="relationship" relationship="rootViewController" id="jlr-L2-Xin"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FfM-LQ-fdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OoZ-c0-WSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2933" y="2738"/>
+            <point key="canvasLocation" x="-2938" y="1842"/>
         </scene>
         <!--发布-->
         <scene sceneID="NtT-g0-7cj">
