@@ -338,7 +338,7 @@ class HotVideoTableViewController: UITableViewController {
 
             playVideoViewController.initVideoUrlString(videoInfo.url)
             
-//            segue.destinationViewController.hidesBottomBarWhenPushed = true
+//            segue.destinationViewController.hidesBottomBarWhenPushed = false
             
         }
     }

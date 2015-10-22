@@ -54,19 +54,11 @@ class PlayVideoViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        //设置tabBar 是否显示
-//        
         self.navigationController?.navigationBar.hidden = true
-////
-//        self.tabBarController?.tabBar.hidden = true
-////
-        
     }
     
     override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("view 消失了")
-        
+        super.viewDidDisappear(animated) 
         self.videoController.stop()
     }
     
