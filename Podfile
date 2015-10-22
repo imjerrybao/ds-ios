@@ -14,3 +14,6 @@ pod 'VGParallaxHeader'
 
 
 pod 'APParallaxHeader'
+
+pod 'RoundImageView', '~> 1.0.1'
+
