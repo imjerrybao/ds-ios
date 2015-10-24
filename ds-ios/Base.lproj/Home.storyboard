@@ -130,11 +130,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="100" id="cIX-He-Ref" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="100" id="cIX-He-Ref" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cIX-He-Ref" id="9VO-Vw-wWW">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BSg-qX-ord">
@@ -144,7 +144,7 @@
                                                 <constraint firstAttribute="width" constant="118" id="lXJ-Nr-H3l"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="大白版&quot;胖子的一天&quot;，看得眼泪流出来，要不要这么神准！" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7P-UZ-Uu9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大白版&quot;胖子的一天&quot;，看得眼泪流出来，要不要这么神准！" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7P-UZ-Uu9">
                                             <rect key="frame" x="142" y="8" width="439" height="65"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
@@ -181,7 +181,7 @@
                                     <outlet property="picImageView" destination="BSg-qX-ord" id="gwQ-te-E5z"/>
                                     <outlet property="timeLabel" destination="oaY-qF-Tt7" id="L62-rA-kds"/>
                                     <outlet property="titleLabel" destination="f7P-UZ-Uu9" id="b78-E9-R1b"/>
-                                    <segue destination="glx-SP-shN" kind="push" identifier="toPlayVideo" id="lFX-zv-H9R"/>
+                                    <segue destination="glx-SP-shN" kind="show" identifier="toPlayVideo" id="0HI-Kx-kli"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -234,7 +234,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtG-sG-yqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-814" y="-712"/>
+            <point key="canvasLocation" x="-826.5" y="-372"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="TvX-wI-fDf">
+            <objects>
+                <avPlayerViewController hidesBottomBarWhenPushed="YES" videoGravity="AVLayerVideoGravityResizeAspect" id="LoR-c6-tLc" customClass="AVPlayVideoViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="N4Y-bD-Tk9"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k31-Ho-9sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1380" y="-381"/>
         </scene>
     </scenes>
     <resources>

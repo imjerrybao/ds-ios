@@ -157,7 +157,6 @@ class HotVideoTableViewController: UITableViewController {
                     videoInfos = ((JSON as! NSDictionary).valueForKey("rows") as! [NSDictionary]).map { VideoInfo(id: $0["id"] as! String,title: $0["title"] as! String,pic: $0["pic"] as! String,url: $0["mp4_url"] as! String,cTime: $0["cTime"] as! String)}
                     
                     self.videos.addObjectsFromArray(videoInfos)
-                    
                     self.tableView.reloadData()
                 }
                 
@@ -171,18 +170,17 @@ class HotVideoTableViewController: UITableViewController {
                     
                 }
                 
-                
             case .Failure(let error):
                 
                 self.tableView.header.endRefreshing()
                 
-                print(error)
-                self.otherView.hidden = false
-
+                //没有数据时显示
+                if self.videos.count == 0 {
+                    self.otherView.hidden = false
+                }
             }
             
             self.populatingVideo = false
-            
             //停止计时
             self.ti?.invalidate()
         }
@@ -260,7 +258,6 @@ class HotVideoTableViewController: UITableViewController {
             
             cell.titleLabel.text = videoInfo.title
             cell.timeLabel.text = videoInfo.cTime
-            
             cell.picImageView.kf_setImageWithURL(NSURL(string: videoInfo.pic)!)
             
         }
@@ -337,9 +334,12 @@ class HotVideoTableViewController: UITableViewController {
             let playVideoViewController =  segue.destinationViewController as! PlayVideoViewController
 
             playVideoViewController.initVideoUrlString(videoInfo.url)
-            
+//
 //            segue.destinationViewController.hidesBottomBarWhenPushed = false
             
+//            let  aVPlayVideoViewController = segue.destinationViewController as!  AVPlayVideoViewController
+            
+             
         }
     }
 
