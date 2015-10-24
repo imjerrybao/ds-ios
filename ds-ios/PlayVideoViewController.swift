@@ -1,6 +1,6 @@
 //
 //  PlayVideoViewController.swift
-//  doushi-ios
+//  doushi-ios 视频播放页
 //
 //  Created by Songlijun on 15/10/12.
 //  Copyright © 2015年 Songlijun. All rights reserved.
@@ -15,37 +15,25 @@ class PlayVideoViewController: UIViewController {
     
     var videoController = KrVideoPlayerController()
     
+    var pageMenu : CAPSPageMenu?
+
+    
     func initVideoUrlString(videoUrlString: String){
         
         self.videoUrlString = videoUrlString
     }
     
-//    var moviePlayer:AVPlayerViewController
-
-//    var avPlayerViewController: AVPlayerViewController?
-    
-    
     override func viewDidLoad() {
-
         super.viewDidLoad()
         let url = NSURL(string: videoUrlString)
-////        createPlayer()
-//        // Do any additional setup after loading the view.
         self.addVideoPlayerWithURL(url!)
-        // Do any additional setup after loading the view.
+        
+        addPageMenu()
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "embedAVPlayer", let avPlayerVC = segue.destinationViewController as? AVPlayVideoViewController {
-//            
-//            avPlayerVC.videoUrl = videoUrlString
-//            
-//            avPlayerViewController = avPlayerVC
-//            
-//            self.addChildViewController(avPlayerVC)
-//        }
-//    }
     
+    
+ 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.videoController.pause()
@@ -56,63 +44,40 @@ class PlayVideoViewController: UIViewController {
         self.navigationController?.navigationBar.hidden = true
 
        self.videoController.play()
-        
-    }
-    
-    
-    func createPlayer(){
-        //定义一个视频文件路径
-//        let filePath = NSBundle.mainBundle().pathForResource("sample130", ofType: "mp4")
-        //定义一个视频播放器，通过本地文件路径初始化
-//        moviePlayer = MPMoviePlayerController(contentURL: NSURL(fileURLWithPath: filePath!))
-//        
-//        moviePlayer = MPMoviePlayerController(contentURL: NSURL(string: "http://lxqncdn.miaopai.com/stream/zQalZjCAXQjBS6AvAc2IUQ__.mp4"))
-//        //设置播放器样式 - 全屏
-//        moviePlayer!.controlStyle = MPMovieControlStyle.Embedded
-//        //设置大小和位置
-//        moviePlayer?.view.frame = CGRect(x: 0, y: 20, width: UIScreen.mainScreen().bounds.size.width, height: 270)
-//        //添加到界面上
-//        self.view.addSubview(moviePlayer!.view)
-        
-        //开始播放
-//        moviePlayer?.play()
-        
+      
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    let width = UIScreen.mainScreen().bounds.size.width
+
     /**
      添加播放器
-     
      - parameter url: 视频url
      */
     func addVideoPlayerWithURL(url: NSURL){
      
-        let width = UIScreen.mainScreen().bounds.size.width
-        
-        
         
         self.videoController =  KrVideoPlayerController(frame: CGRect(x: 0, y: 20, width: width, height: width*(9.0/16.0)))
 //        
-//        let dimissCompleteBlock: () -> Void = {
-//            self.videoController = KrVideoPlayerController()
-//        }
-//        
-//        let willBackOrientationPortrait:() -> Void = {
-//            self.toolbarHidden(false)
-//        }
-//        
-//        let willChangeToFullscreenMode:() -> Void = {
-//            self.toolbarHidden(true)
-//        }
-//        
-//        self.videoController.willBackOrientationPortrait = willBackOrientationPortrait
-//        self.videoController.willChangeToFullscreenMode = willChangeToFullscreenMode
-////        self.videoController.dimissCompleteBlock = dimissCompleteBlock
-//        
+        
+        
+        let willBackOrientationPortrait:() -> Void = {
+            self.pageMenu?.view.hidden = false
+            self.toolbarHidden(false)
+        }
+        
+        let willChangeToFullscreenMode:() -> Void = {
+             self.pageMenu?.view.hidden = true
+            self.toolbarHidden(true)
+        }
+        
+        self.videoController.willBackOrientationPortrait = willBackOrientationPortrait
+        self.videoController.willChangeToFullscreenMode = willChangeToFullscreenMode
+ 
+       
         
         self.view.addSubview(self.videoController.view)
         
@@ -123,6 +88,48 @@ class PlayVideoViewController: UIViewController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         self.videoController.stop()
+    }
+    
+    //添加分页视图
+    func addPageMenu(){
+        
+        var controllerArray : [UIViewController] = []
+        
+        // Do any additional setup after loading the view.
+        let aStoryboard = UIStoryboard(name: "Play", bundle:NSBundle.mainBundle())
+        
+        let palyVideoInfoViewController = aStoryboard.instantiateViewControllerWithIdentifier("PalyVideoInfoViewController")
+        
+        
+        let playVideoRecommendTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoRecommendTableViewController") as! PlayVideoRecommendTableViewController
+        
+        controllerArray.append(palyVideoInfoViewController)
+
+        controllerArray.append(playVideoRecommendTableViewController)
+        
+        let parameters: [CAPSPageMenuOption] = [
+            .SelectedMenuItemLabelColor(UIColor(rgba:"#f0a22a")),
+            .UnselectedMenuItemLabelColor(UIColor(rgba:"#939395")),
+            .ScrollMenuBackgroundColor(UIColor(rgba: "#f2f2f2")),
+            .ViewBackgroundColor(UIColor(rgba:"#e6e7ec")),
+            .SelectionIndicatorColor(UIColor(rgba:"#fea113")),
+            .BottomMenuHairlineColor(UIColor(rgba:"#f5f5f7")),
+            
+            .MenuItemFont(UIFont(name: "ChalkboardSE-Light", size: 13.0)!),
+            .MenuHeight(40.0),
+            .MenuItemWidth(90.0),
+            
+            
+            .CenterMenuItems(true)
+        ]
+        
+        pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, width*(9.0/16.0)+20, self.view.frame.width, self.view.frame.height -  width*(9.0/16.0) - 20), pageMenuOptions: parameters)
+        
+        self.addChildViewController(pageMenu!)
+        self.view.addSubview(pageMenu!.view)
+        
+        pageMenu!.didMoveToParentViewController(self)
+        
     }
     
     
@@ -137,9 +144,6 @@ class PlayVideoViewController: UIViewController {
     */
     
     //隐藏navigation tabbar 电池栏
-    //    - (void)toolbarHidden:(BOOL)Bool{
-    //     [[UIApplication sharedApplication] setStatusBarHidden:Bool withAnimation:UIStatusBarAnimationFade];
-    //    }
     
     func toolbarHidden(bool:Bool){
         UIApplication.sharedApplication().setStatusBarHidden(bool, withAnimation: .Fade)

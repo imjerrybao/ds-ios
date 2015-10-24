@@ -14,10 +14,15 @@
 		AB03C8131BD6A09A00F0A37C /* ds_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB03C8111BD6A09A00F0A37C /* ds_ios.xcdatamodeld */; };
 		AB03C8151BD6A09A00F0A37C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8141BD6A09A00F0A37C /* Assets.xcassets */; };
 		AB03C8181BD6A09A00F0A37C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8161BD6A09A00F0A37C /* LaunchScreen.storyboard */; };
+		AB03E0341BDA320F000F8D6C /* AVPlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03E0331BDA320F000F8D6C /* AVPlayVideoViewController.swift */; };
+		AB03E0361BDA3225000F8D6C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB03E0351BDA3225000F8D6C /* AVKit.framework */; };
 		AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */; };
 		AB1493F61BD72A60004A9F43 /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1493F51BD72A60004A9F43 /* FindTableViewCell.swift */; };
 		AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1494061BD74721004A9F43 /* PeriscopyNavBarExtension.swift */; };
 		AB1494091BD74721004A9F43 /* PeriscopyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1494071BD74721004A9F43 /* PeriscopyTitleView.swift */; };
+		AB2CBAA81BDB67C200EE0672 /* PalyVideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBAA71BDB67C200EE0672 /* PalyVideoInfoViewController.swift */; };
+		AB2CBAAA1BDB680000EE0672 /* PlayVideoCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBAA91BDB680000EE0672 /* PlayVideoCommentTableViewController.swift */; };
+		AB2CBAAC1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBAAB1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift */; };
 		AB46FBBF1BD927AE001C3C42 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBBD1BD927AE001C3C42 /* Home.storyboard */; };
 		AB46FBC21BD927CE001C3C42 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBC01BD927CE001C3C42 /* Find.storyboard */; };
 		AB46FBC51BD92811001C3C42 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBC31BD92811001C3C42 /* Play.storyboard */; };
@@ -63,10 +68,15 @@
 		AB03C8141BD6A09A00F0A37C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB03C8171BD6A09A00F0A37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB03C8191BD6A09A00F0A37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB03E0331BDA320F000F8D6C /* AVPlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayVideoViewController.swift; sourceTree = "<group>"; };
+		AB03E0351BDA3225000F8D6C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMainTableViewController.swift; sourceTree = "<group>"; };
 		AB1493F51BD72A60004A9F43 /* FindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
 		AB1494061BD74721004A9F43 /* PeriscopyNavBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriscopyNavBarExtension.swift; sourceTree = "<group>"; };
 		AB1494071BD74721004A9F43 /* PeriscopyTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriscopyTitleView.swift; sourceTree = "<group>"; };
+		AB2CBAA71BDB67C200EE0672 /* PalyVideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalyVideoInfoViewController.swift; sourceTree = "<group>"; };
+		AB2CBAA91BDB680000EE0672 /* PlayVideoCommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoCommentTableViewController.swift; sourceTree = "<group>"; };
+		AB2CBAAB1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoRecommendTableViewController.swift; sourceTree = "<group>"; };
 		AB46FBBE1BD927AE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		AB46FBC11BD927CE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Find.storyboard; sourceTree = "<group>"; };
 		AB46FBC41BD92811001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Play.storyboard; sourceTree = "<group>"; };
@@ -110,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB03E0361BDA3225000F8D6C /* AVKit.framework in Frameworks */,
 				AB58EFCE1BD6A89F00E2B428 /* StoreKit.framework in Frameworks */,
 				4D27B1C84096D8EC738422AE /* Pods.framework in Frameworks */,
 				AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */,
@@ -122,6 +133,7 @@
 		10EBB73AC5FA1091404FD628 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB03E0351BDA3225000F8D6C /* AVKit.framework */,
 				AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */,
 				AB58EFC91BD6A51800E2B428 /* MapKit.framework */,
 				D9C98F2E301BB341C3C310AC /* Pods.framework */,
@@ -187,6 +199,18 @@
 			name = Periscopy;
 			sourceTree = "<group>";
 		};
+		AB2CBAA61BDB653800EE0672 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				AB58EF861BD6A19A00E2B428 /* PlayVideoViewController.swift */,
+				AB03E0331BDA320F000F8D6C /* AVPlayVideoViewController.swift */,
+				AB2CBAA71BDB67C200EE0672 /* PalyVideoInfoViewController.swift */,
+				AB2CBAA91BDB680000EE0672 /* PlayVideoCommentTableViewController.swift */,
+				AB2CBAAB1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift */,
+			);
+			name = Play;
+			sourceTree = "<group>";
+		};
 		AB58EF981BD6A1F800E2B428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +226,7 @@
 			children = (
 				AB58EF831BD6A19A00E2B428 /* HomeViewController.swift */,
 				AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */,
-				AB58EF861BD6A19A00E2B428 /* PlayVideoViewController.swift */,
+				AB2CBAA61BDB653800EE0672 /* Play */,
 				AB58EF871BD6A19A00E2B428 /* PopVideoTableViewController.swift */,
 			);
 			name = Home;
@@ -477,11 +501,14 @@
 				AB58EFC61BD6A41A00E2B428 /* README.md in Sources */,
 				AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */,
 				AB58EF8D1BD6A19A00E2B428 /* HotVideoTableViewController.swift in Sources */,
+				AB2CBAAA1BDB680000EE0672 /* PlayVideoCommentTableViewController.swift in Sources */,
 				AB58EF931BD6A19A00E2B428 /* PopVideoTableViewController.swift in Sources */,
 				AB03C80B1BD6A09A00F0A37C /* AppDelegate.swift in Sources */,
 				AB58EFC41BD6A41A00E2B428 /* KrVideoPlayerController.m in Sources */,
+				AB2CBAA81BDB67C200EE0672 /* PalyVideoInfoViewController.swift in Sources */,
 				AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */,
 				ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */,
+				AB2CBAAC1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift in Sources */,
 				AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */,
 				AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */,
 				AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */,
@@ -490,6 +517,7 @@
 				AB58EF961BD6A19A00E2B428 /* VideoInfo.swift in Sources */,
 				AB1493F61BD72A60004A9F43 /* FindTableViewCell.swift in Sources */,
 				AB58EF971BD6A19A00E2B428 /* VideoTableViewCell.swift in Sources */,
+				AB03E0341BDA320F000F8D6C /* AVPlayVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
