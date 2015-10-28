@@ -16,22 +16,6 @@ extension Alamofire.Request{
 
 }
 
-// MARK: - 扩展Manager
-extension Alamofire.Manager{
-
-    /// 请求规则
-    static let sharedInstanceAndTimeOut: Manager = {
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        //请求超时 时间
-        configuration.timeoutIntervalForRequest = 10 // 秒
-
-        configuration.HTTPAdditionalHeaders = Manager.defaultHTTPHeaders
-        return Manager(configuration: configuration)
-        }()
-    
-
-}
-
 // 创建HttpClient结构体
 struct HttpClient {
     

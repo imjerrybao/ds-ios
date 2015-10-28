@@ -11,7 +11,6 @@ import SDCycleScrollView
 import VGParallaxHeader
 import APParallaxHeader
 import MJRefresh
-import PathCover
 
 
 class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelegate,APParallaxViewDelegate {
@@ -30,8 +29,6 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         super.viewDidLoad()
 
         setNav();
-        
-        
         let tableHeardView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200), imageURLStringsGroup: imageURL)
         tableHeardView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
         tableHeardView.delegate = self;
@@ -65,26 +62,16 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         
         
     }
-//    //
-//        override func scrollViewDidScroll(scrollView: UIScrollView) {
-//    
-//    //        self.tableView.shouldPositionParallaxHeader()
-//    
-//        }
-    //
+    
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
-        
-        print("点击了\(index) 张图片")
+         print("点击了\(index) 张图片")
     }
     
     func parallaxView(view: APParallaxView!, willChangeFrame frame: CGRect) {
-        
-        
+    
     }
     
-    
     func parallaxView(view: APParallaxView!, didChangeFrame frame: CGRect) {
-        
         
     }
 

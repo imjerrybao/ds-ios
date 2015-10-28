@@ -21,12 +21,18 @@ class HomeViewController: UIViewController {
         var controllerArray : [UIViewController] = []
 
         // Do any additional setup after loading the view.
-        let aStoryboard = UIStoryboard(name: "Main", bundle:NSBundle.mainBundle())
+        let aStoryboard = UIStoryboard(name: "Home", bundle:NSBundle.mainBundle())
 
+        
+        let newVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("NewVideoTableViewController") as! NewVideoTableViewController
+        
+        
         let hotVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("HotVideoTableViewController") as! HotVideoTableViewController
         
         
         let popVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PopVideoTableViewController") as! PopVideoTableViewController
+        
+        controllerArray.append(newVideoTableViewController)
         controllerArray.append(hotVideoTableViewController)
         controllerArray.append(popVideoTableViewController)
       
