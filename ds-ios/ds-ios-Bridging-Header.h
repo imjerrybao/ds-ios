@@ -15,6 +15,11 @@
 
 #import <APParallaxHeader/UIScrollView+APParallaxHeader.h>
 
+#import "ParallaxHeaderView.h"
+#import "UIImage+ImageEffects.h"
+
+#import <StrechyParallaxScrollView/StrechyParallaxScrollView.h>
+
 
  
 

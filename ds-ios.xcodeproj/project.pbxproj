@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D27B1C84096D8EC738422AE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C98F2E301BB341C3C310AC /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4D27B1C84096D8EC738422AE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C98F2E301BB341C3C310AC /* Pods.framework */; };
 		AB03C80B1BD6A09A00F0A37C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03C80A1BD6A09A00F0A37C /* AppDelegate.swift */; };
 		AB03C80D1BD6A09A00F0A37C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03C80C1BD6A09A00F0A37C /* ViewController.swift */; };
 		AB03C8101BD6A09A00F0A37C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB03C80E1BD6A09A00F0A37C /* Main.storyboard */; };
@@ -54,9 +54,14 @@
 		AB58EFC61BD6A41A00E2B428 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB71BD6A41A00E2B428 /* README.md */; };
 		AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFC91BD6A51800E2B428 /* MapKit.framework */; };
 		AB58EFCE1BD6A89F00E2B428 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */; };
+		AB6E7EBE1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E7EBD1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift */; };
+		AB6E7EC01BE1B68A00A9CB79 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E7EBF1BE1B68A00A9CB79 /* MyViewController.swift */; };
 		ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */; };
 		ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */; };
 		ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */; };
+		ABCF39601BE07E9D00C18508 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF395E1BE07E9D00C18508 /* My.storyboard */; };
+		ABF6AEE51BE0D42800448D75 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF6AEE21BE0D42800448D75 /* UIImage+ImageEffects.m */; };
+		ABF6AEE61BE0D42800448D75 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF6AEE41BE0D42800448D75 /* ParallaxHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,9 +118,16 @@
 		AB58EFB71BD6A41A00E2B428 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AB58EFC91BD6A51800E2B428 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AB6E7EBD1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		AB6E7EBF1BE1B68A00A9CB79 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageViewPro.swift; sourceTree = "<group>"; };
 		ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVideoTableViewController.swift; sourceTree = "<group>"; };
 		ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSHttpClient.swift; sourceTree = "<group>"; };
+		ABCF395F1BE07E9D00C18508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/My.storyboard; sourceTree = "<group>"; };
+		ABF6AEE11BE0D42800448D75 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		ABF6AEE21BE0D42800448D75 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		ABF6AEE31BE0D42800448D75 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		ABF6AEE41BE0D42800448D75 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
 		D9C98F2E301BB341C3C310AC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				AB03C80E1BD6A09A00F0A37C /* Main.storyboard */,
+				ABCF395E1BE07E9D00C18508 /* My.storyboard */,
 				AB46FBC01BD927CE001C3C42 /* Find.storyboard */,
 				AB46FBBD1BD927AE001C3C42 /* Home.storyboard */,
 				AB46FBC31BD92811001C3C42 /* Play.storyboard */,
@@ -221,6 +234,7 @@
 				AB58EF9B1BD6A22C00E2B428 /* Main */,
 				AB58EF991BD6A21200E2B428 /* Home */,
 				AB58EF9A1BD6A21C00E2B428 /* Find */,
+				ABCF39611BE09ADA00C18508 /* My */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +280,7 @@
 		AB58EF9D1BD6A24100E2B428 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AB6E7EBD1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift */,
 				AB58EF881BD6A19A00E2B428 /* UIColorExtension.swift */,
 				AB58EF891BD6A19A00E2B428 /* UIViewController-Extension.swift */,
 			);
@@ -292,6 +307,7 @@
 		AB58EFA01BD6A26800E2B428 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				ABF6AEE01BE0D41200448D75 /* ParallaxHeaderView */,
 				ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */,
 				AB1494051BD74718004A9F43 /* Periscopy */,
 				AB58EFA41BD6A41A00E2B428 /* KrVideoPlayer */,
@@ -338,6 +354,25 @@
 				AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		ABCF39611BE09ADA00C18508 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				AB6E7EBF1BE1B68A00A9CB79 /* MyViewController.swift */,
+			);
+			name = My;
+			sourceTree = "<group>";
+		};
+		ABF6AEE01BE0D41200448D75 /* ParallaxHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				ABF6AEE11BE0D42800448D75 /* UIImage+ImageEffects.h */,
+				ABF6AEE21BE0D42800448D75 /* UIImage+ImageEffects.m */,
+				ABF6AEE31BE0D42800448D75 /* ParallaxHeaderView.h */,
+				ABF6AEE41BE0D42800448D75 /* ParallaxHeaderView.m */,
+			);
+			name = ParallaxHeaderView;
 			sourceTree = "<group>";
 		};
 		B5ACFED64BE8BFC2A1ED13FC /* Pods */ = {
@@ -422,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABCF39601BE07E9D00C18508 /* My.storyboard in Resources */,
 				AB58EFBE1BD6A41A00E2B428 /* kr-video-player-play@2x.png in Resources */,
 				AB58EFB91BD6A41A00E2B428 /* kr-video-player-close@3x.png in Resources */,
 				AB58EFBF1BD6A41A00E2B428 /* kr-video-player-play@3x.png in Resources */,
@@ -516,13 +552,17 @@
 				AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */,
 				ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */,
 				AB2CBAAC1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift in Sources */,
+				AB6E7EBE1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift in Sources */,
 				AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */,
+				ABF6AEE61BE0D42800448D75 /* ParallaxHeaderView.m in Sources */,
 				ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */,
 				AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */,
 				AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */,
 				AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */,
 				AB58EF941BD6A19A00E2B428 /* UIColorExtension.swift in Sources */,
+				AB6E7EC01BE1B68A00A9CB79 /* MyViewController.swift in Sources */,
 				AB58EF961BD6A19A00E2B428 /* VideoInfo.swift in Sources */,
+				ABF6AEE51BE0D42800448D75 /* UIImage+ImageEffects.m in Sources */,
 				AB1493F61BD72A60004A9F43 /* FindTableViewCell.swift in Sources */,
 				AB58EF971BD6A19A00E2B428 /* VideoTableViewCell.swift in Sources */,
 				AB03E0341BDA320F000F8D6C /* AVPlayVideoViewController.swift in Sources */,
@@ -570,6 +610,14 @@
 				AB46FBC41BD92811001C3C42 /* Base */,
 			);
 			name = Play.storyboard;
+			sourceTree = "<group>";
+		};
+		ABCF395E1BE07E9D00C18508 /* My.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABCF395F1BE07E9D00C18508 /* Base */,
+			);
+			name = My.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

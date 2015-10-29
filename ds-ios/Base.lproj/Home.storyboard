@@ -118,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOB-QN-cJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460" y="531"/>
+            <point key="canvasLocation" x="80" y="271"/>
         </scene>
         <!--热门-->
         <scene sceneID="dYb-t0-uIa">
@@ -225,7 +225,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-1170" y="396"/>
+            <point key="canvasLocation" x="-934" y="271"/>
         </scene>
         <!--playVideoView-->
         <scene sceneID="EQQ-oP-sZX">
@@ -235,7 +235,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtG-sG-yqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542.5" y="-208"/>
+            <point key="canvasLocation" x="-933.5" y="747"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="TvX-wI-fDf">
@@ -245,7 +245,7 @@
                 </avPlayerViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k31-Ho-9sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1716" y="-541"/>
+            <point key="canvasLocation" x="-2472" y="-717"/>
         </scene>
         <!--推荐-->
         <scene sceneID="lPh-CQ-nxl">
@@ -359,7 +359,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="251" y="388"/>
+            <point key="canvasLocation" x="-1989" y="271"/>
         </scene>
     </scenes>
     <resources>
@@ -367,6 +367,6 @@
         <image name="restart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fEv-Q5-ogd"/>
+        <segue reference="0HI-Kx-kli"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -198,7 +198,10 @@ public extension UIImageView {
                 
                 dispatch_async_safely_main_queue {
                     if let sSelf = self where imageURL == sSelf.kf_webURL && image != nil {
-                        if let transition = optionsInfo?[.Transition] as? ImageTransition {
+                        
+                        if let transitionItem = optionsInfo?.kf_findFirstMatch(.Transition(.None)),
+                            case .Transition(let transition) = transitionItem {
+                            
                             UIView.transitionWithView(sSelf, duration: 0.0, options: [], animations: { () -> Void in
                                 indicator?.stopAnimating()
                                 }, completion: { (finished) -> Void in
@@ -206,16 +209,20 @@ public extension UIImageView {
                                         options: transition.animationOptions, animations:
                                         { () -> Void in
                                             transition.animations?(sSelf, image!)
-                                        }, completion: transition.completion)
+                                        }, completion: {
+                                            finished in
+                                            transition.completion?(finished)
+                                            completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
+                                        })
                             })
                         } else {
                             indicator?.stopAnimating()
                             sSelf.image = image;
+                            completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
                         }
-                        
+                    } else {
+                        completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
                     }
-                    
-                    completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
                 }
             })
         
@@ -321,7 +328,7 @@ public extension UIImageView {
                       placeholderImage: UIImage?,
                                options: KingfisherOptions) -> RetrieveImageTask
     {
-        return kf_setImageWithURL(URL, placeholderImage: placeholderImage, optionsInfo: [.Options: options], progressBlock: nil, completionHandler: nil)
+        return kf_setImageWithURL(URL, placeholderImage: placeholderImage, optionsInfo: [.Options(options)], progressBlock: nil, completionHandler: nil)
     }
     
     @available(*, deprecated=1.2, message="Use -kf_setImageWithURL:placeholderImage:optionsInfo:completionHandler: instead.")
@@ -330,7 +337,7 @@ public extension UIImageView {
                                options: KingfisherOptions,
                      completionHandler: CompletionHandler?) -> RetrieveImageTask
     {
-        return kf_setImageWithURL(URL, placeholderImage: placeholderImage, optionsInfo: [.Options: options], progressBlock: nil, completionHandler: completionHandler)
+        return kf_setImageWithURL(URL, placeholderImage: placeholderImage, optionsInfo: [.Options(options)], progressBlock: nil, completionHandler: completionHandler)
     }
     
     @available(*, deprecated=1.2, message="Use -kf_setImageWithURL:placeholderImage:optionsInfo:progressBlock:completionHandler: instead.")
@@ -340,7 +347,7 @@ public extension UIImageView {
                          progressBlock: DownloadProgressBlock?,
                      completionHandler: CompletionHandler?) -> RetrieveImageTask
     {
-        return kf_setImageWithURL(URL, placeholderImage: placeholderImage, optionsInfo: [.Options: options], progressBlock: progressBlock, completionHandler: completionHandler)
+        return kf_setImageWithURL(URL, placeholderImage: placeholderImage, optionsInfo: [.Options(options)], progressBlock: progressBlock, completionHandler: completionHandler)
     }
     
 }

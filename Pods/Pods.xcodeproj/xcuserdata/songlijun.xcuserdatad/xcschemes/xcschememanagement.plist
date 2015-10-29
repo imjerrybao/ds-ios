@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>StrechyParallaxScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>VGParallaxHeader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,52 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>015BCCFD8E25F9604566521601EAC6A1</key>
+		<key>1ABA1364F52B400F9AB0D9C1C909F3B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0A13568FB4CA6403E6AD85B2EE040B7A</key>
+		<key>4B2F30D90D85A544E9EFE2A49D392C25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>17458B1647130CD781A1F7E0EB002E74</key>
+		<key>584462CFF59416755FBACF262690C597</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>24F1E70494030D82589B7143A989F5DC</key>
+		<key>6847254D016329D4A531D34ED2B6DF81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F1D57DDA4961DC57E301504602DB25A</key>
+		<key>735034EF4105BD07E1E331D86A940106</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C1B7CBBA2FF8C05B969D628E10B8428</key>
+		<key>8AD25FF1B14EEFF450C650A69BA0F55C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>477B0FF89C595885147F5AD09AD31C24</key>
+		<key>ADCFC99F84E54BA7B67813A3FD0160FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7FC022A5F0EB0F1AED9DD02FA0B3E3FA</key>
+		<key>B76773D7D56CFAF4E5497C30E37BA434</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD5186F6A78FC9044CE3861CCC1620A0</key>
+		<key>EDDB924C8A7B0849AAD64F27BC91D854</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B204631EE3C445910C4A08EA526E61C7</key>
+		<key>F3694A0C0470381AD662072F4A84672E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F91226101ECE8FCFD221A3EC54481F82</key>
 		<dict>
 			<key>primary</key>
 			<true/>
