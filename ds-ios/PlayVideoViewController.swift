@@ -66,13 +66,11 @@ class PlayVideoViewController: UIViewController {
         
         let willBackOrientationPortrait:() -> Void = {
             self.pageMenu?.view.hidden = false
-            self.toolbarHidden(false)
-        }
+         }
         
         let willChangeToFullscreenMode:() -> Void = {
              self.pageMenu?.view.hidden = true
-            self.toolbarHidden(true)
-        }
+         }
         
         self.videoController.willBackOrientationPortrait = willBackOrientationPortrait
         self.videoController.willChangeToFullscreenMode = willChangeToFullscreenMode
@@ -143,9 +141,4 @@ class PlayVideoViewController: UIViewController {
     }
     */
     
-    //隐藏navigation tabbar 电池栏
-    
-    func toolbarHidden(bool:Bool){
-        UIApplication.sharedApplication().setStatusBarHidden(bool, withAnimation: .Fade)
-    }
 }

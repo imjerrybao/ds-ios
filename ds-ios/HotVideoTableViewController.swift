@@ -167,7 +167,7 @@ class HotVideoTableViewController: UITableViewController {
                 }
                 
             case .Failure(let error):
-                
+                print(error)
                 self.tableView.header.endRefreshing()
                 //没有数据时显示
                 if self.videos.count == 0 {
