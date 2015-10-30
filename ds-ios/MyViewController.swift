@@ -11,9 +11,12 @@ import StrechyParallaxScrollView
 
 class MyViewController: UIViewController,UIScrollViewDelegate {
     
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var myBkImageView: UIImageView!
     
+    @IBOutlet weak var rr: UIButton!
     var mybkImage: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -28,51 +31,78 @@ class MyViewController: UIViewController,UIScrollViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.hidden  = true
+        
+        
+        let width = UIScreen.mainScreen().bounds.size.width
+
+        /// 用户top 背景
         mybkImage = UIImageView(image: UIImage(named: "myBkImage"))
         mybkImage.frame = CGRectMake(0, 0, self.view.frame.width, 240)
-        
-//        UIImageView *circle = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
-//        [circle setImage:[UIImage imageNamed:@"profile.jpg"]];
-//        [circle setCenter:topView.center];
-//        [circle.layer setMasksToBounds:YES];
-//        [circle.layer setCornerRadius:40];
-//        [topView addSubview:circle];
-        
+
+        mybkImage.userInteractionEnabled = true
+        /// 用户头像
         let userCircle = UIImageView(frame: CGRectMake(0,0,70,70))
-        userCircle.image = UIImage(named: "BruceLee")
+        userCircle.image = UIImage(named: "picture-default")
+        userCircle.alpha = 1
         userCircle.center = mybkImage.center
         userCircle.layer.masksToBounds = true
         userCircle.layer.cornerRadius = 35
+        userCircle.layer.borderColor =  UIColor(rgba:"#f0a22a").CGColor
+        userCircle.layer.borderWidth = 2
         mybkImage.addSubview(userCircle)
-   
+        
+        ///登录 按钮
+        let loginButton = UIButton(frame: CGRectMake(0, 200, 80, 20))
+
+        loginButton.backgroundColor = UIColor.blackColor()
+//        loginButton.setImage(UIImage(named: "login"), forState: .Normal)
+        loginButton.addTarget(self, action: "toLoginView:", forControlEvents: .TouchUpInside)
+//        self.view.addSubview(loginButton)
+        
+        
+        let settings = UIButton()
+        settings.addTarget(self, action: "toLoginView:", forControlEvents: UIControlEvents.TouchUpInside)
+        settings.setTitle("Settings", forState: .Normal)
+        settings.frame = CGRectMake(0, 530, 150, 50)
+//        topView.addSubview(settings)
+        
+        /**
+        *  设置登录按钮
+        */
+//        rr.snp_makeConstraints { (make) -> Void in
+//            make.top.equalTo(userCircle.snp_bottom).offset(10)
+//            make.width.equalTo(80)
+//            make.height.equalTo(20)
+//            make.centerX.equalTo(topView)
+//        }
+        
         /**
         *  设置用户头像
         */
         userCircle.snp_makeConstraints { (make) -> Void in
             make.size.equalTo(70)
-            make.center.equalTo(mybkImage)
+            make.center.equalTo(mybkImage) 
         }
         
-        
-        
-        let strechy = StrechyParallaxScrollView(frame: self.view.frame, andTopView: mybkImage)
+        topView.addSubview(myBkImageView)
+//        
+        let strechy = StrechyParallaxScrollView(frame: self.view.frame, andTopView: myBkImageView)
+        strechy.addSubview(myBkImageView)
         self.view.addSubview(strechy)
         strechy.setContentSize(CGSizeMake(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height + 20))
-        
-        
-        
-        
+//
+//        
+//        
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        
-        print("fff")
-    }
     
-    func scrollViewDidZoom(scrollView: UIScrollView) {
+    
+    /**
+     跳转登录页面
+     */
+    func toLoginView(sender: UIButton!){
         
-        print("3333")
+        print("点击了登录")
     }
     
 
