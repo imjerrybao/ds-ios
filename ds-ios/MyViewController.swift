@@ -31,10 +31,48 @@ class MyViewController: UIViewController,UIScrollViewDelegate {
         mybkImage = UIImageView(image: UIImage(named: "myBkImage"))
         mybkImage.frame = CGRectMake(0, 0, self.view.frame.width, 240)
         
+//        UIImageView *circle = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+//        [circle setImage:[UIImage imageNamed:@"profile.jpg"]];
+//        [circle setCenter:topView.center];
+//        [circle.layer setMasksToBounds:YES];
+//        [circle.layer setCornerRadius:40];
+//        [topView addSubview:circle];
+        
+        let userCircle = UIImageView(frame: CGRectMake(0,0,70,70))
+        userCircle.image = UIImage(named: "BruceLee")
+        userCircle.center = mybkImage.center
+        userCircle.layer.masksToBounds = true
+        userCircle.layer.cornerRadius = 35
+        mybkImage.addSubview(userCircle)
+   
+        /**
+        *  设置用户头像
+        */
+        userCircle.snp_makeConstraints { (make) -> Void in
+            make.size.equalTo(70)
+            make.center.equalTo(mybkImage)
+        }
+        
+        
+        
         let strechy = StrechyParallaxScrollView(frame: self.view.frame, andTopView: mybkImage)
         self.view.addSubview(strechy)
         strechy.setContentSize(CGSizeMake(UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height + 20))
         
+        
+        
+        
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        
+        print("fff")
+    }
+    
+    func scrollViewDidZoom(scrollView: UIScrollView) {
+        
+        print("3333")
     }
     
 
