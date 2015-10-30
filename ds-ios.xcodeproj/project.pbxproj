@@ -23,6 +23,7 @@
 		AB2CBAA81BDB67C200EE0672 /* PalyVideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBAA71BDB67C200EE0672 /* PalyVideoInfoViewController.swift */; };
 		AB2CBAAA1BDB680000EE0672 /* PlayVideoCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBAA91BDB680000EE0672 /* PlayVideoCommentTableViewController.swift */; };
 		AB2CBAAC1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2CBAAB1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift */; };
+		AB2ED0491BE37261002CE2E2 /* MyMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2ED0481BE37261002CE2E2 /* MyMainTableViewController.swift */; };
 		AB2EF2DD1BE22C69008E96CC /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EF2D01BE22C69008E96CC /* SnapKit.swift */; };
 		AB2EF2DE1BE22C69008E96CC /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EF2D11BE22C69008E96CC /* Constraint.swift */; };
 		AB2EF2DF1BE22C69008E96CC /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2EF2D21BE22C69008E96CC /* ConstraintDescription.swift */; };
@@ -66,8 +67,6 @@
 		AB58EFC51BD6A41A00E2B428 /* KrVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */; };
 		AB58EFC61BD6A41A00E2B428 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB71BD6A41A00E2B428 /* README.md */; };
 		AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFC91BD6A51800E2B428 /* MapKit.framework */; };
-		AB6E7EBE1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E7EBD1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift */; };
-		AB6E7EC01BE1B68A00A9CB79 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6E7EBF1BE1B68A00A9CB79 /* MyViewController.swift */; };
 		ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */; };
 		ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */; };
 		ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */; };
@@ -96,6 +95,7 @@
 		AB2CBAA71BDB67C200EE0672 /* PalyVideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalyVideoInfoViewController.swift; sourceTree = "<group>"; };
 		AB2CBAA91BDB680000EE0672 /* PlayVideoCommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoCommentTableViewController.swift; sourceTree = "<group>"; };
 		AB2CBAAB1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoRecommendTableViewController.swift; sourceTree = "<group>"; };
+		AB2ED0481BE37261002CE2E2 /* MyMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMainTableViewController.swift; sourceTree = "<group>"; };
 		AB2EF2CC1BE22BF7008E96CC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../../../../../../Desktop/SnapKit.framework; sourceTree = "<group>"; };
 		AB2EF2CF1BE22C69008E96CC /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
 		AB2EF2D01BE22C69008E96CC /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
@@ -145,8 +145,6 @@
 		AB58EFB71BD6A41A00E2B428 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AB58EFC91BD6A51800E2B428 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		AB6E7EBD1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
-		AB6E7EBF1BE1B68A00A9CB79 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageViewPro.swift; sourceTree = "<group>"; };
 		ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVideoTableViewController.swift; sourceTree = "<group>"; };
 		ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSHttpClient.swift; sourceTree = "<group>"; };
@@ -328,7 +326,6 @@
 		AB58EF9D1BD6A24100E2B428 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AB6E7EBD1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift */,
 				AB58EF881BD6A19A00E2B428 /* UIColorExtension.swift */,
 				AB58EF891BD6A19A00E2B428 /* UIViewController-Extension.swift */,
 			);
@@ -408,7 +405,7 @@
 		ABCF39611BE09ADA00C18508 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				AB6E7EBF1BE1B68A00A9CB79 /* MyViewController.swift */,
+				AB2ED0481BE37261002CE2E2 /* MyMainTableViewController.swift */,
 			);
 			name = My;
 			sourceTree = "<group>";
@@ -595,6 +592,7 @@
 				AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */,
 				AB2EF2E01BE22C69008E96CC /* ConstraintMaker.swift in Sources */,
 				AB58EF8D1BD6A19A00E2B428 /* HotVideoTableViewController.swift in Sources */,
+				AB2ED0491BE37261002CE2E2 /* MyMainTableViewController.swift in Sources */,
 				AB2CBAAA1BDB680000EE0672 /* PlayVideoCommentTableViewController.swift in Sources */,
 				AB58EF931BD6A19A00E2B428 /* PopVideoTableViewController.swift in Sources */,
 				ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */,
@@ -607,7 +605,6 @@
 				AB2EF2E41BE22C69008E96CC /* EdgeInsets.swift in Sources */,
 				AB2CBAAC1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift in Sources */,
 				AB2EF2E11BE22C69008E96CC /* View+SnapKit.swift in Sources */,
-				AB6E7EBE1BE1B24F00A9CB79 /* UIViewController+Keyboard.swift in Sources */,
 				AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */,
 				ABF6AEE61BE0D42800448D75 /* ParallaxHeaderView.m in Sources */,
 				ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */,
@@ -618,7 +615,6 @@
 				AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */,
 				AB58EF941BD6A19A00E2B428 /* UIColorExtension.swift in Sources */,
 				AB2EF2DD1BE22C69008E96CC /* SnapKit.swift in Sources */,
-				AB6E7EC01BE1B68A00A9CB79 /* MyViewController.swift in Sources */,
 				AB58EF961BD6A19A00E2B428 /* VideoInfo.swift in Sources */,
 				AB2EF2E91BE22C69008E96CC /* SourceLocation.swift in Sources */,
 				ABF6AEE51BE0D42800448D75 /* UIImage+ImageEffects.m in Sources */,

@@ -104,6 +104,19 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 1 {
+            return 20
+        }else{
+            return 20
+        }
+    }
+    
+    
+    
 
     // MARK: - Table view data source
 
