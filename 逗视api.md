@@ -1,5 +1,5 @@
 ## 逗视 API
-
+api.doushi.me
 * ### host: gaoxiaoshipin.vipappsina.com (暂时)
 * ### 最新逗视: GET </br> /index.php/NewApi36/index/markId/0/random/0/sw/1
 * ### 最新逗视-翻页: GET  </br> /index.php/NewApi36/index/lastId/24568/random_more/0/sw/1 <br/>
