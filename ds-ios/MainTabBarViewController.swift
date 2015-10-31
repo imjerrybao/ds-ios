@@ -21,6 +21,21 @@ class MainTabBarViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: UITabBar delegate 实现双击tabBar刷新
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        
+//        print("self.selectedIndex-> \(self.selectedIndex)")
+//        print("item.tag-> \(item.tag)")
+
+//        
+         if (self.selectedIndex == 1 && self.selectedIndex == item.tag ) {
+            print("双击了\(item.tag)")
+
+        }
+        self.selectedIndex = item.tag;
+    }
+    
 
     /*
     // MARK: - Navigation

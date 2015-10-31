@@ -67,6 +67,7 @@
 		AB58EFC51BD6A41A00E2B428 /* KrVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */; };
 		AB58EFC61BD6A41A00E2B428 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB71BD6A41A00E2B428 /* README.md */; };
 		AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFC91BD6A51800E2B428 /* MapKit.framework */; };
+		ABA09EF21BE4C34D009C8A85 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */; };
 		ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */; };
 		ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */; };
 		ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */; };
@@ -145,6 +146,7 @@
 		AB58EFB71BD6A41A00E2B428 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AB58EFC91BD6A51800E2B428 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageViewPro.swift; sourceTree = "<group>"; };
 		ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVideoTableViewController.swift; sourceTree = "<group>"; };
 		ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSHttpClient.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				AB03C80C1BD6A09A00F0A37C /* ViewController.swift */,
+				ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */,
 				AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */,
 				AB2EF2DE1BE22C69008E96CC /* Constraint.swift in Sources */,
+				ABA09EF21BE4C34D009C8A85 /* MainTabBarViewController.swift in Sources */,
 				AB2EF2E31BE22C69008E96CC /* ConstraintItem.swift in Sources */,
 				AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */,
 				AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */,

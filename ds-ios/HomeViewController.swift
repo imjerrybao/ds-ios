@@ -82,7 +82,7 @@ class HomeViewController: UIViewController {
     /**
     视图全部加载完 出现
     
-    - parameter animated: <#animated description#>
+    - parameter animated: animated description
     */
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -99,5 +99,6 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

@@ -22,7 +22,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         self.navigationController?.navigationBar.hidden  = true
         
         mybkImage = UIImageView(image: UIImage(named: "myBkImage"))
-        mybkImage.frame = CGRectMake(0, 0, self.view.frame.width, 240)
+        mybkImage.frame = CGRectMake(0, 0, self.view.frame.width, 200)
         mybkImage.userInteractionEnabled = true
         
         
@@ -40,7 +40,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         ///登录 按钮
         let loginButton = UIButton(frame: CGRectMake(0, 200, 80, 20))
         
-        loginButton.backgroundColor = UIColor.blackColor()
+//        loginButton.backgroundColor = UIColor(rgba:"#f6f6f6")
                 loginButton.setImage(UIImage(named: "login"), forState: .Normal)
         loginButton.addTarget(self, action: "toLoginView:", forControlEvents: .TouchUpInside)
                 mybkImage.addSubview(loginButton)
@@ -60,10 +60,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         //添加tableHeaderView
         let headerView_v: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(mybkImage) as! ParallaxHeaderView
         
-        self.tableView.tableHeaderView = headerView_v
-        
-        
-        
+        self.tableView.tableHeaderView = headerView_v 
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -85,6 +82,12 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
      跳转登录页面
      */
     func toLoginView(sender: UIButton!){
+        let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
+        
+        
+        let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginTableView")
+        
+        self.navigationController?.pushViewController(loginTableView, animated: true)
         
         print("点击了登录")
     }
