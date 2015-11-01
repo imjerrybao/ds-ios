@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //设置TabBar 选中背景色
         UITabBar.appearance().tintColor = UIColor(rgba:"#f0a22a")
+        
+        //键盘扩展
+        IQKeyboardManager.sharedManager().enable = true
+
+
         
         return true
     }

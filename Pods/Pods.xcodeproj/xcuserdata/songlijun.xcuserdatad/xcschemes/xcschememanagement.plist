@@ -14,12 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Kingfisher.xcscheme</key>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MJExtension.xcscheme</key>
+		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -54,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TextFieldEffects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>VGParallaxHeader.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,6 +67,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0121B78D2535339B181189EFB97F9673</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>17759379B776E9166467DE93B056F54C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>192C8C2413796E089B0A00D1D53C6C09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1ABA1364F52B400F9AB0D9C1C909F3B1</key>
 		<dict>
 			<key>primary</key>
@@ -72,42 +92,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>584462CFF59416755FBACF262690C597</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>6847254D016329D4A531D34ED2B6DF81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>735034EF4105BD07E1E331D86A940106</key>
+		<key>77D784CD0BE87A492CCEAF542BCA385F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AD25FF1B14EEFF450C650A69BA0F55C</key>
+		<key>83AA2533427CFF3D82E74C69470ACB14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADCFC99F84E54BA7B67813A3FD0160FC</key>
+		<key>928F956841C2725561B9D2A05B34B99D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B76773D7D56CFAF4E5497C30E37BA434</key>
+		<key>A58BE7F5A09CD40534D5E9F896C14A7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EDDB924C8A7B0849AAD64F27BC91D854</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F3694A0C0470381AD662072F4A84672E</key>
+		<key>AAE3FCCEA3FFCC903E8237780AEE2E9D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

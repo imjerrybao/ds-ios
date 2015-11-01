@@ -4,8 +4,6 @@ use_frameworks!
 pod 'Alamofire', '~> 2.0'
 pod 'Kingfisher', '~> 1.6'
 
-
-pod 'MJExtension'
 pod 'MJRefresh'
 
 pod 'SDCycleScrollView','~> 1.3'
@@ -18,4 +16,11 @@ pod 'APParallaxHeader'
 pod 'RoundImageView', '~> 1.0.1'
 
 pod 'StrechyParallaxScrollView', '~> 0.1'
+
+##TextField UI
+pod 'TextFieldEffects'
+
+##键盘扩展
+pod 'IQKeyboardManagerSwift'
+
 

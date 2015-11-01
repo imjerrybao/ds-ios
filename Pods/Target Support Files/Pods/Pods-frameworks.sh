@@ -86,24 +86,26 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/APParallaxHeader.framework"
   install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/IQKeyboardManagerSwift.framework"
   install_framework "Pods/Kingfisher.framework"
-  install_framework "Pods/MJExtension.framework"
   install_framework "Pods/MJRefresh.framework"
   install_framework "Pods/PureLayout.framework"
   install_framework "Pods/RoundImageView.framework"
   install_framework "Pods/SDCycleScrollView.framework"
   install_framework "Pods/StrechyParallaxScrollView.framework"
+  install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/VGParallaxHeader.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/APParallaxHeader.framework"
   install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/IQKeyboardManagerSwift.framework"
   install_framework "Pods/Kingfisher.framework"
-  install_framework "Pods/MJExtension.framework"
   install_framework "Pods/MJRefresh.framework"
   install_framework "Pods/PureLayout.framework"
   install_framework "Pods/RoundImageView.framework"
   install_framework "Pods/SDCycleScrollView.framework"
   install_framework "Pods/StrechyParallaxScrollView.framework"
+  install_framework "Pods/TextFieldEffects.framework"
   install_framework "Pods/VGParallaxHeader.framework"
 fi

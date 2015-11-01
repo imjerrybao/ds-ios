@@ -16,6 +16,9 @@
 		AB03C8181BD6A09A00F0A37C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8161BD6A09A00F0A37C /* LaunchScreen.storyboard */; };
 		AB03E0341BDA320F000F8D6C /* AVPlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB03E0331BDA320F000F8D6C /* AVPlayVideoViewController.swift */; };
 		AB03E0361BDA3225000F8D6C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB03E0351BDA3225000F8D6C /* AVKit.framework */; };
+		AB0CA1531BE5B9E700134F1E /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */; };
+		AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */; };
+		AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */; };
 		AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */; };
 		AB1493F61BD72A60004A9F43 /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1493F51BD72A60004A9F43 /* FindTableViewCell.swift */; };
 		AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1494061BD74721004A9F43 /* PeriscopyNavBarExtension.swift */; };
@@ -89,6 +92,9 @@
 		AB03C8191BD6A09A00F0A37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB03E0331BDA320F000F8D6C /* AVPlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayVideoViewController.swift; sourceTree = "<group>"; };
 		AB03E0351BDA3225000F8D6C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMainTableViewController.swift; sourceTree = "<group>"; };
 		AB1493F51BD72A60004A9F43 /* FindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
 		AB1494061BD74721004A9F43 /* PeriscopyNavBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriscopyNavBarExtension.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 		AB03C8091BD6A09A00F0A37C /* ds-ios */ = {
 			isa = PBXGroup;
 			children = (
+				AB0CA13F1BE5B23E00134F1E /* Resources */,
 				AB58EF9D1BD6A24100E2B428 /* Extension */,
 				AB58EF9C1BD6A23500E2B428 /* NetWork */,
 				AB1493F21BD71EDC004A9F43 /* Storyboard */,
@@ -219,6 +226,29 @@
 				AB58EFA11BD6A2D500E2B428 /* ds-ios-Bridging-Header.h */,
 			);
 			path = "ds-ios";
+			sourceTree = "<group>";
+		};
+		AB0CA13F1BE5B23E00134F1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB0CA1401BE5B24B00134F1E /* images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AB0CA1401BE5B24B00134F1E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AB0CA1411BE5B26C00134F1E /* share_btn */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		AB0CA1411BE5B26C00134F1E /* share_btn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = share_btn;
 			sourceTree = "<group>";
 		};
 		AB1493F21BD71EDC004A9F43 /* Storyboard */ = {
@@ -355,6 +385,8 @@
 		AB58EFA01BD6A26800E2B428 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */,
+				AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */,
 				AB2EF2CE1BE22C5B008E96CC /* Snap */,
 				ABF6AEE01BE0D41200448D75 /* ParallaxHeaderView */,
 				ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */,
@@ -409,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2ED0481BE37261002CE2E2 /* MyMainTableViewController.swift */,
+				AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */,
 			);
 			name = My;
 			sourceTree = "<group>";
@@ -595,6 +628,7 @@
 				AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */,
 				AB2EF2E01BE22C69008E96CC /* ConstraintMaker.swift in Sources */,
 				AB58EF8D1BD6A19A00E2B428 /* HotVideoTableViewController.swift in Sources */,
+				AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */,
 				AB2ED0491BE37261002CE2E2 /* MyMainTableViewController.swift in Sources */,
 				AB2CBAAA1BDB680000EE0672 /* PlayVideoCommentTableViewController.swift in Sources */,
 				AB58EF931BD6A19A00E2B428 /* PopVideoTableViewController.swift in Sources */,
@@ -602,10 +636,12 @@
 				AB03C80B1BD6A09A00F0A37C /* AppDelegate.swift in Sources */,
 				AB58EFC41BD6A41A00E2B428 /* KrVideoPlayerController.m in Sources */,
 				AB2CBAA81BDB67C200EE0672 /* PalyVideoInfoViewController.swift in Sources */,
+				AB0CA1531BE5B9E700134F1E /* SimpleButton.swift in Sources */,
 				AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */,
 				AB2EF2E21BE22C69008E96CC /* ViewController+SnapKit.swift in Sources */,
 				ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */,
 				AB2EF2E41BE22C69008E96CC /* EdgeInsets.swift in Sources */,
+				AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */,
 				AB2CBAAC1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift in Sources */,
 				AB2EF2E11BE22C69008E96CC /* View+SnapKit.swift in Sources */,
 				AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */,

@@ -86,9 +86,8 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         
         
         let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginTableView")
-        
         self.navigationController?.pushViewController(loginTableView, animated: true)
-        
+
         print("点击了登录")
     }
     
@@ -119,7 +118,9 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     }
     
     
-    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
 
     // MARK: - Table view data source
 
@@ -181,12 +182,16 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
 
     /*
     // MARK: - Navigation
-
+    */
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+//        if segue.identifier == "toLoginView" {
+//              let loginView =  segue.destinationViewController
+//            self.navigationController?.pushViewController(loginView, animated: true)
+//        }
+//        
     }
-    */
+    
 
 }
