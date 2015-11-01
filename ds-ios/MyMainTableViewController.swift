@@ -85,7 +85,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
         
         
-        let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginTableView")
+        let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
         self.navigationController?.pushViewController(loginTableView, animated: true)
 
         print("点击了登录")

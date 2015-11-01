@@ -15,19 +15,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().keyWindow?.endEditing(true)
-         
-        let scrollView = UIScrollView(frame: UIScreen.mainScreen().bounds)
-         scrollView.addSubview(self.view)
+          
   
+        
     }
     
     @IBOutlet weak var phoneTextField: UITextField!
 
     @IBOutlet weak var pwdTextField: UITextField!
-    
-    
-    
-    
+     
     @IBAction func closeKeyBoard()
     {
         self.phoneTextField?.resignFirstResponder()
@@ -42,11 +38,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
      */
     @IBAction func qqLogin(sender: UIButton) {
         print("点击了QQ登录")
+        self.phoneTextField?.resignFirstResponder()
+        self.pwdTextField?.resignFirstResponder()
     }
     
     
     @IBAction func weiboLogin(sender: UIButton) {
         print("点击了微博登录")
+        self.phoneTextField?.resignFirstResponder()
+        self.pwdTextField?.resignFirstResponder()
     }
     
     

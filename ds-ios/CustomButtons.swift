@@ -32,10 +32,11 @@ class BackgroundColorButton: SimpleButton {
         setShadowOpacity(0.6, forState: .Highlighted)
         setShadowOffset(CGSize(width: 0, height: 1), forState: .Normal)
         setShadowOffset(CGSize(width: 0, height: 2), forState: .Highlighted)
-        setBackgroundColor(UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1.0), forState: .Normal)
-        setBackgroundColor(UIColor(red: 211/255, green: 84/255, blue: 0/255, alpha: 1.0), forState: .Highlighted)
-        setTitle(".Normal", forState: .Normal)
-        setTitle(".Highlighted", forState: .Highlighted)
+//        setBackgroundColor(UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1.0), forState: .Normal)
+        setBackgroundColor(UIColor(rgba:"#f0a22a"))
+//        setBackgroundColor(UIColor(red: 211/255, green: 84/255, blue: 0/255, alpha: 1.0), forState: .Highlighted)
+        setTitle("获取验证码", forState: .Normal)
+//        setTitle(".Highlighted", forState: .Highlighted)
         
     }
 }
@@ -72,11 +73,40 @@ class BorderColorButton: SimpleButton {
 class CornerRadiusButton: SimpleButton {
     override func configureButtonStyles() {
         super.configureButtonStyles()
-        setBackgroundColor(UIColor(red: 26/255, green: 188/255, blue: 156/255, alpha: 1.0), forState: .Normal)
+        setBackgroundColor(UIColor(rgba:"#f0a22a"), forState: .Normal)
         setTitle("登录", forState: .Normal)
 //        setTitle(".Highlighted", forState: .Highlighted)
         setCornerRadius(10.0, forState: .Normal)
 //        setCornerRadius(20.0, forState: .Highlighted)
 
+    }
+}
+
+@IBDesignable
+class CornerRadiusButtonByRes: SimpleButton {
+    override func configureButtonStyles() {
+        super.configureButtonStyles()
+//        setBackgroundColor(UIColor(red: 26/255, green: 188/255, blue: 156/255, alpha: 1.0), forState: .Normal)
+        setBackgroundColor(UIColor(rgba:"#f0a22a"), forState: .Normal)
+
+        
+        setTitle("注册", forState: .Normal)
+        //        setTitle(".Highlighted", forState: .Highlighted)
+        setCornerRadius(10.0, forState: .Normal)
+        //        setCornerRadius(20.0, forState: .Highlighted)
+        
+    }
+}
+
+@IBDesignable
+class CornerRadiusButtonByCode: SimpleButton {
+    override func configureButtonStyles() {
+        super.configureButtonStyles()
+        setBackgroundColor(UIColor(rgba:"#f0a22a"), forState: .Normal)
+        setTitle("获取验证码", forState: .Normal)
+        //        setTitle(".Highlighted", forState: .Highlighted)
+        setCornerRadius(10.0, forState: .Normal)
+        //        setCornerRadius(20.0, forState: .Highlighted)
+        
     }
 }
