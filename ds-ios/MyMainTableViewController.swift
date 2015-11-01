@@ -1,6 +1,6 @@
 //
 //  MyMainTableViewController.swift
-//  ds-ios
+//  ds-ios My页面
 //
 //  Created by 宋立君 on 15/10/30.
 //  Copyright © 2015年 Songlijun. All rights reserved.
@@ -20,6 +20,8 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden  = true
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
         mybkImage = UIImageView(image: UIImage(named: "myBkImage"))
         mybkImage.frame = CGRectMake(0, 0, self.view.frame.width, 200)
@@ -63,17 +65,19 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         self.tableView.tableHeaderView = headerView_v 
     }
 
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         //添加tableHeaderView
         let header: ParallaxHeaderView = self.tableView.tableHeaderView as! ParallaxHeaderView
         header.refreshBlurViewForNewImage()
         self.tableView.tableHeaderView = header
-        
-        
-        
-        
     }
     
     
@@ -83,7 +87,6 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
      */
     func toLoginView(sender: UIButton!){
         let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
-        
         
         let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
         self.navigationController?.pushViewController(loginTableView, animated: true)
@@ -115,11 +118,6 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         }else{
             return 20
         }
-    }
-    
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
     }
 
     // MARK: - Table view data source

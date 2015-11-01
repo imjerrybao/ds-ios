@@ -551,13 +551,8 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-uD-pmR" customClass="CornerRadiusButtonByRes" customModule="ds_ios">
-                                <rect key="frame" x="60" y="344" width="480" height="45"/>
+                                <rect key="frame" x="60" y="344" width="480" height="34"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="AzO-SF-Adn"/>
-                                    <constraint firstAttribute="width" constant="480" id="PFn-gp-Azc"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="UyJ-64-PqT"/>
-                                </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -574,6 +569,7 @@
                                     <constraint firstAttribute="width" constant="100" id="Dh3-Bk-Ise"/>
                                     <constraint firstAttribute="height" constant="45" id="noY-hL-rsd"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

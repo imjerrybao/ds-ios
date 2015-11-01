@@ -1,6 +1,6 @@
 //
 //  LoginViewController.swift
-//  ds-ios
+//  ds-ios 登录页面
 //
 //  Created by 宋立君 on 15/11/1.
 //  Copyright © 2015年 Songlijun. All rights reserved.
@@ -14,10 +14,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().keyWindow?.endEditing(true)
-          
-  
-        
     }
     
     @IBOutlet weak var phoneTextField: UITextField!
@@ -50,19 +46,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        
-//        if ((textField == self.phoneTextField) || (textField == self.pwdTextField)) {
-//            textField.resignFirstResponder()
-//        }
-//        return true;
-//    }
-//    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
-//        sendMessage(textField)
-        
-        return true
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
     }
     
     override func didReceiveMemoryWarning() {
