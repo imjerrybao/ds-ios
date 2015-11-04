@@ -37,72 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         ShareSDK.registerApp("bdee7b54bfd9")
-        
         //添加新浪微博应用
         ShareSDK.connectSinaWeiboWithAppKey("847382581", appSecret: "eeac00a87cfb61bf2bf3374523c7354f", redirectUri: "http://sns.whalecloud.com/sina2/callback")
-        
-//        //添加QQ应用
+        //添加QQ应用
         ShareSDK.connectQQWithQZoneAppKey("1104864621", qqApiInterfaceCls: QQApiInterface.self, tencentOAuthCls: TencentOAuth.self)
-        
         ShareSDK.connectQQWithAppId("1104864621", qqApiCls: QQApiInterface.self)
-        
         ShareSDK.connectQZoneWithAppKey("1104864621", appSecret: "", qqApiInterfaceCls: QQApiInterface.self, tencentOAuthCls: TencentOAuth.self)
         
         //连接邮件
         ShareSDK.connectMail()
-        
         //连接拷贝
         ShareSDK.connectCopy()
-        
-        
-//        ShareSDK.registerApp("bdee7b54bfd9",
-//            
-//            activePlatforms: [
-//                SSDKPlatformType.TypeSinaWeibo.rawValue,
-//                SSDKPlatformType.TypeQQ.rawValue,
-//                SSDKPlatformType.TypeMail.rawValue,
-//                SSDKPlatformType.TypeCopy.rawValue,
-//                SSDKPlatformType.TypeWechat.rawValue],
-//            onImport: {(platform : SSDKPlatformType) -> Void in
-//                
-//                switch platform{
-//                    
-//                case SSDKPlatformType.TypeWechat:
-//                    ShareSDKConnector.connectWeChat(WXApi.classForCoder())
-//                    
-//                case SSDKPlatformType.TypeQQ:
-//                    ShareSDKConnector.connectQQ(QQApiInterface.classForCoder(), tencentOAuthClass: TencentOAuth.classForCoder())
-//                default:
-//                    break
-//                }
-//            },
-//            onConfiguration: {(platform : SSDKPlatformType,appInfo : NSMutableDictionary!) -> Void in
-//                switch platform {
-//                    
-//                case SSDKPlatformType.TypeSinaWeibo:
-//                    //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-//                    appInfo.SSDKSetupSinaWeiboByAppKey("568898243",
-//                        appSecret : "38a4f8204cc784f81f9f0daaf31e02e3",
-//                        redirectUri : "http://www.sharesdk.cn",
-//                        authType : SSDKAuthTypeBoth)
-//                    
-//                case SSDKPlatformType.TypeWechat:
-//                    //设置微信应用信息
-//                    appInfo.SSDKSetupWeChatByAppId("wx4868b35061f87885", appSecret: "64020361b8ec4c99936c0e3999a9f249")
-//                case SSDKPlatformType.TypeQQ:
-//                    //设置QQ应用信息
-//                    appInfo.SSDKSetupQQByAppId("1104864621",
-//                        appKey : "AQKpnMRxELiDWHwt",
-//                        authType : SSDKAuthTypeBoth)
-//                    
-//                default:
-//                    break
-//                    
-//                }
-//        })
-
-
-        
         return true
     }
     
