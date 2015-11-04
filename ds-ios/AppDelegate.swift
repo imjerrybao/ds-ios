@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ShareSDK.registerApp("bdee7b54bfd9")
         
         //添加新浪微博应用
-        ShareSDK.connectSinaWeiboWithAppKey("", appSecret: "", redirectUri: "")
+        ShareSDK.connectSinaWeiboWithAppKey("847382581", appSecret: "eeac00a87cfb61bf2bf3374523c7354f", redirectUri: "http://sns.whalecloud.com/sina2/callback")
         
 //        //添加QQ应用
         ShareSDK.connectQQWithQZoneAppKey("1104864621", qqApiInterfaceCls: QQApiInterface.self, tencentOAuthCls: TencentOAuth.self)
