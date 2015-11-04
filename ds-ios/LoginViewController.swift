@@ -38,19 +38,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.pwdTextField?.resignFirstResponder()
         
         //授权
-        ShareSDK.authorize(SSDKPlatformType.TypeQQ, settings: nil, onStateChanged: { (state : SSDKResponseState, user : SSDKUser!, error : NSError!) -> Void in
+        ShareSDK.getUserInfoWithType(ShareTypeQQSpace, authOptions: nil) { (result, userInfo, error) -> Void in
             
-            switch state{
+         
+            if result {
                 
-            case SSDKResponseState.Success: print("授权成功,用户信息为\(user)\n ----- 授权凭证为\(user.credential)")
-            case SSDKResponseState.Fail:    print("授权失败,错误描述:\(error)")
-            case SSDKResponseState.Cancel:  print("操作取消")
-                
-            default:
-                break
-            }
-        })
-        
+                print("用户信息\(userInfo)")
+                print("用户信息\(userInfo.nickname())")
+            } 
+        }
     }
     
     
@@ -61,19 +57,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        //授权
-        ShareSDK.authorize(SSDKPlatformType.TypeSinaWeibo, settings: nil, onStateChanged: { (state : SSDKResponseState, user : SSDKUser!, error : NSError!) -> Void in
-            
-            switch state{
-                
-            case SSDKResponseState.Success: print("授权成功,用户信息为\(user)\n ----- 授权凭证为\(user.credential)")
-            case SSDKResponseState.Fail:    print("授权失败,错误描述:\(error)")
-            case SSDKResponseState.Cancel:  print("操作取消")
-                
-            default:
-                break
-            }
-        })
+//        //授权
+//        ShareSDK.authorize(SSDKPlatformType.TypeSinaWeibo, settings: nil, onStateChanged: { (state : SSDKResponseState, user : SSDKUser!, error : NSError!) -> Void in
+//            
+//            switch state{
+//                
+//            case SSDKResponseState.Success: print("授权成功,用户信息为\(user)\n ----- 授权凭证为\(user.credential)")
+//            case SSDKResponseState.Fail:    print("授权失败,错误描述:\(error)")
+//            case SSDKResponseState.Cancel:  print("操作取消")
+//                
+//            default:
+//                break
+//            }
+//        })
 
     }
     

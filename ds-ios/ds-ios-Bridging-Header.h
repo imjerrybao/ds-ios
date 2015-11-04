@@ -23,9 +23,8 @@
 
 
 #import <ShareSDK/ShareSDK.h>
-#import <ShareSDKUI/ShareSDK+SSUI.h>
-#import <ShareSDKConnector/ShareSDKConnector.h>
 
+ 
 //腾讯SDK头文件
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiInterface.h>
@@ -35,7 +34,7 @@
 
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
-
+ 
 
  
 
