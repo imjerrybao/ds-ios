@@ -36,6 +36,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("点击了QQ登录")
         self.phoneTextField?.resignFirstResponder()
         self.pwdTextField?.resignFirstResponder()
+        
+        //授权
+        ShareSDK.authorize(SSDKPlatformType.TypeQQ, settings: nil, onStateChanged: { (state : SSDKResponseState, user : SSDKUser!, error : NSError!) -> Void in
+            
+            switch state{
+                
+            case SSDKResponseState.Success: print("授权成功,用户信息为\(user)\n ----- 授权凭证为\(user.credential)")
+            case SSDKResponseState.Fail:    print("授权失败,错误描述:\(error)")
+            case SSDKResponseState.Cancel:  print("操作取消")
+                
+            default:
+                break
+            }
+        })
+        
     }
     
     
@@ -43,6 +58,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("点击了微博登录")
         self.phoneTextField?.resignFirstResponder()
         self.pwdTextField?.resignFirstResponder()
+        
+        
+        
+        //授权
+        ShareSDK.authorize(SSDKPlatformType.TypeSinaWeibo, settings: nil, onStateChanged: { (state : SSDKResponseState, user : SSDKUser!, error : NSError!) -> Void in
+            
+            switch state{
+                
+            case SSDKResponseState.Success: print("授权成功,用户信息为\(user)\n ----- 授权凭证为\(user.credential)")
+            case SSDKResponseState.Fail:    print("授权失败,错误描述:\(error)")
+            case SSDKResponseState.Cancel:  print("操作取消")
+                
+            default:
+                break
+            }
+        })
+
     }
     
     

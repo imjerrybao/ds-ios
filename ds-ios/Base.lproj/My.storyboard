@@ -314,7 +314,7 @@
         <!--Login View Controller-->
         <scene sceneID="tLl-XV-cm7">
             <objects>
-                <viewController storyboardIdentifier="LoginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JLD-Ne-23D" customClass="LoginViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JLD-Ne-23D" customClass="LoginViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JJM-0m-Rns"/>
                         <viewControllerLayoutGuide type="bottom" id="OEA-Iu-Kqs"/>
@@ -477,7 +477,7 @@
         <!--View Controller-->
         <scene sceneID="hC7-KR-WVL">
             <objects>
-                <viewController id="pNw-Qi-P3a" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="pNw-Qi-P3a" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hL4-MH-jiF"/>
                         <viewControllerLayoutGuide type="bottom" id="0hr-tu-ATB"/>
