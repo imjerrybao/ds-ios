@@ -146,7 +146,7 @@ class NewVideoTableViewController: UITableViewController {
                     self.videos = []
                     let videoInfos:[AnyObject];
                     
-                    videoInfos = ((JSON as! NSDictionary).valueForKey("content") as! [NSDictionary]).map { VideoInfo(id: $0["id"] as! String,title: $0["title"] as! String,pic: $0["pic"] as! String,url: $0["videoUrl"] as! String,cTime: "10分钟")}
+                    videoInfos = ((JSON as! NSDictionary).valueForKey("content") as! [NSDictionary]).map { VideoInfo(id: $0["id"] as! String,title: $0["title"] as! String,pic: $0["pic"] as! String,url: $0["videoUrl"] as! String,cTime: $0["pushTime"] as! String)}
                     
                     self.videos.addObjectsFromArray(videoInfos)
                     self.tableView.reloadData()
@@ -198,7 +198,7 @@ class NewVideoTableViewController: UITableViewController {
                 if let JSON = result.value {
                     let videoInfos:[AnyObject];
                     
-                    videoInfos = ((JSON as! NSDictionary).valueForKey("content") as! [NSDictionary]).map { VideoInfo(id: $0["id"] as! String,title: $0["title"] as! String,pic: $0["pic"] as! String,url: $0["videoUrl"] as! String,cTime: "10分钟")}
+                    videoInfos = ((JSON as! NSDictionary).valueForKey("content") as! [NSDictionary]).map { VideoInfo(id: $0["id"] as! String,title: $0["title"] as! String,pic: $0["pic"] as! String,url: $0["videoUrl"] as! String,cTime: $0["pushTime"] as! String)}
                     
                     self.videos.addObjectsFromArray(videoInfos)
                     
