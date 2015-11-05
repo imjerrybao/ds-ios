@@ -14,8 +14,7 @@ import Kingfisher
 class NewVideoTableViewController: UITableViewController {
     
     @IBOutlet var otherView: UIView!
-
-    
+ 
     //加载超时操作
     var ti:NSTimer?
    
@@ -41,9 +40,7 @@ class NewVideoTableViewController: UITableViewController {
         print(self.view.frame)
         
         self.view.frame = CGRectMake(0, 64, self.tableView.frame.width, self.tableView.frame.height)
-        
-        print(self.view.frame)
-        
+         
         //设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
         self.tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             self.loadNewData()
@@ -140,7 +137,7 @@ class NewVideoTableViewController: UITableViewController {
             return
         }
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.NewVideos(0, 10)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByNew(0, 10)).responseJSON { (request, response, result) -> Void in
             print("请求")
             switch result {
             case .Success:
@@ -195,7 +192,7 @@ class NewVideoTableViewController: UITableViewController {
         }
         
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.NewVideos(self.currentPage, 20)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByNew(self.currentPage, 20)).responseJSON { (request, response, result) -> Void in
             switch result {
             case .Success:
                 if let JSON = result.value {

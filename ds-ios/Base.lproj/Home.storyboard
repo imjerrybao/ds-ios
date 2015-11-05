@@ -54,6 +54,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="FQD-Kd-hTs">
+                            <rect key="frame" x="0.0" y="128" width="600" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="100" id="8fm-FM-WGz" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="100"/>
@@ -115,10 +121,41 @@
                             <outlet property="delegate" destination="dvH-BU-CO9" id="rqa-gb-ukn"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="otherView" destination="BhI-xE-3pb" id="qts-N1-eVx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOB-QN-cJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="BhI-xE-3pb">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7T2-XZ-l7C">
+                            <rect key="frame" x="283" y="45.5" width="32" height="32"/>
+                            <animations/>
+                            <state key="normal" image="restart"/>
+                            <connections>
+                                <action selector="restartData:" destination="JhJ-3x-UdT" eventType="touchUpInside" id="c5K-yJ-oX2"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数据加载失败" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpc-Iy-IfM">
+                            <rect key="frame" x="267" y="24" width="66" height="13.5"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <constraints>
+                        <constraint firstItem="7T2-XZ-l7C" firstAttribute="centerY" secondItem="BhI-xE-3pb" secondAttribute="centerY" constant="11.5" id="1gu-jc-2me"/>
+                        <constraint firstItem="Jpc-Iy-IfM" firstAttribute="centerY" secondItem="BhI-xE-3pb" secondAttribute="centerY" constant="-19.25" id="etU-QB-9ih"/>
+                        <constraint firstItem="7T2-XZ-l7C" firstAttribute="centerX" secondItem="BhI-xE-3pb" secondAttribute="centerX" constant="-1" id="hQj-fy-0KK"/>
+                        <constraint firstItem="Jpc-Iy-IfM" firstAttribute="centerX" secondItem="BhI-xE-3pb" secondAttribute="centerX" id="zy3-ag-avj"/>
+                    </constraints>
+                </view>
             </objects>
-            <point key="canvasLocation" x="80" y="271"/>
+            <point key="canvasLocation" x="-240" y="271"/>
         </scene>
         <!--热门-->
         <scene sceneID="dYb-t0-uIa">
@@ -130,6 +167,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="qvB-kl-5W7">
+                            <rect key="frame" x="0.0" y="128" width="600" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="100" id="cIX-He-Ref" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="100"/>
@@ -367,6 +410,6 @@
         <image name="restart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fEv-Q5-ogd"/>
+        <segue reference="Jzc-xd-fzS"/>
     </inferredMetricsTieBreakers>
 </document>

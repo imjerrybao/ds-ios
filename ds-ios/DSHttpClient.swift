@@ -37,21 +37,16 @@ struct HttpClientByVideo {
         
         
         // 请求方法
-        case EliteVideos(Int) //获取精华分类
-        case EliteVideosByPage(Int) //获取精华分类-分页
-        case PopularVideos(Int) //获取热门分类
-        case Gifs(Int) //获取Gif
-        
-        case NewVideos(Int,Int)
-        case VideosByHot(Int,Int)
-        case PopVideos(Int,Int)
+        case VideosByNew(Int,Int) //最新
+        case VideosByHot(Int,Int) //热门
+        case VideosByPop(Int,Int) //精华
 
         
         
         // 不同请求，对应不同请求类型
         var method: Alamofire.Method {
             switch self {
-            case .NewVideos:
+            case .VideosByNew:
                 return .GET
             case .VideosByHot:
                 return .GET
@@ -65,25 +60,13 @@ struct HttpClientByVideo {
             let (path) : (String) = {
                 
                 switch self {
-                    
-                case .EliteVideos(let id):
-                    return ("NewApi36/index/markId/\(id)/random/0/sw/1")
-                case .EliteVideosByPage(let id):
-                    
-                    return ("NewApi36/index/lastId/\(id)/random_more/0/sw/1")
-                    
-                case .PopularVideos(let id):
-                    return ("NewApi36/index/markId/\(id)/random/1/sw/1")
-                    
-                case .NewVideos(let vid, let count):
+                case .VideosByNew(let vid, let count):
                     return ("getNewVideos/\(vid)/\(count)")
                 case .VideosByHot(let vid, let count):
                     return ("getVideosByHot/\(vid)/\(count)")
-                case .PopVideos(let vid, let count):
+                case .VideosByPop(let vid, let count):
                     return ("getVideosByPop/\(vid)/\(count)")
-                    
-                default:
-                    return ("")
+                 
                     
                 }
             }()
