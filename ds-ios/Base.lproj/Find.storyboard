@@ -41,6 +41,7 @@
                                 <connections>
                                     <outlet property="cellImageView" destination="oOY-Qp-rJg" id="AoO-xZ-nL0"/>
                                     <outlet property="titleLabel" destination="URt-sN-uMq" id="akw-U1-eXN"/>
+                                    <segue destination="z5w-CB-HRb" kind="show" identifier="toHotApp" id="AEr-0d-l7T"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,6 +67,26 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="-2058" y="1842"/>
+        </scene>
+        <!--Hot App View Controller-->
+        <scene sceneID="vuq-bB-9Km">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="z5w-CB-HRb" customClass="HotAppViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ORX-B1-3Ke"/>
+                        <viewControllerLayoutGuide type="bottom" id="b8f-JM-8fq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SHk-fb-Man">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="amP-ck-bOz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUc-FU-SFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1431" y="1842"/>
         </scene>
         <!--发现-->
         <scene sceneID="vcN-Dv-3CV">

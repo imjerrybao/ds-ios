@@ -4,58 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BruceLee" translatesAutoresizingMaskIntoConstraints="NO" id="lOU-3i-bAY" customClass="RoundImageView" customModule="RoundImageView">
-                                <rect key="frame" x="27" y="20" width="60" height="60"/>
-                                <animations/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="833" y="46"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="9kW-up-8DJ">
-            <objects>
-                <viewController id="O6f-Rk-Lbi" customClass="ViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="z1P-Hw-xO4"/>
-                        <viewControllerLayoutGuide type="bottom" id="KuU-Vx-dS8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wwS-jR-bhT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dGU-Dl-A28" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2874" y="-945"/>
-        </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="fP4-4W-04b">
             <objects>
@@ -174,7 +122,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BruceLee" width="931" height="1024"/>
         <image name="add" width="32" height="32"/>
     </resources>
 </document>

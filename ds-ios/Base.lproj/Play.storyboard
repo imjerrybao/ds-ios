@@ -101,7 +101,7 @@
         <!--视频详情-->
         <scene sceneID="4c6-tB-XqX">
             <objects>
-                <viewController storyboardIdentifier="PalyVideoInfoViewController" title="视频详情" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YFI-yH-Aoq" userLabel="视频详情" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PalyVideoInfoViewController" title="视频详情" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YFI-yH-Aoq" userLabel="视频详情" customClass="PalyVideoInfoViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dN6-oI-iN3"/>
                         <viewControllerLayoutGuide type="bottom" id="eWE-aO-Whf"/>
@@ -137,6 +137,9 @@
                                 <rect key="frame" x="548" y="28" width="32" height="32"/>
                                 <animations/>
                                 <state key="normal" image="share"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="YFI-yH-Aoq" eventType="touchUpInside" id="l6F-Xk-UEx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm2-2c-asi">
                                 <rect key="frame" x="493" y="60" width="26" height="17"/>

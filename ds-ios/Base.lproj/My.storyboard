@@ -430,7 +430,7 @@
                                     <color key="titleColor" red="0.89975961538461535" green="0.40024902854300554" blue="0.30407172063817661" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pNw-Qi-P3a" kind="push" id="NYF-fl-DLe"/>
+                                    <segue destination="pNw-Qi-P3a" kind="show" id="NYF-fl-DLe"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -280,16 +280,6 @@
             </objects>
             <point key="canvasLocation" x="-933.5" y="747"/>
         </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="TvX-wI-fDf">
-            <objects>
-                <avPlayerViewController hidesBottomBarWhenPushed="YES" videoGravity="AVLayerVideoGravityResizeAspect" id="LoR-c6-tLc" customClass="AVPlayVideoViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="N4Y-bD-Tk9"/>
-                </avPlayerViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k31-Ho-9sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2472" y="-717"/>
-        </scene>
         <!--推荐-->
         <scene sceneID="lPh-CQ-nxl">
             <objects>
