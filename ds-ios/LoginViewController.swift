@@ -36,17 +36,47 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("点击了QQ登录")
         self.phoneTextField?.resignFirstResponder()
         self.pwdTextField?.resignFirstResponder()
-        
         //授权
-        ShareSDK.getUserInfoWithType(ShareTypeQQSpace, authOptions: nil) { (result, userInfo, error) -> Void in
+        
+        let snsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToQQ)
+        
+        var  response:UMSocialResponseEntity
+        snsPlatform.loginClickHandler(self,UMSocialControllerService.defaultControllerService(),true,{(response :UMSocialResponseEntity!) ->Void in
             
-         
-            if result {
+            var usm = UMSResponseCodeSuccess
+            var rcode = response.responseCode
+            
+            if rcode.rawValue == usm.rawValue {
                 
-                print("用户信息\(userInfo)")
-                print("用户信息\(userInfo.nickname())")
-            } 
-        }
+                var snsAccount = UMSocialAccountManager.socialAccountDictionary()
+                
+                var qqUser:UMSocialAccountEntity =  snsAccount[UMShareToQQ] as! UMSocialAccountEntity
+                
+                print("QQ用户数据\(qqUser)")
+                //用户id
+                var usid = qqUser.usid
+                //微博昵称
+                var username = qqUser.userName
+                //用户头像
+                var icon = qqUser.iconURL
+                
+                if snsAccount != nil{
+                    
+                    let parameters = [
+                        "nickname": username,
+                        "face":icon,
+                        "user_client_id": usid,
+                        "platform_id": "2",
+                    ]
+                    
+
+                }else{
+                    
+                }
+            }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            
+        });
     }
     
     
@@ -54,21 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("点击了微博登录")
         self.phoneTextField?.resignFirstResponder()
         self.pwdTextField?.resignFirstResponder()
-        
-        
-        
-//        //授权
-
         //授权
-        ShareSDK.getUserInfoWithType(ShareTypeSinaWeibo, authOptions: nil) { (result, userInfo, error) -> Void in
-            
-            
-            if result {
-                
-                print("用户信息\(userInfo)")
-                print("用户信息\(userInfo.nickname())")
-            }
-        }
 
     }
     
