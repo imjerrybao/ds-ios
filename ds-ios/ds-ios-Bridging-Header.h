@@ -44,6 +44,8 @@
 #import "UMSocialSnsPlatformManager.h"
 #import "UMSocialQQHandler.h"
 
+
+#import <SMS_SDK/SMSSDK.h>
  
 
  
