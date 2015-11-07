@@ -22,18 +22,28 @@
 
 
 
-#import <ShareSDK/ShareSDK.h>
+//#import <ShareSDK/ShareSDK.h>
+//
+// 
+////腾讯SDK头文件
+//#import <TencentOpenAPI/TencentOAuth.h>
+//#import <TencentOpenAPI/QQApiInterface.h>
+//
+////微信SDK头文件
+//#import "WXApi.h"
+//
+////新浪微博SDK头文件
+//#import "WeiboSDK.h"
+// 
 
- 
-//腾讯SDK头文件
-#import <TencentOpenAPI/TencentOAuth.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 
-//微信SDK头文件
-#import "WXApi.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialSinaHandler.h"
+#import "UMSocialControllerService.h"
+#import "UMSocialSnsPlatformManager.h"
+#import "UMSocialQQHandler.h"
 
-//新浪微博SDK头文件
-#import "WeiboSDK.h"
  
 
  

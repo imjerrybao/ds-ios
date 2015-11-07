@@ -21,6 +21,21 @@ class PalyVideoInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func shareAction(sender: UIButton) {
+        
+        
+        print("点击了分享")
+        
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText: "fensss ，www.umeng.com/social", shareImage: UIImage(named: "BruceLee"), shareToSnsNames: [UMShareToSina,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline], delegate: nil)
+        
+        UMSocialData.defaultData().extConfig.title = "ddd"
+        UMSocialData.defaultData().extConfig.qqData.url = "http://www.itjh.net/aa.html"
+        UMSocialData.defaultData().extConfig.qzoneData.url = "http://www.itjh.net/aa.html"
+  
+        UMSocialData.defaultData().extConfig.wechatSessionData.url = "http://www.itjh.net/aa.html";
+        UMSocialData.defaultData().extConfig.wechatTimelineData.url = "http://www.itjh.net/aa.html";
+
+    }
 
     /*
     // MARK: - Navigation
