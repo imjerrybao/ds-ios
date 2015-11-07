@@ -13,6 +13,10 @@ class PlayVideoViewController: UIViewController {
     
     var videoUrlString = ""
     
+    var videoTitleLabel = ""
+    
+    var videoInfoLable = ""
+    
     var videoController = KrVideoPlayerController()
     
     var pageMenu : CAPSPageMenu?
@@ -96,12 +100,15 @@ class PlayVideoViewController: UIViewController {
         // Do any additional setup after loading the view.
         let aStoryboard = UIStoryboard(name: "Play", bundle:NSBundle.mainBundle())
         
-        let palyVideoInfoViewController = aStoryboard.instantiateViewControllerWithIdentifier("PalyVideoInfoViewController")
+        let playVideoInfoViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoInfoViewController") as! PlayVideoInfoViewController
         
+        playVideoInfoViewController.videoTitle = videoTitleLabel
+        
+        playVideoInfoViewController.videoInfo = videoInfoLable
         
         let playVideoRecommendTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoRecommendTableViewController") as! PlayVideoRecommendTableViewController
         
-        controllerArray.append(palyVideoInfoViewController)
+        controllerArray.append(playVideoInfoViewController)
 
         controllerArray.append(playVideoRecommendTableViewController)
         

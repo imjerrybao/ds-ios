@@ -474,10 +474,10 @@
             </objects>
             <point key="canvasLocation" x="-1213" y="2971"/>
         </scene>
-        <!--View Controller-->
+        <!--Register User View Controller-->
         <scene sceneID="hC7-KR-WVL">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="pNw-Qi-P3a" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="pNw-Qi-P3a" customClass="RegisterUserViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hL4-MH-jiF"/>
                         <viewControllerLayoutGuide type="bottom" id="0hr-tu-ATB"/>
@@ -550,6 +550,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e55-6x-09D" customClass="BackgroundColorButton" customModule="ds_ios">
+                                <rect key="frame" x="460" y="270" width="100" height="34"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Dh3-Bk-Ise"/>
+                                    <constraint firstAttribute="height" constant="34" id="noY-hL-rsd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getCode:" destination="pNw-Qi-P3a" eventType="touchUpInside" id="FuA-6O-i62"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-uD-pmR" customClass="CornerRadiusButtonByRes" customModule="ds_ios">
                                 <rect key="frame" x="60" y="344" width="480" height="34"/>
                                 <animations/>
@@ -561,23 +581,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e55-6x-09D" customClass="BackgroundColorButton" customModule="ds_ios">
-                                <rect key="frame" x="460" y="259" width="100" height="45"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Dh3-Bk-Ise"/>
-                                    <constraint firstAttribute="height" constant="45" id="noY-hL-rsd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerUser:" destination="pNw-Qi-P3a" eventType="touchUpInside" id="pOP-Nb-NqO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -588,7 +594,7 @@
                             <constraint firstAttribute="trailing" secondItem="5BA-h6-Paz" secondAttribute="trailing" constant="40" id="NSF-a9-mYa"/>
                             <constraint firstAttribute="trailing" secondItem="e55-6x-09D" secondAttribute="trailing" constant="40" id="RPf-AV-8ua"/>
                             <constraint firstAttribute="trailing" secondItem="eIx-lV-9Nn" secondAttribute="trailing" constant="40" id="X43-2g-p0E"/>
-                            <constraint firstItem="e55-6x-09D" firstAttribute="top" secondItem="5BA-h6-Paz" secondAttribute="bottom" constant="37" id="XeI-bp-mjd"/>
+                            <constraint firstItem="e55-6x-09D" firstAttribute="top" secondItem="5BA-h6-Paz" secondAttribute="bottom" constant="48" id="XeI-bp-mjd"/>
                             <constraint firstItem="5BA-h6-Paz" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="40" id="fjS-M9-H8L"/>
                             <constraint firstAttribute="trailing" secondItem="ebc-uD-pmR" secondAttribute="trailing" constant="60" id="i0a-Ce-rvV"/>
                             <constraint firstItem="ebc-uD-pmR" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="60" id="jYI-mr-W7d"/>
@@ -599,10 +605,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iDl-id-WCS"/>
+                    <connections>
+                        <outlet property="code" destination="Weq-cR-rrE" id="YFU-uj-gKk"/>
+                        <outlet property="passwordTextField" destination="5BA-h6-Paz" id="KzD-jG-fLR"/>
+                        <outlet property="phoneTextField" destination="eIx-lV-9Nn" id="fGg-Jw-FrU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5n-YK-9Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-571" y="2971"/>
+            <point key="canvasLocation" x="-439" y="2971"/>
         </scene>
     </scenes>
     <resources>

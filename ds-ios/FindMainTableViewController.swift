@@ -119,11 +119,7 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         
         return cell
     }
-
-    
-//    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? { 
-//        return UIView()
-//    }
+ 
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 90
@@ -166,12 +162,18 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
 
     /*
     // MARK: - Navigation
-
+ */
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toHotApp" { //点击了热门app
+            
+            print("点击了热门app")
+            
+        }
+            
+        
     }
-    */
+
 
 }

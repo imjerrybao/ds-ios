@@ -325,11 +325,11 @@ class PopVideoTableViewController: UITableViewController {
             
             let playVideoViewController =  segue.destinationViewController as! PlayVideoViewController
             
-            playVideoViewController.initVideoUrlString(videoInfo.url)
-            //
-            //            segue.destinationViewController.hidesBottomBarWhenPushed = false
+            playVideoViewController.videoTitleLabel = videoInfo.title
+            playVideoViewController.videoInfoLable = videoInfo.title
             
-            //            let  aVPlayVideoViewController = segue.destinationViewController as!  AVPlayVideoViewController
+            
+            playVideoViewController.initVideoUrlString(videoInfo.url)
             
             
         }
