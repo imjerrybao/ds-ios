@@ -22,8 +22,6 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
     ]
     
     let titles  = ["偏偏起舞的青春","小苹果 疯狂🎸","hey 逗比"]
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +34,13 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         tableHeardView.dotColor = UIColor(rgba:"#f0a22a") // 自定义分页控件小圆标颜色
         tableHeardView.placeholderImage = UIImage(named: "tutorial_background_03")
         tableHeardView.autoScrollTimeInterval = 5
-         
         
-//        
+        
         self.tableView.addParallaxWithView(tableHeardView!, andHeight: 200)
         self.tableView.parallaxView.delegate = self
-        self.tableView.footer = nil
+        self.tableView.mj_footer = nil
     
-//        self.title = "List of elements"
+ 
         let titleView = PeriscopyTitleView(frame: CGRect(x: 0.0, y: 0.0, width: 160.0, height: CGRectGetHeight((self.navigationController?.navigationBar.frame)!)),
             attachToScrollView: tableView, refreshAction: { [unowned self] in
                 
