@@ -23,4 +23,8 @@ pod 'TextFieldEffects'
 ##键盘扩展
 pod 'IQKeyboardManagerSwift'
 
+ 
+
+pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+
 

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
 
 class RegisterUserViewController: UIViewController {
 
@@ -16,9 +19,14 @@ class RegisterUserViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField! //密码
     
+    
+    var alamofireManager : Manager?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.alamofireManager =  Manager.sharedInstanceAndTimeOut
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,9 +72,45 @@ class RegisterUserViewController: UIViewController {
             if ((error == nil))
             {
                 print("验证成功")
+                
+                
             }
             
         }
+        
+        let user = User()
+        user.nickName = "我是昵称"
+        user.headImage = "我手头像"
+        user.phone = "我是手机"
+        user.platformId = "我是平台id"
+        user.platformName = "我是平台名称"
+        user.password = "我是密码"
+        user.gender = 1
+        //注册用户
+        
+        self.alamofireManager!.request(HttpClientByUser.DSRouter.registerUser(user)).responseJSON(completionHandler: { (request, response, result) -> Void in
+            
+            //                guard error == nil else {
+            //
+            //                    print(error)
+            //                }
+           
+            
+            switch result {
+                
+            case .Success:
+                print("HTTP 状态码->\(response?.statusCode)")
+                print("注册成功")
+                print(result.value)
+                
+            case .Failure(let error):
+                print(error)
+                
+            }
+            
+            
+        })
+
         
     }
     

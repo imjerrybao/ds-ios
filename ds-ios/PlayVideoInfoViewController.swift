@@ -19,10 +19,6 @@ class PlayVideoInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        self.videoInfoLable.text = videoInfo
         self.videoTitleLabel.text = videoTitle
 
     }

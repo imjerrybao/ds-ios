@@ -103,14 +103,15 @@ class PlayVideoViewController: UIViewController {
         let playVideoInfoViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoInfoViewController") as! PlayVideoInfoViewController
         
         playVideoInfoViewController.videoTitle = videoTitleLabel
-        
         playVideoInfoViewController.videoInfo = videoInfoLable
-        
-        let playVideoRecommendTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoRecommendTableViewController") as! PlayVideoRecommendTableViewController
-        
         controllerArray.append(playVideoInfoViewController)
 
-        controllerArray.append(playVideoRecommendTableViewController)
+        
+//        let playVideoRecommendTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoRecommendTableViewController") as! PlayVideoRecommendTableViewController
+//        
+
+        //相关推荐
+//        controllerArray.append(playVideoRecommendTableViewController)
         
         let parameters: [CAPSPageMenuOption] = [
             .SelectedMenuItemLabelColor(UIColor(rgba:"#f0a22a")),

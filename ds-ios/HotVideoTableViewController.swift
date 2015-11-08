@@ -43,17 +43,17 @@ class HotVideoTableViewController: UITableViewController {
         print(self.view.frame)
         
         //设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
-        self.tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             self.loadNewData()
             
         })
-        self.tableView.header.beginRefreshing()
+        self.tableView.mj_header.beginRefreshing()
         //
-        self.tableView.footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
             self.loadMoreData()
             
         })
-        self.tableView.footer.hidden = true
+        self.tableView.mj_footer.hidden = true
         
         
         ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
@@ -71,7 +71,7 @@ class HotVideoTableViewController: UITableViewController {
     @IBAction func restartData(sender: AnyObject) {
         ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
         
-        self.tableView.header.beginRefreshing()
+        self.tableView.mj_header.beginRefreshing()
         self.loadNewData()
         
         otherView.hidden = true
@@ -83,7 +83,7 @@ class HotVideoTableViewController: UITableViewController {
     func restartData() {
         ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
         
-        self.tableView.header.beginRefreshing()
+        self.tableView.mj_header.beginRefreshing()
         self.loadNewData()
         
         otherView.hidden = true
@@ -97,16 +97,16 @@ class HotVideoTableViewController: UITableViewController {
      */
     func isLoading() {
         //判断上拉or下拉
-        if self.tableView.header.isRefreshing() {
+        if self.tableView.mj_header.isRefreshing() {
             
-            self.tableView.header.endRefreshing()
+            self.tableView.mj_header.endRefreshing()
             
             //            self.tableView.reloadData()
             if self.videos.count == 0{
                 otherView.hidden = false
             }
         }else{
-            self.tableView.footer.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
             otherView.hidden = true
         }
         //停止
@@ -153,7 +153,7 @@ class HotVideoTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
                 
-                self.tableView.header.endRefreshing()
+                self.tableView.mj_header.endRefreshing()
                 
                 if self.videos.lastObject == nil {
                     self.currentPage = 0
@@ -165,7 +165,7 @@ class HotVideoTableViewController: UITableViewController {
                 
             case .Failure(let error):
                 print(error)
-                self.tableView.header.endRefreshing()
+                self.tableView.mj_header.endRefreshing()
                 //没有数据时显示
                 if self.videos.count == 0 {
                     self.otherView.hidden = false
@@ -206,12 +206,12 @@ class HotVideoTableViewController: UITableViewController {
                     self.tableView.reloadData()
                     
                 }
-                self.tableView.footer.endRefreshing();
+                self.tableView.mj_footer.endRefreshing();
                 
                 self.currentPage = Int( (self.videos.lastObject as! VideoInfo).id)!
             case .Failure(let error):
                 print(error)
-                self.tableView.footer.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
                 
                 
             }
