@@ -136,7 +136,7 @@ class PopVideoTableViewController: UITableViewController {
             return
         }
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByPop(0, 10)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(0, 10 , 1)).responseJSON { (request, response, result) -> Void in
             print("请求")
             switch result {
             case .Success:
@@ -191,7 +191,7 @@ class PopVideoTableViewController: UITableViewController {
         }
         
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByPop(self.currentPage, 20)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(self.currentPage, 20,1)).responseJSON { (request, response, result) -> Void in
             switch result {
             case .Success:
                 if let JSON = result.value {

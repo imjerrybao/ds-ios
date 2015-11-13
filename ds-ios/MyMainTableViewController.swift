@@ -23,7 +23,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
-        mybkImage = UIImageView(image: UIImage(named: "myBkImage"))
+        mybkImage = UIImageView(image: UIImage(named: "silence"))
         mybkImage.frame = CGRectMake(0, 0, self.view.frame.width, 200)
         mybkImage.userInteractionEnabled = true
         

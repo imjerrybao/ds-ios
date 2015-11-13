@@ -37,22 +37,15 @@ struct HttpClientByVideo {
         static let baseURLString = "https://api.doushi.me/v1/rest/video/"
         
         
-        
         // 请求方法
-        case VideosByNew(Int,Int) //最新
-        case VideosByHot(Int,Int) //热门
-        case VideosByPop(Int,Int) //精华
+        case VideosByType(Int,Int,Int) //根据类型获取视频
         
         
         
         // 不同请求，对应不同请求类型
         var method: Alamofire.Method {
             switch self {
-            case .VideosByNew:
-                return .GET
-            case .VideosByHot:
-                return .GET
-            default:
+            case .VideosByType:
                 return .GET
             }
         }
@@ -62,14 +55,8 @@ struct HttpClientByVideo {
             let (path) : (String) = {
                 
                 switch self {
-                case .VideosByNew(let vid, let count):
-                    return ("getNewVideos/\(vid)/\(count)")
-                case .VideosByHot(let vid, let count):
-                    return ("getVideosByHot/\(vid)/\(count)")
-                case .VideosByPop(let vid, let count):
-                    return ("getVideosByPop/\(vid)/\(count)")
-                    
-                    
+                case .VideosByType(let vid, let count, let type):
+                    return ("getVideosByType/\(vid)/\(count)/\(type)")
                 }
             }()
             

@@ -46,7 +46,10 @@
 
 
 #import <SMS_SDK/SMSSDK.h>
- 
+
+
+#import "FSMediaPicker.h"
+
 
  
 

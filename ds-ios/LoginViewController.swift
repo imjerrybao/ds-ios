@@ -85,6 +85,46 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.phoneTextField?.resignFirstResponder()
         self.pwdTextField?.resignFirstResponder()
         //授权
+        
+        let snsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToSina)
+        
+        var  response:UMSocialResponseEntity
+        snsPlatform.loginClickHandler(self,UMSocialControllerService.defaultControllerService(),true,{(response :UMSocialResponseEntity!) ->Void in
+            
+            var usm = UMSResponseCodeSuccess
+            var rcode = response.responseCode
+            
+            if rcode.rawValue == usm.rawValue {
+                
+                var snsAccount = UMSocialAccountManager.socialAccountDictionary()
+                
+                var qqUser:UMSocialAccountEntity =  snsAccount[UMShareToSina] as! UMSocialAccountEntity
+                
+                print("微博用户数据\(qqUser)")
+                //用户id
+                var usid = qqUser.usid
+                //微博昵称
+                var username = qqUser.userName
+                //用户头像
+                var icon = qqUser.iconURL
+                
+                if snsAccount != nil{
+                    
+                    let parameters = [
+                        "nickname": username,
+                        "face":icon,
+                        "user_client_id": usid,
+                        "platform_id": "2",
+                    ]
+                    
+                    
+                }else{
+                    
+                }
+            }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            
+        });
 
     }
     

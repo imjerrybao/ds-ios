@@ -104,6 +104,8 @@
 		ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */; };
 		ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */; };
 		ABCF39601BE07E9D00C18508 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF395E1BE07E9D00C18508 /* My.storyboard */; };
+		ABE114971BF09E1800027708 /* FSMediaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE114961BF09E1800027708 /* FSMediaPicker.m */; };
+		ABE114991BF0A64E00027708 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE114981BF0A64E00027708 /* MobileCoreServices.framework */; };
 		ABE6843B1BED92CF004B2BBD /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABE684361BED92CF004B2BBD /* SMS_SDKLocalizable.strings */; };
 		ABE6843C1BED92CF004B2BBD /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE684381BED92CF004B2BBD /* MOBFoundation.framework */; };
 		ABE6843D1BED92CF004B2BBD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE684391BED92CF004B2BBD /* SMS_SDK.framework */; };
@@ -240,6 +242,9 @@
 		ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVideoTableViewController.swift; sourceTree = "<group>"; };
 		ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSHttpClient.swift; sourceTree = "<group>"; };
 		ABCF395F1BE07E9D00C18508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/My.storyboard; sourceTree = "<group>"; };
+		ABE114951BF09E1800027708 /* FSMediaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMediaPicker.h; sourceTree = "<group>"; };
+		ABE114961BF09E1800027708 /* FSMediaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMediaPicker.m; sourceTree = "<group>"; };
+		ABE114981BF0A64E00027708 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		ABE684371BED92CF004B2BBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		ABE684381BED92CF004B2BBD /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		ABE684391BED92CF004B2BBD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -257,6 +262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE114991BF0A64E00027708 /* MobileCoreServices.framework in Frameworks */,
 				AB3263E11BE8AE530099D02D /* libstdc++.tbd in Frameworks */,
 				ABE6843D1BED92CF004B2BBD /* SMS_SDK.framework in Frameworks */,
 				AB3264C71BEBB9AA0099D02D /* CoreTelephony.framework in Frameworks */,
@@ -288,6 +294,7 @@
 		10EBB73AC5FA1091404FD628 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABE114981BF0A64E00027708 /* MobileCoreServices.framework */,
 				AB3264841BEB8E860099D02D /* libz.tbd */,
 				AB3264811BEB8E4E0099D02D /* CoreLocation.framework */,
 				AB3263F31BE8AEE80099D02D /* MessageUI.framework */,
@@ -599,6 +606,7 @@
 		AB58EFA01BD6A26800E2B428 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				ABE114941BF09E0A00027708 /* FSMediaPicker */,
 				AB76C6A21BEF43950002F138 /* Reflect */,
 				AB0CA1581BE6439B00134F1E /* SimpleButton */,
 				AB2EF2CE1BE22C5B008E96CC /* Snap */,
@@ -706,6 +714,15 @@
 				ABE6843E1BED95AB004B2BBD /* RegisterUserViewController.swift */,
 			);
 			name = My;
+			sourceTree = "<group>";
+		};
+		ABE114941BF09E0A00027708 /* FSMediaPicker */ = {
+			isa = PBXGroup;
+			children = (
+				ABE114951BF09E1800027708 /* FSMediaPicker.h */,
+				ABE114961BF09E1800027708 /* FSMediaPicker.m */,
+			);
+			name = FSMediaPicker;
 			sourceTree = "<group>";
 		};
 		ABE684351BED92CF004B2BBD /* SMS_SDK */ = {
@@ -940,6 +957,7 @@
 				AB2EF2E31BE22C69008E96CC /* ConstraintItem.swift in Sources */,
 				AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */,
 				AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */,
+				ABE114971BF09E1800027708 /* FSMediaPicker.m in Sources */,
 				AB58EF941BD6A19A00E2B428 /* UIColorExtension.swift in Sources */,
 				AB76C6B31BEF43950002F138 /* Reflect+Other.swift in Sources */,
 				AB2EF2DD1BE22C69008E96CC /* SnapKit.swift in Sources */,

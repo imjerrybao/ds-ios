@@ -137,7 +137,7 @@ class NewVideoTableViewController: UITableViewController {
             return
         }
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByNew(0, 20)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(0, 20,0)).responseJSON { (request, response, result) -> Void in
             print("请求")
             switch result {
             case .Success:
@@ -192,7 +192,7 @@ class NewVideoTableViewController: UITableViewController {
         }
         
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByNew(self.currentPage, 20)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(self.currentPage, 20,0)).responseJSON { (request, response, result) -> Void in
             switch result {
             case .Success:
                 if let JSON = result.value {
