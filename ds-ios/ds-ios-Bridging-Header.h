@@ -48,6 +48,8 @@
 
 #import <SMS_SDK/SMSSDK.h>
 
+#import <Qiniu/QiniuSDK.h>
+
 
  
 

@@ -72,6 +72,8 @@ struct HttpClientByVideo {
 }
 
 
+
+
 // 创建HttpClient User结构体
 struct HttpClientByUser {
     
@@ -118,6 +120,50 @@ struct HttpClientByUser {
                 URLRequest.HTTPBody = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions())
             } catch {
             }
+            let encoding = Alamofire.ParameterEncoding.URL
+            return encoding.encode(URLRequest, parameters: nil).0
+        }
+    }
+}
+
+
+// 创建HttpClient结构体 工具类
+struct HttpClientByUtil {
+    
+    // 创建逗视网络请求 Alamofire 路由
+    enum DSRouter: URLRequestConvertible {
+        
+        // 逗视API地址
+        static let baseURLString = "https://api.doushi.me/v1/rest/util/"
+        
+        
+        // 请求方法
+        case getQiNiuUpToken() //获取七牛token
+        
+        
+        // 不同请求，对应不同请求类型
+        var method: Alamofire.Method {
+            switch self {
+            case .getQiNiuUpToken:
+                return .GET
+            }
+        }
+        
+        var URLRequest: NSMutableURLRequest {
+            
+            let (path) : (String) = {
+                
+                switch self {
+                case .getQiNiuUpToken():
+                    return ("getQiNiuUpToken")
+                }
+            }()
+            
+            let URL = NSURL(string: DSRouter.baseURLString)
+            let URLRequest = NSMutableURLRequest(URL: URL!.URLByAppendingPathComponent(path))
+            
+            URLRequest.HTTPMethod = method.rawValue
+            
             let encoding = Alamofire.ParameterEncoding.URL
             return encoding.encode(URLRequest, parameters: nil).0
         }

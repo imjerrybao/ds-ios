@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MobileCoreServices
+import Qiniu
 
 
 class RegisterUserViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate {
@@ -217,6 +218,61 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
             print("图片")
             
             let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+            
+            //上传七牛
+            
+            var token =  ""
+            
+            
+            let upManager = QNUploadManager()
+            
+            
+            //            NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
+            
+            let imageData =  UIImagePNGRepresentation(image!)
+            
+            self.alamofireManager!.request(HttpClientByUtil.DSRouter.getQiNiuUpToken()).responseJSON(completionHandler: { (request, response, result) -> Void in
+                
+                switch result {
+                case .Success:
+                    print("HTTP 状态码->\(response?.statusCode)")
+                    print("注册成功")
+                    print(result.value)
+                    if let JSON = result.value {
+                       
+                        token = ((JSON as! NSDictionary).valueForKey("content") as! String)
+                        
+                        
+                        
+                  
+                        upManager.putData(imageData, key: nil, token: "qzX1uyw1OIarlNOdm0FuT8MoiZUGNWHu57_Cq0rr:DgreSJChbpN49owPEsphRBTCrHo=:eyJzY29wZSI6Iml0amgiLCJkZWFkbGluZSI6MTQ0NzUxNTc5M30="
+
+
+                            , complete: { (info, key, resp) -> Void in
+                            
+                            print("info-> \(info.statusCode)")
+                            
+                            print("key-> \(key)")
+                            
+                            print("resp-> \(resp)")
+                            
+                            }, option: nil)
+
+                    }
+                    
+                    
+                case .Failure(let error):
+                    print(error)
+                    
+                }
+            })
+        
+//            [upManager putData:data key:@"hello" token:token
+//            complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+//            NSLog(@"%@", info);
+//            NSLog(@"%@", resp);
+//            } option:nil];
+            
             
 //            self.headImageButton.setImage(image, forState: .Highlighted)
             headImageView.image = image

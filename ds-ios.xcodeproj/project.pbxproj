@@ -94,6 +94,7 @@
 		AB76C6A11BEF09140002F138 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB76C6A01BEF09140002F138 /* User.swift */; };
 		ABA09EF21BE4C34D009C8A85 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */; };
 		ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */; };
+		ABC4B5821BF7708C00B2CC24 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3264841BEB8E860099D02D /* libz.tbd */; };
 		ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */; };
 		ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */; };
 		ABCF39601BE07E9D00C18508 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF395E1BE07E9D00C18508 /* My.storyboard */; };
@@ -245,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC4B5821BF7708C00B2CC24 /* libz.tbd in Frameworks */,
 				AB50ADFB1BF5F243008A1819 /* libSocialQQ.a in Frameworks */,
 				ABE114991BF0A64E00027708 /* MobileCoreServices.framework in Frameworks */,
 				AB50ADF91BF5F243008A1819 /* libUMSocial_Sdk_Comment_4.3.a in Frameworks */,
