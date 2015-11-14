@@ -20,7 +20,7 @@ import Foundation
 //}
 
 
-class User:Reflect{
+class User:NSObject{
     
     
     var id:Int = 0

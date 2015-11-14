@@ -43,13 +43,13 @@
 #import "UMSocialControllerService.h"
 #import "UMSocialSnsPlatformManager.h"
 #import "UMSocialQQHandler.h"
+#import "UMessage.h"
 
 
 #import <SMS_SDK/SMSSDK.h>
 
 
-#import "FSMediaPicker.h"
-
+ 
 
  
 

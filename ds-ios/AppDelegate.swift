@@ -38,24 +38,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //Share SMS
-//        [SMS_SDK registerApp:appKey withSecret:appSecret];
-        
         SMSSDK.registerApp("c06e0d3b9ec2", withSecret: "ad02d765bad19681273e61a5c570a145")
+        
+        //推送
+        UMessage.startWithAppkey("563b6bdc67e58e73ee002acd", launchOptions: launchOptions)
+        
+        
+        let action1 = UIMutableUserNotificationAction()
+        
+        
+        action1.identifier = "toPlayVideo"
+        action1.title = "Accept"
+        action1.activationMode = UIUserNotificationActivationMode.Foreground//当点击的时候启动程序
+        
+       let action2 =  UIMutableUserNotificationAction()
+            action2.identifier =  "action2_identifier";
+            action2.title = "Reject";
+            action2.activationMode = UIUserNotificationActivationMode.Background;//当点击的时候不启动程序，在后台处理
+            action2.authenticationRequired = true;//需要解锁才能处理，如果        //
+        
+        
+        let categorys = UIMutableUserNotificationCategory()
+        categorys.identifier = "category1"
+        categorys.setActions([action1,action2], forContext: UIUserNotificationActionContext.Default)
+        
+    
+        let seta =  NSSet(object: categorys)
+        
+        let userSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories: seta as? Set<UIUserNotificationCategory>)
+        
+        
+        
+    
+        UMessage.registerRemoteNotificationAndUserNotificationSettings(userSettings)
+        UMessage.setLogEnabled(false)
+
+        
         
         return true
     }
     
     
-    // MARK ShareSDK Delegate
-//    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-//        
-//         return ShareSDK.handleOpenURL(url, wxDelegate: nil)
-//
-//    }
-//    
-//    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-//        return ShareSDK.handleOpenURL(url, sourceApplication: sourceApplication, annotation: annotation, wxDelegate: nil)
-//    }
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+ 
+
+        UMessage.registerDeviceToken(deviceToken)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("userInfo ->  \(userInfo)" )
+        UMessage.didReceiveRemoteNotification(userInfo)
+    }
+    
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        
+        print("application:didFailToRegisterForRemoteNotificationsWithError: \(error)");
+
+    }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

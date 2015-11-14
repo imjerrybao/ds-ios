@@ -90,7 +90,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         
         let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
         self.navigationController?.pushViewController(loginTableView, animated: true)
-
+        
         print("点击了登录")
     }
     

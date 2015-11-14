@@ -26,5 +26,7 @@ pod 'IQKeyboardManagerSwift'
  
 
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
-
+#
+#
+#pod 'Qiniu', '~> 7.0'
 
