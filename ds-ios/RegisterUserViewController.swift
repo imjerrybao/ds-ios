@@ -11,24 +11,22 @@ import Alamofire
 import SwiftyJSON
 import MobileCoreServices
 import Qiniu
+import Validator
 
 
-class RegisterUserViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate {
+
+class RegisterUserViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UITextFieldDelegate {
     
+    @IBOutlet weak var resultUILabel: UILabel!
     @IBOutlet weak var phoneTextField: UITextField! //手机号
-    
     @IBOutlet weak var code: UITextField! //验证码
-    
     @IBOutlet weak var passwordTextField: UITextField! //密码
- 
-    @IBOutlet weak var headImageView: UIImageView!
-    
+    @IBOutlet weak var headImageView: UIImageView! 
     
     var imagePicker = UIImagePickerController()
     
-    
     var alamofireManager : Manager?
-    
+    @IBOutlet weak var sendCodeButton: BackgroundColorButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +36,46 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
         let tapGestureRecognizer  = UITapGestureRecognizer(target: self, action: "uploadHeadImage:")
         headImageView.addGestureRecognizer(tapGestureRecognizer)
         
+        phoneTextField.delegate = self
+        
+        phoneTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        
     }
     
+    
+    /**
+     检测正在输入
+     
+     - parameter textField: <#textField description#>
+     */
+    func textFieldDidChange(textField: UITextField){
+        
+        
+        print("我正在输入")
+        
+        let phoneRule = ValidationRuleLength(min: 11, max: 11, failureError: ValidationError(message: "😫"))
+        
+        let result = textField.text?.validate(rule: phoneRule)
+        
+        let bool = result?.isValid
+        
+        if (bool != nil && bool == true) {
+            print("😀")
+            resultUILabel.text = "😀"
+        }else{
+            print("😫")
+            resultUILabel.text = "😫"
+
+        }
+        
+        
+
+    }
+    
+    
     @IBOutlet weak var headImageButton: UIButton!
+     
     
     /**
      上传头像
@@ -79,28 +114,63 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
         super.didReceiveMemoryWarning()
     }
     
+    private var timer: NSTimer?
+    private var timeLabel: UILabel!
+    private var disabledText: String!
+    private var remainingSeconds = 3
+
+    
     /**
      获取验证码
      
      - parameter sender: sender description
      */
-    @IBAction func getCode(sender: UIButton) {//获取验证码
-        //
-        //        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.telField.text
-        //            zone:str2
-        //            customIdentifier:nil
-        //            result:^(NSError *error)
-        //
-        SMSSDK.getVerificationCodeByMethod(SMSGetCodeMethodSMS, phoneNumber: self.phoneTextField.text, zone: "+86", customIdentifier: nil) { (error) -> Void in
-            
-            
-            if ((error == nil))
-            {
-                print("发送成功")
-            }
-        }
+    @IBAction func getCode(sender: BackgroundColorButton) {
+        //发送验证码
+//        SMSSDK.getVerificationCodeByMethod(SMSGetCodeMethodSMS, phoneNumber: self.phoneTextField.text, zone: "+86", customIdentifier: nil) { (error) -> Void in
+//            
+//            
+//            if ((error == nil))
+//            {
+//                print("发送成功")
+//                
+//                sender.enabled = false
+//                sender.alpha = 0.6
+//                
+////                sender.setTitle("倒计时", forState: .Disabled)
+//                
+//                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimer:", userInfo: nil, repeats: true)
+//                self.sendCodeButton.setTitle("\(self.remainingSeconds)s", forState: .Disabled)
+//            }
+//        }
+        
+        sender.enabled = false
+        sender.alpha = 0.6
+        
+        //                sender.setTitle("倒计时", forState: .Disabled)
+        
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimer:", userInfo: nil, repeats: true)
+        self.sendCodeButton.setTitle("\(self.remainingSeconds)s", forState: .Disabled)
+
         
     }
+    
+    func updateTimer(timer: NSTimer) {
+        remainingSeconds -= 1
+        
+        if remainingSeconds <= 0 {
+             self.remainingSeconds = 0
+            self.timer!.invalidate()
+            sendCodeButton.enabled = true
+            sendCodeButton.alpha = 1
+            remainingSeconds = 3
+
+        }
+//        self.timeLabel.text = "\(remainingSeconds)s"
+        print(remainingSeconds)
+        sendCodeButton.setTitle("\(remainingSeconds)s", forState: .Disabled)
+    }
+    
     
     /**
      注册
@@ -135,11 +205,6 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
         //注册用户
         
         self.alamofireManager!.request(HttpClientByUser.DSRouter.registerUser(user)).responseJSON(completionHandler: { (request, response, result) -> Void in
-            
-            //                guard error == nil else {
-            //
-            //                    print(error)
-            //                }
             
             
             switch result {
@@ -189,6 +254,7 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
         presentViewController(self.imagePicker, animated: true, completion: nil)
     }
     
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let mediaType = info[UIImagePickerControllerMediaType] as! String
@@ -203,13 +269,11 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
             //获取路径
             let moviePathString = moviePath!.relativePath
             
-            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePathString!)
-            {
+            if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePathString!){
                 
                 UISaveVideoAtPathToSavedPhotosAlbum(moviePathString!, nil, nil, nil)
                 
             }
-            
             print("视频")
             
         }
@@ -221,38 +285,22 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
             
             //上传七牛
             
-            var token =  ""
-            
-            
             let upManager = QNUploadManager()
-            
-            
-            //            NSData *data = [@"Hello, World!" dataUsingEncoding : NSUTF8StringEncoding];
-            
-            let imageData =  UIImagePNGRepresentation(image!)
-            
+            //压缩图片
+            let imageData =  UIImageJPEGRepresentation(image!, 0.5)
             self.alamofireManager!.request(HttpClientByUtil.DSRouter.getQiNiuUpToken()).responseJSON(completionHandler: { (request, response, result) -> Void in
                 
                 switch result {
                 case .Success:
-                    print("HTTP 状态码->\(response?.statusCode)")
-                    print("注册成功")
-                    print(result.value)
                     if let JSON = result.value {
-                       
-                        token = ((JSON as! NSDictionary).valueForKey("content") as! String)
-                        
-                        
-                        
-                  
-                        upManager.putData(imageData, key: nil, token: "qzX1uyw1OIarlNOdm0FuT8MoiZUGNWHu57_Cq0rr:DgreSJChbpN49owPEsphRBTCrHo=:eyJzY29wZSI6Iml0amgiLCJkZWFkbGluZSI6MTQ0NzUxNTc5M30="
-
-
-                            , complete: { (info, key, resp) -> Void in
+                        upManager.putData(imageData, key: nil, token:((JSON as! NSDictionary).valueForKey("content") as! String) , complete: { (info, key, resp) -> Void in
                             
-                            print("info-> \(info.statusCode)")
+                            if info.statusCode == 200 {
+                                print("图片上传成功 key－> \(resp["key"] as! String)" )
+                                print("img url -> http://img.itjh.com.cn/\(resp["key"] as! String)")
+                            }
                             
-                            print("key-> \(key)")
+//                            print("info-> \(info)")
                             
                             print("resp-> \(resp)")
                             
@@ -260,27 +308,14 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
 
                     }
                     
-                    
                 case .Failure(let error):
                     print(error)
                     
                 }
             })
-        
-//            [upManager putData:data key:@"hello" token:token
-//            complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-//            NSLog(@"%@", info);
-//            NSLog(@"%@", resp);
-//            } option:nil];
-            
-            
-//            self.headImageButton.setImage(image, forState: .Highlighted)
             headImageView.image = image
         }
-        
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
-        
-        
     }
     
     /*

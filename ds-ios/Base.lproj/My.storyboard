@@ -495,7 +495,7 @@
                                 </constraints>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" red="0.41568627450000001" green="0.47450980390000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -617,6 +617,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGD-1l-mYh">
+                                <rect key="frame" x="558" y="196" width="22" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFH-dz-bIj">
+                                <rect key="frame" x="558" y="271" width="22" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -629,11 +643,16 @@
                             <constraint firstItem="eIx-lV-9Nn" firstAttribute="top" secondItem="QI4-jB-Iot" secondAttribute="bottom" constant="30" id="G5R-vs-Slo"/>
                             <constraint firstAttribute="trailing" secondItem="5BA-h6-Paz" secondAttribute="trailing" constant="40" id="NSF-a9-mYa"/>
                             <constraint firstItem="QI4-jB-Iot" firstAttribute="top" secondItem="hL4-MH-jiF" secondAttribute="bottom" constant="29" id="Pof-7x-5fw"/>
+                            <constraint firstItem="DFH-dz-bIj" firstAttribute="top" secondItem="oGD-1l-mYh" secondAttribute="bottom" constant="54" id="QyB-Pq-HjZ"/>
                             <constraint firstAttribute="trailing" secondItem="e55-6x-09D" secondAttribute="trailing" constant="40" id="RPf-AV-8ua"/>
+                            <constraint firstItem="DFH-dz-bIj" firstAttribute="leading" secondItem="5BA-h6-Paz" secondAttribute="trailing" constant="-2" id="TYS-ky-fbc"/>
                             <constraint firstItem="QI4-jB-Iot" firstAttribute="centerY" secondItem="Y0j-kz-Gfh" secondAttribute="centerY" id="WRM-oX-2aR"/>
                             <constraint firstAttribute="trailing" secondItem="eIx-lV-9Nn" secondAttribute="trailing" constant="40" id="X43-2g-p0E"/>
                             <constraint firstItem="e55-6x-09D" firstAttribute="top" secondItem="5BA-h6-Paz" secondAttribute="bottom" constant="48" id="XeI-bp-mjd"/>
+                            <constraint firstItem="oGD-1l-mYh" firstAttribute="leading" secondItem="eIx-lV-9Nn" secondAttribute="trailing" constant="-2" id="Zcb-N8-bRx"/>
+                            <constraint firstItem="oGD-1l-mYh" firstAttribute="top" secondItem="hL4-MH-jiF" secondAttribute="bottom" constant="176" id="aEs-ze-Xua"/>
                             <constraint firstItem="QI4-jB-Iot" firstAttribute="centerY" secondItem="9mN-ui-ddy" secondAttribute="centerY" constant="22.5" id="cNq-zi-ftS"/>
+                            <constraint firstItem="oGD-1l-mYh" firstAttribute="centerY" secondItem="eIx-lV-9Nn" secondAttribute="centerY" id="ca4-5n-Qby"/>
                             <constraint firstItem="5BA-h6-Paz" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="40" id="fjS-M9-H8L"/>
                             <constraint firstAttribute="trailing" secondItem="ebc-uD-pmR" secondAttribute="trailing" constant="60" id="i0a-Ce-rvV"/>
                             <constraint firstItem="ebc-uD-pmR" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="60" id="jYI-mr-W7d"/>
@@ -641,6 +660,7 @@
                             <constraint firstItem="Weq-cR-rrE" firstAttribute="top" secondItem="5BA-h6-Paz" secondAttribute="bottom" constant="22" id="nVk-uH-SCJ"/>
                             <constraint firstItem="Weq-cR-rrE" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="40" id="pa1-eH-4BE"/>
                             <constraint firstItem="ebc-uD-pmR" firstAttribute="top" secondItem="e55-6x-09D" secondAttribute="bottom" constant="40" id="qy1-Xi-ZoC"/>
+                            <constraint firstItem="oGD-1l-mYh" firstAttribute="leading" secondItem="DFH-dz-bIj" secondAttribute="leading" id="xNX-xv-UPy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -655,6 +675,8 @@
                         <outlet property="headImageView" destination="QI4-jB-Iot" id="I6i-c1-VEf"/>
                         <outlet property="passwordTextField" destination="5BA-h6-Paz" id="KzD-jG-fLR"/>
                         <outlet property="phoneTextField" destination="eIx-lV-9Nn" id="fGg-Jw-FrU"/>
+                        <outlet property="resultUILabel" destination="oGD-1l-mYh" id="PUT-84-Fe6"/>
+                        <outlet property="sendCodeButton" destination="e55-6x-09D" id="uNy-Zk-fE8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5n-YK-9Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
