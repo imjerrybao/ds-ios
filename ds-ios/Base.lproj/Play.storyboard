@@ -111,6 +111,8 @@
                                 <rect key="frame" x="490" y="33" width="32" height="32"/>
                                 <animations/>
                                 <state key="normal" image="cloud_d"/>
+                                <state key="selected" image="cloud_d"/>
+                                <state key="highlighted" image="cloud" backgroundImage="cloud"/>
                                 <connections>
                                     <action selector="collectVideo:" destination="YFI-yH-Aoq" eventType="touchUpInside" id="5Zo-6K-dEK"/>
                                 </connections>
@@ -220,6 +222,7 @@
     </scenes>
     <resources>
         <image name="BruceLee" width="931" height="1024"/>
+        <image name="cloud" width="32" height="32"/>
         <image name="cloud_d" width="32" height="32"/>
         <image name="share" width="32" height="32"/>
     </resources>

@@ -16,6 +16,10 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     
     var mybkImage: UIImageView!
 
+    let userCircle = UIImageView(frame: CGRectMake(0,0,70,70))
+    
+    
+    let loginButton = UIButton(frame: CGRectMake(0, 200, 80, 20))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +27,25 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
-        mybkImage = UIImageView(image: UIImage(named: "silence"))
+        mybkImage = UIImageView(image: UIImage(named: "mybk1"))
         mybkImage.frame = CGRectMake(0, 0, self.view.frame.width, 200)
         mybkImage.userInteractionEnabled = true
         
         
         /// 用户头像
-        let userCircle = UIImageView(frame: CGRectMake(0,0,70,70))
-        userCircle.image = UIImage(named: "picture-default")
+        setHeadImage()
+        
         userCircle.alpha = 1
         userCircle.center = mybkImage.center
         userCircle.layer.masksToBounds = true
         userCircle.layer.cornerRadius = 35
-        userCircle.layer.borderColor =  UIColor(rgba:"#f0a22a").CGColor
+        userCircle.layer.borderColor = UIColor(rgba:"#f0a22a").CGColor
         userCircle.layer.borderWidth = 2
         mybkImage.addSubview(userCircle)
         
-        ///登录 按钮
-        let loginButton = UIButton(frame: CGRectMake(0, 200, 80, 20))
+        ///登录 按钮 
         
-//        loginButton.backgroundColor = UIColor(rgba:"#f6f6f6")
-                loginButton.setImage(UIImage(named: "login"), forState: .Normal)
+//                loginButton.setImage(UIImage(named: "login"), forState: .Normal)
         loginButton.addTarget(self, action: "toLoginView:", forControlEvents: .TouchUpInside)
                 mybkImage.addSubview(loginButton)
         
@@ -69,7 +71,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
-
+       setHeadImage()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -118,6 +120,26 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         }else{
             return 20
         }
+    }
+    
+    
+    func setHeadImage(){
+        let user =  userDefaults.objectForKey("userInfo")
+        
+        if (user != nil) {
+            let headImageUrl = user!.objectForKey("headImage") as! String
+            let nickName = user!.objectForKey("nickName") as! String
+          
+                userCircle.kf_setImageWithURL(NSURL(string: headImageUrl)!)
+                loginButton.setTitle(nickName, forState: .Normal)
+ 
+        }else{
+            loginButton.setTitle("立即登录", forState: .Normal)
+            userCircle.image = UIImage(named: "picture-default")
+
+        }
+        
+        
     }
 
     // MARK: - Table view data source

@@ -72,6 +72,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         UMessage.registerRemoteNotificationAndUserNotificationSettings(userSettings)
         UMessage.setLogEnabled(false)
+        
+        
+        //设置3d touch
+        
+        if #available(iOS 9.1, *) {
+            let firstItemIcon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Cloud)
+            let firstItem = UIMutableApplicationShortcutItem(type: "1", localizedTitle: "我的收藏", localizedSubtitle: nil, icon: firstItemIcon, userInfo: nil)
+            
+            application.shortcutItems = [firstItem]
+            
+        } else {
+            // Fallback on earlier versions
+        }
+        
 
         
         
@@ -79,15 +93,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    /**
+     3D Touch 跳转
+     
+     - parameter application:       application
+     - parameter shortcutItem:      item
+     - parameter completionHandler: handler
+     */
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
         
- 
-
+        let handledShortCutItem = handleShortCutItem(shortcutItem)
+        completionHandler(handledShortCutItem)
+        
+    }
+    
+    
+    func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        var handled = false
+        //Get type string from shortcutItem
+        if shortcutItem.type == "1" {
+            
+            // My视图
+            let storyMy = UIStoryboard(name: "My", bundle: nil)
+            
+            // 获取当前页面TabBar
+            let tabBar = UIApplication.sharedApplication().keyWindow?.rootViewController as! UITabBarController
+            
+            // 获取当前TabBar Nav
+            let nav = tabBar.selectedViewController as! UINavigationController
+            // 收藏列表页
+            let myOrdersVC = storyMy.instantiateViewControllerWithIdentifier("MyCollect")
+            // 跳转
+            nav.pushViewController(myOrdersVC, animated: true)
+            
+            
+            handled = true
+        }
+        return handled
+    }
+    
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         UMessage.registerDeviceToken(deviceToken)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("userInfo ->  \(userInfo)" )
+//        print("userInfo ->  \(userInfo)" )
         UMessage.didReceiveRemoteNotification(userInfo)
     }
     

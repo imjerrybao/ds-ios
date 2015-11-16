@@ -30,12 +30,30 @@ class PlayVideoInfoViewController: UIViewController {
     
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var collectButton: UIButton!
+    
+    
+    var isC = false
+    
     /**
      收藏
      
      - parameter sender: sender description
      */
     @IBAction func collectVideo(sender: UIButton) {
+        print("点击了收藏")
+        
+        if !isC {
+            sender.setImage(UIImage(named: "cloud"), forState:
+                .Normal)
+            isC = true
+            print("收藏成功")
+        }else{
+            sender.setImage(UIImage(named: "cloud_d"), forState:
+                .Normal)
+            isC = false
+            print("取消收藏")
+        }
+        
     }
     
     /**

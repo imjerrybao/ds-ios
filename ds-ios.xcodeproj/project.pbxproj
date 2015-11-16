@@ -52,6 +52,7 @@
 		AB3264C71BEBB9AA0099D02D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3263E41BE8AE890099D02D /* CoreTelephony.framework */; };
 		AB3509AB1BF60840003C27D2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */; };
 		AB3509AF1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3509AD1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a */; };
+		AB42A0B51BF9A4B800A2162E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB42A0B41BF9A4B800A2162E /* Constants.swift */; };
 		AB46FBBF1BD927AE001C3C42 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBBD1BD927AE001C3C42 /* Home.storyboard */; };
 		AB46FBC21BD927CE001C3C42 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBC01BD927CE001C3C42 /* Find.storyboard */; };
 		AB46FBC51BD92811001C3C42 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBC31BD92811001C3C42 /* Play.storyboard */; };
@@ -162,6 +163,7 @@
 		AB3264861BEB8FD80099D02D /* HotAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotAppViewController.swift; sourceTree = "<group>"; };
 		AB3509AD1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.0.a; sourceTree = "<group>"; };
 		AB3509AE1BF6B820003C27D2 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		AB42A0B41BF9A4B800A2162E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB46FBBE1BD927AE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		AB46FBC11BD927CE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Find.storyboard; sourceTree = "<group>"; };
 		AB46FBC41BD92811001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Play.storyboard; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 		AB58EFA01BD6A26800E2B428 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AB42A0B41BF9A4B800A2162E /* Constants.swift */,
 				AB0CA1581BE6439B00134F1E /* SimpleButton */,
 				AB2EF2CE1BE22C5B008E96CC /* Snap */,
 				ABF6AEE01BE0D41200448D75 /* ParallaxHeaderView */,
@@ -883,6 +886,7 @@
 				AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */,
 				AB2EF2E21BE22C69008E96CC /* ViewController+SnapKit.swift in Sources */,
 				ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */,
+				AB42A0B51BF9A4B800A2162E /* Constants.swift in Sources */,
 				AB2EF2E41BE22C69008E96CC /* EdgeInsets.swift in Sources */,
 				AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */,
 				AB76C6A11BEF09140002F138 /* User.swift in Sources */,

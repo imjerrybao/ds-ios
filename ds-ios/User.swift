@@ -29,7 +29,7 @@ class User:NSObject{
     var headImage:String = ""
     var phone:String = ""
     var gender:Int = 0
-    var platformId:String = ""
+    var platformId:Int = 9
     var platformName:String = ""
     
     
