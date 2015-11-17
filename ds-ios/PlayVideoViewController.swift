@@ -29,6 +29,10 @@ class PlayVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.check3DTouch()
+self.videoController.play()
+        
         let url = NSURL(string: videoUrlString)
         self.addVideoPlayerWithURL(url!)
         
@@ -139,6 +143,84 @@ class PlayVideoViewController: UIViewController {
     }
     
     
+    /**
+     检测3D Touch
+     */
+    func check3DTouch() {
+        if self.traitCollection.forceTouchCapability != UIForceTouchCapability.Available {
+            
+            let tap = UITapGestureRecognizer(target: self, action: "dismissMe:")
+            self.view.addGestureRecognizer(tap)
+            
+        }
+        
+    }
+    
+    var detailTitle: String?
+
+    
+    func dismissMe(){
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+//    override func previewActionItems() -> [UIPreviewActionItem] {
+//        
+//        let action1 = UIPreviewAction(title: "赞", style: .Default) { (_, _) -> Void in
+//            
+//            print("点击了赞")
+//            
+//        }
+//        
+////        let action2 = UIPreviewAction(title: "分享", style: .Default) { (_, _) -> Void in
+////            
+////            print("点击了分享")
+////        }
+//        
+//        let actionQQ = UIPreviewAction(title: "QQ", style: .Default) { (_, _) -> Void in
+//            
+//            print("点击了QQ分享")
+//        }
+//        let actionWeixin = UIPreviewAction(title: "微信", style: .Default) { (_, _) -> Void in
+//            
+//            print("点击了微信分享")
+//        }
+//        
+//        let action3  = UIPreviewActionGroup(title: "分享", style: .Default, actions: [actionQQ, actionWeixin])
+//        
+//        
+//        let actions = [action1,action3]
+//        
+//        return actions
+//        
+//    }
+    
+    // MARK: - Preview action items.
+    lazy var previewDetailsActions: [UIPreviewActionItem] = {
+        func previewActionForTitle(title: String, style: UIPreviewActionStyle = .Default) -> UIPreviewAction {
+            return UIPreviewAction(title: title, style: style) { previewAction, viewController in
+                guard let detailViewController = viewController as? PlayVideoViewController,
+                    item = detailViewController.detailTitle else { return }
+                
+                print("\(previewAction.title) triggered from `DetailsViewController` for item: \(item)")
+            }
+        }
+        
+        let actionDefault = previewActionForTitle("赞")
+        let actionDestructive = previewActionForTitle("分享", style: .Destructive)
+        
+        let subActionGoTo = previewActionForTitle("QQ")
+        let subActionSave = previewActionForTitle("微博")
+        
+        let groupedOptionsActions = UIPreviewActionGroup(title: "分享", style: .Default, actions: [subActionGoTo, subActionSave] )
+        
+        return [actionDefault,   groupedOptionsActions]
+    }()
+
+    
+    
+    
+    
     /*
     // MARK: - Navigation
     
@@ -149,4 +231,14 @@ class PlayVideoViewController: UIViewController {
     }
     */
     
+}
+
+//MARK: - PreviewActions -> DetailsViewController Extension
+typealias PreviewActions = PlayVideoViewController
+extension PreviewActions  {
+    
+    /// User swipes upward on a 3D Touch preview
+    override func previewActionItems() -> [UIPreviewActionItem] {
+        return previewDetailsActions
+    }
 }

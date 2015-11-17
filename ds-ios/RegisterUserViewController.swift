@@ -173,7 +173,7 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
         //验证 验证码 
         SMSSDK.commitVerificationCode(self.code.text, phoneNumber: phoneTextField.text, zone: "+86") { (error) -> Void in
             
-//            if ((error == nil)) {
+            if ((error == nil)) {
                 print("验证成功")
                 let user = User()
                 user.nickName = "未填写"
@@ -184,7 +184,7 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
                 
                 user.headImage = userDefaults.stringForKey("userHeadImage")!
                 user.phone = self.phoneTextField.text!
-                user.platformId = 9
+                user.platformId = "9"
                 user.platformName = "逗视"
                 user.password = self.passwordTextField.text!
                 user.gender = 1
@@ -199,30 +199,8 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
                         print(result.value)
                         let JSON = result.value
                         let userDictionary = (JSON as! NSDictionary).valueForKey("content") as! NSDictionary
-                        
-                        /*
-                        
-                        var id:Int = 0
-                        var nickName:String = ""
-                        var password:String = ""
-                        var headImage:String = ""
-                        var phone:String = ""
-                        var gender:Int = 0
-                        var platformId:Int = 9
-                        var platformName:String = ""
-//                        */
-//                        
-//                        ((JSON as! NSDictionary).valueForKey("content") as! [NSDictionary]).map { User(id: $0["id"] as! Int,nickName: $0["nickName"] as! String,headImage: $0["headImage"] as! String,phone: $0["phone"] as! String,gender: $0["gender"] as! Int,platformId: $0["platformId"] as! Int,platformName: $0["platformName"] as! String)}
-                        
-                        print("userDictionary -> \(userDictionary)")
-                        
-                        print("userDictionary  headImage -> \(userDictionary.objectForKey("headImage"))")
-
-                        
+                        //将用户信息保存到内存中
                         userDefaults.setObject(userDictionary, forKey: "userInfo")
-                        
-                        
-                        print("userInfo \(userDefaults.objectForKey("userInfo"))")
                         //返回my页面
                         self.navigationController?.popToRootViewControllerAnimated(true)
                         
@@ -231,9 +209,9 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
                         
                     }
                 })
-//            }else{
-//                print("验证码错误")
-//            }
+            }else{
+                print("验证码错误")
+            }
         }
     }
     

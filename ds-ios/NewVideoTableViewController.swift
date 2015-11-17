@@ -11,9 +11,15 @@ import Alamofire
 import MJRefresh
 import Kingfisher
 
-class NewVideoTableViewController: UITableViewController {
+class NewVideoTableViewController: UITableViewController,UIViewControllerPreviewingDelegate {
     
     @IBOutlet var otherView: UIView!
+    
+    
+    // 长按手势
+    var longPress = UILongPressGestureRecognizer()
+    
+    
  
     //加载超时操作
     var ti:NSTimer?
@@ -67,6 +73,8 @@ class NewVideoTableViewController: UITableViewController {
         
     }
     
+    
+    
     @IBAction func restartData(sender: AnyObject) {
         ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
         
@@ -86,6 +94,8 @@ class NewVideoTableViewController: UITableViewController {
         self.loadNewData()
         
         otherView.hidden = true
+        
+        
         
         
     }
@@ -123,7 +133,9 @@ class NewVideoTableViewController: UITableViewController {
         // 隐藏scroll indicators
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.showsVerticalScrollIndicator = false
+        //检测3D Touch
         
+        check3DTouch()
     }
 
     // MARK: - Table view data source
@@ -335,6 +347,72 @@ class NewVideoTableViewController: UITableViewController {
             
             
         }
+    }
+    
+    
+    /**
+     检测页面是否处于3DTouch
+     */
+    func check3DTouch(){
+        
+        if self.traitCollection.forceTouchCapability == UIForceTouchCapability.Available {
+            
+            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
+            print("3D Touch 开启")
+            //长按停止
+            self.longPress.enabled = false
+            
+        } else {
+            print("3D Touch 没有开启")
+            self.longPress.enabled = true
+        }
+    }
+    
+    
+    
+    // MARK: 3D Touch Delegate
+    
+    /**
+    轻按进入浮动页面
+    
+    - parameter previewingContext: previewingContext description
+    - parameter location:          location description
+    
+    - returns: 文章详情页  浮动页
+    */
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        
+        // Get indexPath for location (CGPoint) + cell (for sourceRect)
+        guard let indexPath = tableView.indexPathForRowAtPoint(location),
+        _ = tableView.cellForRowAtIndexPath(indexPath) else { return nil }
+        
+        // Instantiate VC with Identifier (Storyboard ID)
+        guard let playVideoViewController = storyboard?.instantiateViewControllerWithIdentifier("playVideoView") as? PlayVideoViewController else { return nil }
+        
+        let videoInfo = (videos.objectAtIndex(indexPath.row) as! VideoInfo)
+
+        playVideoViewController.videoUrlString = videoInfo.url
+                        playVideoViewController.videoTitleLabel =  videoInfo.title
+                        playVideoViewController.videoInfoLable = videoInfo.title
+        
+        let cellFrame = tableView.cellForRowAtIndexPath(indexPath)!.frame
+ 
+        previewingContext.sourceRect = view.convertRect(cellFrame, fromView: tableView)
+ 
+        return playVideoViewController
+    }
+    
+    
+    /**
+     重按进入视频播放
+     
+     - parameter previewingContext:      previewingContext description
+     - parameter viewControllerToCommit: viewControllerToCommit description
+     */
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        self.showViewController(viewControllerToCommit, sender: self)
+        
     }
 
 }

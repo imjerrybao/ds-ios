@@ -59,7 +59,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="5qB-c8-CaC" kind="push" id="2IB-SW-zeu"/>
+                                            <segue destination="5qB-c8-CaC" kind="show" id="2IB-SW-zeu"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="4Ea-jC-s3T" imageView="gQw-qo-Aev" rowHeight="45" style="IBUITableViewCellStyleDefault" id="tAB-id-8OO">

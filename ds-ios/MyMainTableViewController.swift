@@ -32,8 +32,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         mybkImage.userInteractionEnabled = true
         
         
-        /// 用户头像
-        setHeadImage()
+       
         
         userCircle.alpha = 1
         userCircle.center = mybkImage.center
@@ -49,9 +48,12 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         loginButton.addTarget(self, action: "toLoginView:", forControlEvents: .TouchUpInside)
                 mybkImage.addSubview(loginButton)
         
+        loginButton.titleLabel?.font = UIFont(name: "Helvetica Neue", size: 16)
+
+
         loginButton.snp_makeConstraints { (make) -> Void in
             make.top.equalTo(userCircle.snp_bottom).offset(10)
-            make.width.equalTo(80)
+            make.width.equalTo(150)
             make.height.equalTo(20)
             make.centerX.equalTo(mybkImage)
         }
@@ -64,7 +66,10 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         //添加tableHeaderView
         let headerView_v: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(mybkImage) as! ParallaxHeaderView
         
-        self.tableView.tableHeaderView = headerView_v 
+        self.tableView.tableHeaderView = headerView_v
+        
+        /// 用户头像
+        setHeadImage()
     }
 
     
@@ -132,6 +137,8 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
           
                 userCircle.kf_setImageWithURL(NSURL(string: headImageUrl)!)
                 loginButton.setTitle(nickName, forState: .Normal)
+                //禁止点击
+                loginButton.enabled = false
  
         }else{
             loginButton.setTitle("立即登录", forState: .Normal)
