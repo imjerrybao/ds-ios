@@ -32,6 +32,9 @@ class VideoTableViewController: UITableViewController {
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
     
     var type = 0
+    
+    var alertController: UIAlertController?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +72,14 @@ class VideoTableViewController: UITableViewController {
         
         self.alamofireManager =  Manager.sharedInstanceAndTimeOut
         
+        //注册3DTouch
+        registerForPreviewingWithDelegate(self, sourceView: view)
+        
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated) 
+    }
     
     @IBAction func restartData(sender: AnyObject) {
         ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
@@ -91,11 +99,7 @@ class VideoTableViewController: UITableViewController {
         self.tableView.mj_header.beginRefreshing()
         self.loadNewData()
         
-        otherView.hidden = true
-        
-        
-        
-        
+        otherView.hidden = true 
     }
     
     
@@ -132,7 +136,7 @@ class VideoTableViewController: UITableViewController {
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.showsVerticalScrollIndicator = false
         //检测3D Touch
-        check3DTouch()
+//        check3DTouch()
     }
 
     // MARK: - Table view data source
@@ -345,9 +349,6 @@ class VideoTableViewController: UITableViewController {
             
         }
     }
-    
-    
-    
-    
 
 }
+

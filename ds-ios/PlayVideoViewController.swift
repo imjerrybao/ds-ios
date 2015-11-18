@@ -29,26 +29,35 @@ class PlayVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.check3DTouch()
-self.videoController.play()
-        
-        let url = NSURL(string: videoUrlString)
-        self.addVideoPlayerWithURL(url!)
+         self.check3DTouch()
+       
         
         addPageMenu()
     }
     
-    
+    //完全进入视图 才播放
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+         self.videoController.play()
+        
+        let url = NSURL(string: videoUrlString)
+        self.addVideoPlayerWithURL(url!)
+        
+    }
     
  
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        
+ 
         self.videoController.pause()
     }
     
     override func viewWillAppear(animated: Bool) {
+
         super.viewWillAppear(animated)
+ 
         self.navigationController?.navigationBar.hidden = true
 
        self.videoController.play()
