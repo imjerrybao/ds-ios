@@ -11,15 +11,12 @@ import Alamofire
 import MJRefresh
 import Kingfisher
 
-class NewVideoTableViewController: UITableViewController,UIViewControllerPreviewingDelegate {
+class VideoTableViewController: UITableViewController {
     
     @IBOutlet var otherView: UIView!
     
     
-    // 长按手势
-    var longPress = UILongPressGestureRecognizer()
-    
-    
+   
  
     //加载超时操作
     var ti:NSTimer?
@@ -33,7 +30,8 @@ class NewVideoTableViewController: UITableViewController,UIViewControllerPreview
     var alamofireManager : Manager?
     
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-     
+    
+    var type = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +132,6 @@ class NewVideoTableViewController: UITableViewController,UIViewControllerPreview
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.showsVerticalScrollIndicator = false
         //检测3D Touch
-        
         check3DTouch()
     }
 
@@ -149,7 +146,7 @@ class NewVideoTableViewController: UITableViewController,UIViewControllerPreview
             return
         }
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(0, 20,0)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(0, 20,type)).responseJSON { (request, response, result) -> Void in
             print("请求")
             switch result {
             case .Success:
@@ -204,7 +201,7 @@ class NewVideoTableViewController: UITableViewController,UIViewControllerPreview
         }
         
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(self.currentPage, 20,0)).responseJSON { (request, response, result) -> Void in
+        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(self.currentPage, 20,type)).responseJSON { (request, response, result) -> Void in
             switch result {
             case .Success:
                 if let JSON = result.value {
@@ -350,69 +347,7 @@ class NewVideoTableViewController: UITableViewController,UIViewControllerPreview
     }
     
     
-    /**
-     检测页面是否处于3DTouch
-     */
-    func check3DTouch(){
-        
-        if self.traitCollection.forceTouchCapability == UIForceTouchCapability.Available {
-            
-            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
-            print("3D Touch 开启")
-            //长按停止
-            self.longPress.enabled = false
-            
-        } else {
-            print("3D Touch 没有开启")
-            self.longPress.enabled = true
-        }
-    }
     
     
-    
-    // MARK: 3D Touch Delegate
-    
-    /**
-    轻按进入浮动页面
-    
-    - parameter previewingContext: previewingContext description
-    - parameter location:          location description
-    
-    - returns: 文章详情页  浮动页
-    */
-    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        
-        
-        // Get indexPath for location (CGPoint) + cell (for sourceRect)
-        guard let indexPath = tableView.indexPathForRowAtPoint(location),
-        _ = tableView.cellForRowAtIndexPath(indexPath) else { return nil }
-        
-        // Instantiate VC with Identifier (Storyboard ID)
-        guard let playVideoViewController = storyboard?.instantiateViewControllerWithIdentifier("playVideoView") as? PlayVideoViewController else { return nil }
-        
-        let videoInfo = (videos.objectAtIndex(indexPath.row) as! VideoInfo)
-
-        playVideoViewController.videoUrlString = videoInfo.url
-                        playVideoViewController.videoTitleLabel =  videoInfo.title
-                        playVideoViewController.videoInfoLable = videoInfo.title
-        
-        let cellFrame = tableView.cellForRowAtIndexPath(indexPath)!.frame
- 
-        previewingContext.sourceRect = view.convertRect(cellFrame, fromView: tableView)
- 
-        return playVideoViewController
-    }
-    
-    
-    /**
-     重按进入视频播放
-     
-     - parameter previewingContext:      previewingContext description
-     - parameter viewControllerToCommit: viewControllerToCommit description
-     */
-    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
-        self.showViewController(viewControllerToCommit, sender: self)
-        
-    }
 
 }

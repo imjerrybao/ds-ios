@@ -24,13 +24,17 @@ class HomeViewController: UIViewController {
         let aStoryboard = UIStoryboard(name: "Home", bundle:NSBundle.mainBundle())
 
         
-        let newVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("NewVideoTableViewController") as! NewVideoTableViewController
+        let newVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("VideoTableViewController") as! VideoTableViewController
+        newVideoTableViewController.type = 0 
+        
+        let hotVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("VideoTableViewController") as! VideoTableViewController
+        hotVideoTableViewController.type = 2
+        hotVideoTableViewController.title = "热门"
         
         
-        let hotVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("HotVideoTableViewController") as! HotVideoTableViewController
-        
-        
-        let popVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PopVideoTableViewController") as! PopVideoTableViewController
+        let popVideoTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("VideoTableViewController") as! VideoTableViewController
+        popVideoTableViewController.type = 1
+        popVideoTableViewController.title = "精华"
         
         controllerArray.append(newVideoTableViewController)
         controllerArray.append(hotVideoTableViewController)

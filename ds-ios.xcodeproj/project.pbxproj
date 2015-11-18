@@ -67,13 +67,11 @@
 		AB50ADFF1BF5F243008A1819 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50ADF11BF5F243008A1819 /* libWeChatSDK.a */; };
 		AB50AE001BF5F243008A1819 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB50ADF51BF5F243008A1819 /* UMSocialSDKResourcesNew.bundle */; };
 		AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF801BD6A19A00E2B428 /* CAPSPageMenu.swift */; };
-		AB58EF8D1BD6A19A00E2B428 /* HotVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */; };
 		AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF821BD6A19A00E2B428 /* FindViewController.swift */; };
 		AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF831BD6A19A00E2B428 /* HomeViewController.swift */; };
 		AB58EF901BD6A19A00E2B428 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF841BD6A19A00E2B428 /* HttpClient.swift */; };
 		AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF861BD6A19A00E2B428 /* PlayVideoViewController.swift */; };
-		AB58EF931BD6A19A00E2B428 /* PopVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF871BD6A19A00E2B428 /* PopVideoTableViewController.swift */; };
-		AB58EF941BD6A19A00E2B428 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF881BD6A19A00E2B428 /* UIColorExtension.swift */; };
+		AB58EF941BD6A19A00E2B428 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF881BD6A19A00E2B428 /* UIColor-Extension.swift */; };
 		AB58EF951BD6A19A00E2B428 /* UIViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF891BD6A19A00E2B428 /* UIViewController-Extension.swift */; };
 		AB58EF961BD6A19A00E2B428 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF8A1BD6A19A00E2B428 /* VideoInfo.swift */; };
 		AB58EF971BD6A19A00E2B428 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF8B1BD6A19A00E2B428 /* VideoTableViewCell.swift */; };
@@ -93,10 +91,11 @@
 		AB58EFC51BD6A41A00E2B428 /* KrVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */; };
 		AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFC91BD6A51800E2B428 /* MapKit.framework */; };
 		AB76C6A11BEF09140002F138 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB76C6A01BEF09140002F138 /* User.swift */; };
+		AB853CC11BFB29E600695616 /* TableViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */; };
 		ABA09EF21BE4C34D009C8A85 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */; };
 		ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */; };
 		ABC4B5821BF7708C00B2CC24 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3264841BEB8E860099D02D /* libz.tbd */; };
-		ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */; };
+		ABCF395B1BDF6D0E00C18508 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* VideoTableViewController.swift */; };
 		ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */; };
 		ABCF39601BE07E9D00C18508 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF395E1BE07E9D00C18508 /* My.storyboard */; };
 		ABE114991BF0A64E00027708 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE114981BF0A64E00027708 /* MobileCoreServices.framework */; };
@@ -195,13 +194,11 @@
 		AB50ADF51BF5F243008A1819 /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		AB50ADF61BF5F243008A1819 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
 		AB58EF801BD6A19A00E2B428 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
-		AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotVideoTableViewController.swift; sourceTree = "<group>"; };
 		AB58EF821BD6A19A00E2B428 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		AB58EF831BD6A19A00E2B428 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AB58EF841BD6A19A00E2B428 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		AB58EF861BD6A19A00E2B428 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
-		AB58EF871BD6A19A00E2B428 /* PopVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopVideoTableViewController.swift; sourceTree = "<group>"; };
-		AB58EF881BD6A19A00E2B428 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		AB58EF881BD6A19A00E2B428 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		AB58EF891BD6A19A00E2B428 /* UIViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extension.swift"; sourceTree = "<group>"; };
 		AB58EF8A1BD6A19A00E2B428 /* VideoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		AB58EF8B1BD6A19A00E2B428 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
@@ -225,9 +222,10 @@
 		AB58EFC91BD6A51800E2B428 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AB76C6A01BEF09140002F138 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewController-Extension.swift"; sourceTree = "<group>"; };
 		ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageViewPro.swift; sourceTree = "<group>"; };
-		ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVideoTableViewController.swift; sourceTree = "<group>"; };
+		ABCF395A1BDF6D0E00C18508 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSHttpClient.swift; sourceTree = "<group>"; };
 		ABCF395F1BE07E9D00C18508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/My.storyboard; sourceTree = "<group>"; };
 		ABE114981BF0A64E00027708 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -547,9 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				AB58EF831BD6A19A00E2B428 /* HomeViewController.swift */,
-				ABCF395A1BDF6D0E00C18508 /* NewVideoTableViewController.swift */,
-				AB58EF811BD6A19A00E2B428 /* HotVideoTableViewController.swift */,
-				AB58EF871BD6A19A00E2B428 /* PopVideoTableViewController.swift */,
+				ABCF395A1BDF6D0E00C18508 /* VideoTableViewController.swift */,
 				AB2CBAA61BDB653800EE0672 /* Play */,
 			);
 			name = Home;
@@ -586,8 +582,9 @@
 		AB58EF9D1BD6A24100E2B428 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AB58EF881BD6A19A00E2B428 /* UIColorExtension.swift */,
+				AB58EF881BD6A19A00E2B428 /* UIColor-Extension.swift */,
 				AB58EF891BD6A19A00E2B428 /* UIViewController-Extension.swift */,
+				AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -866,18 +863,17 @@
 				AB03C8131BD6A09A00F0A37C /* ds_ios.xcdatamodeld in Sources */,
 				AB58EF951BD6A19A00E2B428 /* UIViewController-Extension.swift in Sources */,
 				AB58EFC51BD6A41A00E2B428 /* KrVideoPlayerControlView.m in Sources */,
+				AB853CC11BFB29E600695616 /* TableViewController-Extension.swift in Sources */,
 				AB03C80D1BD6A09A00F0A37C /* ViewController.swift in Sources */,
 				AB1494091BD74721004A9F43 /* PeriscopyTitleView.swift in Sources */,
 				AB58EF901BD6A19A00E2B428 /* HttpClient.swift in Sources */,
 				AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */,
 				AB2EF2E01BE22C69008E96CC /* ConstraintMaker.swift in Sources */,
-				AB58EF8D1BD6A19A00E2B428 /* HotVideoTableViewController.swift in Sources */,
 				AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */,
 				AB2ED0491BE37261002CE2E2 /* MyMainTableViewController.swift in Sources */,
 				AB3264871BEB8FD80099D02D /* HotAppViewController.swift in Sources */,
 				AB2CBAAA1BDB680000EE0672 /* PlayVideoCommentTableViewController.swift in Sources */,
-				AB58EF931BD6A19A00E2B428 /* PopVideoTableViewController.swift in Sources */,
-				ABCF395B1BDF6D0E00C18508 /* NewVideoTableViewController.swift in Sources */,
+				ABCF395B1BDF6D0E00C18508 /* VideoTableViewController.swift in Sources */,
 				AB03C80B1BD6A09A00F0A37C /* AppDelegate.swift in Sources */,
 				AB58EFC41BD6A41A00E2B428 /* KrVideoPlayerController.m in Sources */,
 				ABE6843F1BED95AB004B2BBD /* RegisterUserViewController.swift in Sources */,
@@ -901,7 +897,7 @@
 				AB2EF2E31BE22C69008E96CC /* ConstraintItem.swift in Sources */,
 				AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */,
 				AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */,
-				AB58EF941BD6A19A00E2B428 /* UIColorExtension.swift in Sources */,
+				AB58EF941BD6A19A00E2B428 /* UIColor-Extension.swift in Sources */,
 				AB2EF2DD1BE22C69008E96CC /* SnapKit.swift in Sources */,
 				AB58EF961BD6A19A00E2B428 /* VideoInfo.swift in Sources */,
 				AB2EF2E91BE22C69008E96CC /* SourceLocation.swift in Sources */,

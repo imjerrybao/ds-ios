@@ -14,12 +14,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.alamofireManager =  Manager.sharedInstanceAndTimeOut
+
     }
     
     @IBOutlet weak var phoneTextField: UITextField!
 
     @IBOutlet weak var pwdTextField: UITextField!
-     
+    
+    var alamofireManager : Manager?
+
+    
     @IBAction func closeKeyBoard()
     {
         self.phoneTextField?.resignFirstResponder()
@@ -37,39 +42,49 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.phoneTextField?.resignFirstResponder()
         self.pwdTextField?.resignFirstResponder()
         //授权
-        
         let snsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToQQ)
         
-        var  response:UMSocialResponseEntity
-        snsPlatform.loginClickHandler(self,UMSocialControllerService.defaultControllerService(),true,{(response :UMSocialResponseEntity!) ->Void in
-            
-            var usm = UMSResponseCodeSuccess
-            var rcode = response.responseCode
-            
-            if rcode.rawValue == usm.rawValue {
+         snsPlatform.loginClickHandler(self,UMSocialControllerService.defaultControllerService(),true,{(response :UMSocialResponseEntity!) ->Void in
+            if response.responseCode.rawValue == UMSResponseCodeSuccess.rawValue {
                 
                 var snsAccount = UMSocialAccountManager.socialAccountDictionary()
                 
-                var qqUser:UMSocialAccountEntity =  snsAccount[UMShareToQQ] as! UMSocialAccountEntity
+                let qqUser:UMSocialAccountEntity =  snsAccount[UMShareToQQ] as! UMSocialAccountEntity
                 
                 print("QQ用户数据\(qqUser)")
-                //用户id
-                var usid = qqUser.usid
-                //微博昵称
-                var username = qqUser.userName
-                //用户头像
-                var icon = qqUser.iconURL
                 
+                let user = User()
+                user.phone = ""
+                user.password = ""
+                user.gender = 1
+                //用户id
+                user.platformId = qqUser.usid
+                user.platformName = "QQ"
+                //微博昵称
+                user.nickName = qqUser.userName
+                //用户头像
+                user.headImage = qqUser.iconURL
+                userDefaults.setValue(qqUser.iconURL, forKey: "userHeadImage")
                 if snsAccount != nil{
-                    
-                    let parameters = [
-                        "nickname": username,
-                        "face":icon,
-                        "user_client_id": usid,
-                        "platform_id": "2",
-                    ]
-                    
-
+                    //注册用户
+                    self.alamofireManager!.request(HttpClientByUser.DSRouter.registerUser(user)).responseJSON(completionHandler: { (request, response, result) -> Void in
+                        
+                        switch result {
+                        case .Success:
+                            print("HTTP 状态码->\(response?.statusCode)")
+                            print("注册成功")
+                            print(result.value)
+                            let JSON = result.value
+                            let userDictionary = (JSON as! NSDictionary).valueForKey("content") as! NSDictionary
+                            //将用户信息保存到内存中
+                            userDefaults.setObject(userDictionary, forKey: "userInfo")
+                            //返回my页面
+                            self.navigationController?.popToRootViewControllerAnimated(true)
+                            
+                        case .Failure(let error):
+                            print(error)
+                        }
+                    }) 
                 }else{
                     
                 }
@@ -88,36 +103,48 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let snsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToSina)
         
-        var  response:UMSocialResponseEntity
         snsPlatform.loginClickHandler(self,UMSocialControllerService.defaultControllerService(),true,{(response :UMSocialResponseEntity!) ->Void in
             
-            var usm = UMSResponseCodeSuccess
-            var rcode = response.responseCode
             
-            if rcode.rawValue == usm.rawValue {
+            if response.responseCode.rawValue == UMSResponseCodeSuccess.rawValue {
                 
                 var snsAccount = UMSocialAccountManager.socialAccountDictionary()
                 
-                var qqUser:UMSocialAccountEntity =  snsAccount[UMShareToSina] as! UMSocialAccountEntity
+                let weiBoUser:UMSocialAccountEntity =  snsAccount[UMShareToSina] as! UMSocialAccountEntity
+                print("微博用户数据\(weiBoUser)")
                 
-                print("微博用户数据\(qqUser)")
+                let user = User()
+                user.phone = ""
+                user.password = ""
+                user.gender = 1
                 //用户id
-                var usid = qqUser.usid
+                user.platformId = weiBoUser.usid
+                user.platformName = "weiBo"
                 //微博昵称
-                var username = qqUser.userName
+                user.nickName = weiBoUser.userName
                 //用户头像
-                var icon = qqUser.iconURL
-                
+                user.headImage = weiBoUser.iconURL
+                userDefaults.setValue(weiBoUser.iconURL, forKey: "userHeadImage")
                 if snsAccount != nil{
-                    
-                    let parameters = [
-                        "nickname": username,
-                        "face":icon,
-                        "user_client_id": usid,
-                        "platform_id": "2",
-                    ]
-                    
-                    
+                    //注册用户
+                    self.alamofireManager!.request(HttpClientByUser.DSRouter.registerUser(user)).responseJSON(completionHandler: { (request, response, result) -> Void in
+                        
+                        switch result {
+                        case .Success:
+                            print("HTTP 状态码->\(response?.statusCode)")
+                            print("注册成功")
+                            print(result.value)
+                            let JSON = result.value
+                            let userDictionary = (JSON as! NSDictionary).valueForKey("content") as! NSDictionary
+                            //将用户信息保存到内存中
+                            userDefaults.setObject(userDictionary, forKey: "userInfo")
+                            //返回my页面
+                            self.navigationController?.popToRootViewControllerAnimated(true)
+                            
+                        case .Failure(let error):
+                            print(error)
+                        }
+                    })
                 }else{
                     
                 }

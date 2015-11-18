@@ -283,7 +283,7 @@
         <!--推荐-->
         <scene sceneID="lPh-CQ-nxl">
             <objects>
-                <tableViewController storyboardIdentifier="NewVideoTableViewController" title="推荐" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o0s-Nd-SFO" customClass="NewVideoTableViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="VideoTableViewController" title="推荐" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o0s-Nd-SFO" customClass="VideoTableViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="hdJ-00-EwE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,6 +400,6 @@
         <image name="restart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fEv-Q5-ogd"/>
+        <segue reference="Jzc-xd-fzS"/>
     </inferredMetricsTieBreakers>
 </document>
