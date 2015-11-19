@@ -39,7 +39,10 @@ extension VideoTableViewController: UIViewControllerPreviewingDelegate{
         playVideoViewController.videoUrlString = videoInfo.url
         playVideoViewController.videoTitleLabel =  videoInfo.title
         playVideoViewController.videoInfoLable = videoInfo.title
-        
+        playVideoViewController.isCollectStatus = videoInfo.isCollectStatus
+        playVideoViewController.userId = userId
+        playVideoViewController.videoId = videoInfo.id
+
         let cellFrame = tableView.cellForRowAtIndexPath(indexPath)!.frame
         
         previewingContext.sourceRect = view.convertRect(cellFrame, fromView: tableView)

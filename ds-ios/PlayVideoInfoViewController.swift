@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import MJRefresh
+import Kingfisher
 
 class PlayVideoInfoViewController: UIViewController {
     @IBOutlet weak var videoTitleLabel: UILabel!
@@ -17,11 +20,38 @@ class PlayVideoInfoViewController: UIViewController {
     
     var videoInfo:String = ""
     
+    var videoId = ""
+    
+    var userId = 0
+    
+    //是否收藏
+    var isCollectStatus = 0;
+    
+    var alamofireManager : Manager?
+
+    
+    @IBOutlet weak var collectUIButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.videoTitleLabel.text = videoTitle
+        
+        //判断用户是否收藏过
+        if isCollectStatus == 0  {
+            //没有收藏过
+        }else{
+            if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
+                != nil{
+                    isC = true
+                    collectUIButton.setImage(UIImage(named: "cloud"), forState:.Normal)
 
+            }
+        }
+        
+        self.alamofireManager =  Manager.sharedInstanceAndTimeOut
+ 
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,8 +60,7 @@ class PlayVideoInfoViewController: UIViewController {
     
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var collectButton: UIButton!
-    
-    
+     
     var isC = false
     
     /**
@@ -42,16 +71,65 @@ class PlayVideoInfoViewController: UIViewController {
     @IBAction func collectVideo(sender: UIButton) {
         print("点击了收藏")
         
+        let userFavorite:UserFavorite = UserFavorite(id: 0, userId: userId, videoId: videoId, status: 1)
+        
         if !isC {
-            sender.setImage(UIImage(named: "cloud"), forState:
-                .Normal)
-            isC = true
-            print("收藏成功")
+            //请求收藏
+            self.alamofireManager!.request(HttpClientByUserAndVideo.DSRouter.addUserFavoriteVideo(userFavorite)).responseJSON { (request, response, result) -> Void in
+                switch result {
+                case .Success:
+                    
+                    if let JSON = result.value {
+                        let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
+                        
+                        if statusCode == 200{
+                            
+                            sender.setImage(UIImage(named: "cloud"), forState:
+                                .Normal)
+                            self.isC = true
+                            print("收藏成功")
+                            userAndVideoDefaults.setObject(true, forKey: "\(self.userId)+\(self.videoId)")
+                        }
+                        
+                    }
+                    
+                case .Failure(let error):
+                    print(error)
+                }
+                
+            }
+            
         }else{
-            sender.setImage(UIImage(named: "cloud_d"), forState:
-                .Normal)
-            isC = false
             print("取消收藏")
+            //请求收藏
+            self.alamofireManager!.request(HttpClientByUserAndVideo.DSRouter.deleteByUserIdAndVideoId(userId, videoId)).responseJSON { (request, response, result) -> Void in
+                switch result {
+                case .Success:
+                    
+                    if let JSON = result.value {
+                        let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
+                        
+                        if statusCode == 200{
+                            sender.setImage(UIImage(named: "cloud_d"), forState:
+                                .Normal)
+                            self.isC = false
+                            print("取消收藏成功")
+                            if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
+                                != nil{
+                                    
+                                    userAndVideoDefaults.removeObjectForKey("\(self.userId)+\(self.videoId)")
+                            }
+
+                        }
+                        
+                    }
+                    
+                case .Failure(let error):
+                    print(error)
+                }
+                
+            }
+             //请求取消收藏
         }
         
     }

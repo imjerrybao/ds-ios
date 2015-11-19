@@ -1,8 +1,8 @@
 //
-//  NewVideoTableViewController.swift
-//  ds-ios
+//  MyUserFavoriteTableViewController.swift
+//  ds-ios 用户收藏table
 //
-//  Created by 宋立君 on 15/10/27.
+//  Created by 宋立君 on 15/11/18.
 //  Copyright © 2015年 Songlijun. All rights reserved.
 //
 
@@ -11,13 +11,9 @@ import Alamofire
 import MJRefresh
 import Kingfisher
 
-class VideoTableViewController: UITableViewController {
+class MyUserFavoriteTableViewController: UITableViewController {
     
-    @IBOutlet var otherView: UIView!
     
-    //加载超时操作
-    var ti:NSTimer?
-   
     //视频集合
     var videos  = NSMutableOrderedSet()
     
@@ -27,7 +23,6 @@ class VideoTableViewController: UITableViewController {
     // 起始页码
     var currentPage = 0
     
-    var alamofireManager : Manager?
     
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
     
@@ -36,27 +31,22 @@ class VideoTableViewController: UITableViewController {
     
     var alertController: UIAlertController?
     
-    //用户信息
-    let user =  userDefaults.objectForKey("userInfo")
+    
     var userId = 0
-
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        
-        otherView.frame = CGRectMake(0.0, (self.view.frame.maxY - 220) / 2, self.view.frame.width, 100)
-        otherView.hidden = true
-        self.view.addSubview(otherView)
         
-        //调整tableview frame
-        print(self.view.frame)
+        self.view.frame = CGRectMake(0, 20, self.tableView.frame.width, self.tableView.frame.height)
+
         
-        self.view.frame = CGRectMake(0, 64, self.tableView.frame.width, self.tableView.frame.height)
-         
         //设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             self.loadNewData()
             
         })
+        
         self.tableView.mj_header.beginRefreshing()
         //
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
@@ -65,101 +55,38 @@ class VideoTableViewController: UITableViewController {
         })
         self.tableView.mj_footer.hidden = true
         
+        let user =  userDefaults.objectForKey("userInfo")
         
-        ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
-        
-        // 设置请求的超时时间
-        // request time
-        // config.timeoutIntervalForRequest = 10 // 秒
-        
-        //        self.alamofireManager = Manager(configuration: config)
-        
-        self.alamofireManager =  Manager.sharedInstanceAndTimeOut
-        
-        //注册3DTouch
-        registerForPreviewingWithDelegate(self, sourceView: view)
-        
-        //判断用户缓存中是否存在
         if (user != nil) {
             userId = user!.objectForKey("id") as! Int
             
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated) 
-    }
-    
-    @IBAction func restartData(sender: AnyObject) {
-        ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
-        
-        self.tableView.mj_header.beginRefreshing()
-        self.loadNewData()
-        
-        otherView.hidden = true
-        
-        
-    }
-    
-    
-    func restartData() {
-        ti = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "isLoading", userInfo: "isLoading", repeats: true)
-        
-        self.tableView.mj_header.beginRefreshing()
-        self.loadNewData()
-        
-        otherView.hidden = true 
-    }
-    
-    
-    /**
-     检测加载是否超时
-     */
-    func isLoading() {
-        //判断上拉or下拉
-        if self.tableView.mj_header.isRefreshing() {
-            
-            self.tableView.mj_header.endRefreshing()
-            
-            //            self.tableView.reloadData()
-            if self.videos.count == 0{
-                otherView.hidden = false
-            }
         }else{
-            self.tableView.mj_footer.endRefreshing()
-            otherView.hidden = true
+            //弹窗登录
         }
-        //停止
-        ti?.invalidate()
-    }
-    
+ 
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        // 隐藏scroll indicators
-        self.tableView.showsHorizontalScrollIndicator = false
-        self.tableView.showsVerticalScrollIndicator = false
-        //检测3D Touch
-//        check3DTouch()
-    }
-
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        
+     }
+    
+    
+    
+    
     // MARK: - Table view data source
     // 加载新数据
     func loadNewData(){
-        
-//        otherView.hidden = true
         
         self.currentPage = 0
         if populatingVideo {
             return
         }
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(0, 20,type,userId)).responseJSON { (request, response, result) -> Void in
+        alamofireManager.request(HttpClientByUserAndVideo.DSRouter.getVideosByUserId(userId, currentPage, 20)).responseJSON { (request, response, result) -> Void in
             print("请求")
             switch result {
             case .Success:
@@ -180,7 +107,7 @@ class VideoTableViewController: UITableViewController {
                     self.currentPage = 0
                     
                 }else {
-                  self.currentPage = Int( (self.videos.lastObject as! VideoInfo).id)!
+                    self.currentPage = Int( (self.videos.lastObject as! VideoInfo).id)!
                 }
                 
             case .Failure(let error):
@@ -188,13 +115,13 @@ class VideoTableViewController: UITableViewController {
                 self.tableView.mj_header.endRefreshing()
                 //没有数据时显示
                 if self.videos.count == 0 {
-                    self.otherView.hidden = false
+                    
                 }
             }
             
             self.populatingVideo = false
             //停止计时
-            self.ti?.invalidate()
+//            self.ti?.invalidate()
         }
         
         
@@ -213,7 +140,7 @@ class VideoTableViewController: UITableViewController {
         }
         
         populatingVideo = true
-        self.alamofireManager!.request(HttpClientByVideo.DSRouter.VideosByType(self.currentPage, 20,type,userId)).responseJSON { (request, response, result) -> Void in
+        alamofireManager.request(HttpClientByUserAndVideo.DSRouter.getVideosByUserId(userId, currentPage, 20)).responseJSON { (request, response, result) -> Void in
             switch result {
             case .Success:
                 if let JSON = result.value {
@@ -228,7 +155,7 @@ class VideoTableViewController: UITableViewController {
                 }
                 self.tableView.mj_footer.endRefreshing();
                 
-               self.currentPage = Int( (self.videos.lastObject as! VideoInfo).id)!
+                self.currentPage = Int( (self.videos.lastObject as! VideoInfo).id)!
             case .Failure(let error):
                 print(error)
                 self.tableView.mj_footer.endRefreshing()
@@ -239,10 +166,13 @@ class VideoTableViewController: UITableViewController {
             
         }
     }
-    
-    
-    
-    
+
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     
     // MARK: - Table view data source
     
@@ -275,20 +205,14 @@ class VideoTableViewController: UITableViewController {
         
         return cell
     }
-
+    
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         return 100
     }
     
     
-    
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        // 滑动显示scroll indicators
-        self.tableView.showsHorizontalScrollIndicator = true
-        self.tableView.showsVerticalScrollIndicator = true
-    }
+
     
     /*
     // Override to support conditional editing of the table view.
@@ -327,12 +251,6 @@ class VideoTableViewController: UITableViewController {
 
     /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -355,4 +273,3 @@ class VideoTableViewController: UITableViewController {
     }
 
 }
-

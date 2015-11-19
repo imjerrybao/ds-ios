@@ -25,13 +25,15 @@ class VideoInfo : NSObject{
     let pic: String
     let url: String
     let cTime: String
-    
-    init(id: String, title: String,pic: String,url: String,cTime: String) {
+    let isCollectStatus:Int
+
+    init(id: String, title: String,pic: String,url: String,cTime: String,isCollectStatus:Int) {
         self.id = id
         self.title = title
         self.pic = pic
         self.url = url
         self.cTime = cTime
+        self.isCollectStatus = isCollectStatus
     }
    
 }

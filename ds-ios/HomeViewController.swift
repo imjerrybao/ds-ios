@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
             
             .MenuItemFont(UIFont(name: "AvenirNextCondensed-DemiBold", size: 13.0)!),
             .MenuHeight(40.0),
-             .MenuItemWidth(90.0),
+            .MenuItemWidth(90.0),
             
             
             .CenterMenuItems(true)
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
     /**
     视图开始加载 出现
     
-    - parameter animated: <#animated description#>
+    - parameter animated: animated description
     */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

@@ -67,7 +67,6 @@
 		AB50ADFF1BF5F243008A1819 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50ADF11BF5F243008A1819 /* libWeChatSDK.a */; };
 		AB50AE001BF5F243008A1819 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB50ADF51BF5F243008A1819 /* UMSocialSDKResourcesNew.bundle */; };
 		AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF801BD6A19A00E2B428 /* CAPSPageMenu.swift */; };
-		AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF821BD6A19A00E2B428 /* FindViewController.swift */; };
 		AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF831BD6A19A00E2B428 /* HomeViewController.swift */; };
 		AB58EF901BD6A19A00E2B428 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF841BD6A19A00E2B428 /* HttpClient.swift */; };
 		AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB58EF861BD6A19A00E2B428 /* PlayVideoViewController.swift */; };
@@ -98,6 +97,9 @@
 		ABCF395B1BDF6D0E00C18508 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* VideoTableViewController.swift */; };
 		ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */; };
 		ABCF39601BE07E9D00C18508 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABCF395E1BE07E9D00C18508 /* My.storyboard */; };
+		ABDA830B1BFC653600BBAF74 /* UserFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA830A1BFC653600BBAF74 /* UserFavorite.swift */; };
+		ABDA830D1BFC72D300BBAF74 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA830C1BFC72D300BBAF74 /* ResponseEntity.swift */; };
+		ABDA830F1BFC809900BBAF74 /* MyUserFavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDA830E1BFC809900BBAF74 /* MyUserFavoriteTableViewController.swift */; };
 		ABE114991BF0A64E00027708 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE114981BF0A64E00027708 /* MobileCoreServices.framework */; };
 		ABE6843B1BED92CF004B2BBD /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABE684361BED92CF004B2BBD /* SMS_SDKLocalizable.strings */; };
 		ABE6843C1BED92CF004B2BBD /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE684381BED92CF004B2BBD /* MOBFoundation.framework */; };
@@ -194,7 +196,6 @@
 		AB50ADF51BF5F243008A1819 /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		AB50ADF61BF5F243008A1819 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
 		AB58EF801BD6A19A00E2B428 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
-		AB58EF821BD6A19A00E2B428 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		AB58EF831BD6A19A00E2B428 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AB58EF841BD6A19A00E2B428 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		AB58EF861BD6A19A00E2B428 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +229,9 @@
 		ABCF395A1BDF6D0E00C18508 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSHttpClient.swift; sourceTree = "<group>"; };
 		ABCF395F1BE07E9D00C18508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/My.storyboard; sourceTree = "<group>"; };
+		ABDA830A1BFC653600BBAF74 /* UserFavorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFavorite.swift; sourceTree = "<group>"; };
+		ABDA830C1BFC72D300BBAF74 /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		ABDA830E1BFC809900BBAF74 /* MyUserFavoriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUserFavoriteTableViewController.swift; sourceTree = "<group>"; };
 		ABE114981BF0A64E00027708 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		ABE684371BED92CF004B2BBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		ABE684381BED92CF004B2BBD /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
@@ -554,7 +558,6 @@
 		AB58EF9A1BD6A21C00E2B428 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				AB58EF821BD6A19A00E2B428 /* FindViewController.swift */,
 				AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */,
 				AB3264861BEB8FD80099D02D /* HotAppViewController.swift */,
 			);
@@ -594,6 +597,8 @@
 			children = (
 				AB58EF8A1BD6A19A00E2B428 /* VideoInfo.swift */,
 				AB76C6A01BEF09140002F138 /* User.swift */,
+				ABDA830A1BFC653600BBAF74 /* UserFavorite.swift */,
+				ABDA830C1BFC72D300BBAF74 /* ResponseEntity.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 				AB2ED0481BE37261002CE2E2 /* MyMainTableViewController.swift */,
 				AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */,
 				ABE6843E1BED95AB004B2BBD /* RegisterUserViewController.swift */,
+				ABDA830E1BFC809900BBAF74 /* MyUserFavoriteTableViewController.swift */,
 			);
 			name = My;
 			sourceTree = "<group>";
@@ -884,24 +890,26 @@
 				ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */,
 				AB42A0B51BF9A4B800A2162E /* Constants.swift in Sources */,
 				AB2EF2E41BE22C69008E96CC /* EdgeInsets.swift in Sources */,
+				ABDA830B1BFC653600BBAF74 /* UserFavorite.swift in Sources */,
 				AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */,
 				AB76C6A11BEF09140002F138 /* User.swift in Sources */,
 				AB2CBAAC1BDB68D200EE0672 /* PlayVideoRecommendTableViewController.swift in Sources */,
 				AB2EF2E11BE22C69008E96CC /* View+SnapKit.swift in Sources */,
 				AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */,
 				ABF6AEE61BE0D42800448D75 /* ParallaxHeaderView.m in Sources */,
+				ABDA830D1BFC72D300BBAF74 /* ResponseEntity.swift in Sources */,
 				ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */,
 				AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */,
 				AB2EF2DE1BE22C69008E96CC /* Constraint.swift in Sources */,
 				ABA09EF21BE4C34D009C8A85 /* MainTabBarViewController.swift in Sources */,
 				AB2EF2E31BE22C69008E96CC /* ConstraintItem.swift in Sources */,
 				AB1493F41BD72901004A9F43 /* FindMainTableViewController.swift in Sources */,
-				AB58EF8E1BD6A19A00E2B428 /* FindViewController.swift in Sources */,
 				AB58EF941BD6A19A00E2B428 /* UIColor-Extension.swift in Sources */,
 				AB2EF2DD1BE22C69008E96CC /* SnapKit.swift in Sources */,
 				AB58EF961BD6A19A00E2B428 /* VideoInfo.swift in Sources */,
 				AB2EF2E91BE22C69008E96CC /* SourceLocation.swift in Sources */,
 				ABF6AEE51BE0D42800448D75 /* UIImage+ImageEffects.m in Sources */,
+				ABDA830F1BFC809900BBAF74 /* MyUserFavoriteTableViewController.swift in Sources */,
 				AB1493F61BD72A60004A9F43 /* FindTableViewCell.swift in Sources */,
 				AB2EF2E61BE22C69008E96CC /* Debugging.swift in Sources */,
 				AB58EF971BD6A19A00E2B428 /* VideoTableViewCell.swift in Sources */,

@@ -26,7 +26,8 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setNav();
+//        setNav();
+        
         let tableHeardView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200), imageURLStringsGroup: imageURL)
         tableHeardView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
         tableHeardView.delegate = self;

@@ -35,10 +35,10 @@ struct HttpClientByVideo {
         
         // 逗视API地址
         static let baseURLString = "https://api.doushi.me/v1/rest/video/"
-        
+
         
         // 请求方法
-        case VideosByType(Int,Int,Int) //根据类型获取视频
+        case VideosByType(Int,Int,Int,Int) //根据类型获取视频
         
         
         
@@ -55,8 +55,8 @@ struct HttpClientByVideo {
             let (path) : (String) = {
                 
                 switch self {
-                case .VideosByType(let vid, let count, let type):
-                    return ("getVideosByType/\(vid)/\(count)/\(type)")
+                case .VideosByType(let vid, let count, let type,let userId):
+                    return ("getVideosByType/\(vid)/\(count)/\(type)/\(userId)")
                 }
             }()
             
@@ -64,6 +64,8 @@ struct HttpClientByVideo {
             let URLRequest = NSMutableURLRequest(URL: URL!.URLByAppendingPathComponent(path))
             
             URLRequest.HTTPMethod = method.rawValue
+            
+            
             
             let encoding = Alamofire.ParameterEncoding.URL
             return encoding.encode(URLRequest, parameters: nil).0
@@ -113,6 +115,7 @@ struct HttpClientByUser {
             let URL = NSURL(string: DSRouter.baseURLString)
             let URLRequest = NSMutableURLRequest(URL: URL!.URLByAppendingPathComponent(path))
             URLRequest.HTTPMethod = method.rawValue
+            
             URLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             //用户参数
             let parameters = ["nickName": user.nickName,"headImage": user.headImage,"phone":user.phone,"platformId":user.platformId,"platformName":user.platformName,"password":user.password,"gender":user.gender]
@@ -169,4 +172,80 @@ struct HttpClientByUtil {
         }
     }
 }
+
+
+
+
+// 创建HttpClient结构体
+struct HttpClientByUserAndVideo {
+    
+    // 创建逗视网络请求 Alamofire 路由
+    enum DSRouter: URLRequestConvertible {
+        
+        // 逗视API地址
+        static let baseURLString = "https://api.doushi.me/v1/rest/userAndVideo/"
+        
+        
+        // 请求方法
+        case deleteByUserIdAndVideoId(Int,String) //取消收藏
+        
+        case addUserFavoriteVideo(UserFavorite) //收藏
+        
+        case getVideosByUserId(Int,Int,Int) //根据用户id获取收藏记录
+        
+        
+        // 不同请求，对应不同请求类型
+        var method: Alamofire.Method {
+            switch self {
+            case .deleteByUserIdAndVideoId:
+                return .DELETE
+            case .addUserFavoriteVideo:
+                return .POST
+            case .getVideosByUserId:
+                return .GET
+            }
+        }
+        
+        var URLRequest: NSMutableURLRequest {
+            
+            //返回请求链接
+            let (path) : (String) = {
+                switch self {
+                case .getVideosByUserId(let userId, let pageNum, let count):
+                    return ("getVideosByUserId/\(userId)/\(pageNum)/\(count)")
+                case .deleteByUserIdAndVideoId(let userId, let vid):
+                    return ("deleteByUserIdAndVideoId/\(userId)/\(vid)")
+                case .addUserFavoriteVideo(_):
+                    return "addUserFavoriteVideo"
+                }
+            }()
+          
+            
+            let URL = NSURL(string: DSRouter.baseURLString)
+            let URLRequest = NSMutableURLRequest(URL: URL!.URLByAppendingPathComponent(path))
+            URLRequest.HTTPMethod = method.rawValue
+            
+            
+            
+            switch self {
+            case .addUserFavoriteVideo(let userFavorite):
+                
+                URLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                //用户参数
+                let parameters = ["userId": userFavorite.userId,"videoId": userFavorite.videoId,"status":userFavorite.status]
+                do {
+                    URLRequest.HTTPBody = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions())
+                } catch {
+                }
+                
+            default: break
+                
+            }
+            
+            let encoding = Alamofire.ParameterEncoding.URL
+            return encoding.encode(URLRequest, parameters: nil).0
+        }
+    }
+}
+
 

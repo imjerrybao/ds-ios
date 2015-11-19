@@ -17,10 +17,17 @@ class PlayVideoViewController: UIViewController {
     
     var videoInfoLable = ""
     
+    var videoId = ""
+    
+    var userId = 0
+    
+    //是否收藏
+    var isCollectStatus = 0;
+    
     var videoController = KrVideoPlayerController()
     
     var pageMenu : CAPSPageMenu?
-
+    
     
     func initVideoUrlString(videoUrlString: String){
         
@@ -29,39 +36,41 @@ class PlayVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.check3DTouch()
-       
+        self.check3DTouch()
+        
         
         addPageMenu()
+        
+        
+        let url = NSURL(string: videoUrlString)
+        self.addVideoPlayerWithURL(url!)
     }
     
     //完全进入视图 才播放
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-         self.videoController.play()
         
-        let url = NSURL(string: videoUrlString)
-        self.addVideoPlayerWithURL(url!)
+        self.videoController.play()
         
     }
     
- 
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
- 
+        
         self.videoController.pause()
     }
     
     override func viewWillAppear(animated: Bool) {
-
+        
         super.viewWillAppear(animated)
- 
+        
         self.navigationController?.navigationBar.hidden = true
-
-       self.videoController.play()
-      
+        
+        self.videoController.play()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,30 +78,30 @@ class PlayVideoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     let width = UIScreen.mainScreen().bounds.size.width
-
+    
     /**
      添加播放器
      - parameter url: 视频url
      */
     func addVideoPlayerWithURL(url: NSURL){
-     
+        
         
         self.videoController =  KrVideoPlayerController(frame: CGRect(x: 0, y: 20, width: width, height: width*(9.0/16.0)))
-//        
+        //
         
         
         let willBackOrientationPortrait:() -> Void = {
             self.pageMenu?.view.hidden = false
-         }
+        }
         
         let willChangeToFullscreenMode:() -> Void = {
-             self.pageMenu?.view.hidden = true
-         }
+            self.pageMenu?.view.hidden = true
+        }
         
         self.videoController.willBackOrientationPortrait = willBackOrientationPortrait
         self.videoController.willChangeToFullscreenMode = willChangeToFullscreenMode
- 
-       
+        
+        
         
         self.view.addSubview(self.videoController.view)
         
@@ -117,14 +126,18 @@ class PlayVideoViewController: UIViewController {
         
         playVideoInfoViewController.videoTitle = videoTitleLabel
         playVideoInfoViewController.videoInfo = videoInfoLable
-        controllerArray.append(playVideoInfoViewController)
-
+        playVideoInfoViewController.isCollectStatus = isCollectStatus
+        playVideoInfoViewController.userId = userId
+        playVideoInfoViewController.videoId = videoId
         
-//        let playVideoRecommendTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoRecommendTableViewController") as! PlayVideoRecommendTableViewController
-//        
-
+        controllerArray.append(playVideoInfoViewController)
+        
+        
+        //        let playVideoRecommendTableViewController = aStoryboard.instantiateViewControllerWithIdentifier("PlayVideoRecommendTableViewController") as! PlayVideoRecommendTableViewController
+        //
+        
         //相关推荐
-//        controllerArray.append(playVideoRecommendTableViewController)
+        //        controllerArray.append(playVideoRecommendTableViewController)
         
         let parameters: [CAPSPageMenuOption] = [
             .SelectedMenuItemLabelColor(UIColor(rgba:"#f0a22a")),
@@ -166,43 +179,43 @@ class PlayVideoViewController: UIViewController {
     }
     
     var detailTitle: String?
-
+    
     
     func dismissMe(){
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-//    override func previewActionItems() -> [UIPreviewActionItem] {
-//        
-//        let action1 = UIPreviewAction(title: "赞", style: .Default) { (_, _) -> Void in
-//            
-//            print("点击了赞")
-//            
-//        }
-//        
-////        let action2 = UIPreviewAction(title: "分享", style: .Default) { (_, _) -> Void in
-////            
-////            print("点击了分享")
-////        }
-//        
-//        let actionQQ = UIPreviewAction(title: "QQ", style: .Default) { (_, _) -> Void in
-//            
-//            print("点击了QQ分享")
-//        }
-//        let actionWeixin = UIPreviewAction(title: "微信", style: .Default) { (_, _) -> Void in
-//            
-//            print("点击了微信分享")
-//        }
-//        
-//        let action3  = UIPreviewActionGroup(title: "分享", style: .Default, actions: [actionQQ, actionWeixin])
-//        
-//        
-//        let actions = [action1,action3]
-//        
-//        return actions
-//        
-//    }
+    //    override func previewActionItems() -> [UIPreviewActionItem] {
+    //
+    //        let action1 = UIPreviewAction(title: "赞", style: .Default) { (_, _) -> Void in
+    //
+    //            print("点击了赞")
+    //
+    //        }
+    //
+    ////        let action2 = UIPreviewAction(title: "分享", style: .Default) { (_, _) -> Void in
+    ////
+    ////            print("点击了分享")
+    ////        }
+    //
+    //        let actionQQ = UIPreviewAction(title: "QQ", style: .Default) { (_, _) -> Void in
+    //
+    //            print("点击了QQ分享")
+    //        }
+    //        let actionWeixin = UIPreviewAction(title: "微信", style: .Default) { (_, _) -> Void in
+    //
+    //            print("点击了微信分享")
+    //        }
+    //
+    //        let action3  = UIPreviewActionGroup(title: "分享", style: .Default, actions: [actionQQ, actionWeixin])
+    //
+    //
+    //        let actions = [action1,action3]
+    //
+    //        return actions
+    //
+    //    }
     
     // MARK: - Preview action items.
     lazy var previewDetailsActions: [UIPreviewActionItem] = {
@@ -225,7 +238,7 @@ class PlayVideoViewController: UIViewController {
         
         return [actionDefault,   groupedOptionsActions]
     }()
-
+    
     
     
     

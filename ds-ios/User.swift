@@ -31,6 +31,7 @@ class User:NSObject{
     var gender:Int = 0
     var platformId:String = ""
     var platformName:String = ""
+    var isCollectStatus = 0
     
     
     

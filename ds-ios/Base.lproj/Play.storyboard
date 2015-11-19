@@ -150,6 +150,7 @@
                     </view>
                     <connections>
                         <outlet property="collectButton" destination="2RD-Gm-zXk" id="nvu-DI-p4B"/>
+                        <outlet property="collectUIButton" destination="2RD-Gm-zXk" id="wZT-e2-oIh"/>
                         <outlet property="shareButton" destination="LVb-Y0-CMb" id="Rz8-bZ-uPL"/>
                         <outlet property="videoTitleLabel" destination="Qck-J5-S5H" id="0LI-QP-7G2"/>
                     </connections>

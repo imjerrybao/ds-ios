@@ -709,189 +709,81 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRw-i2-KBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2124.5" y="2542"/>
+            <point key="canvasLocation" x="-2443.5" y="2808"/>
         </scene>
         <!--我的收藏-->
         <scene sceneID="Xwr-4V-fku">
             <objects>
-                <tableViewController storyboardIdentifier="MyCollect" title="我的收藏" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5qB-c8-CaC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="VeS-pp-OoZ">
+                <tableViewController storyboardIdentifier="MyCollect" title="我的收藏" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5qB-c8-CaC" customClass="MyUserFavoriteTableViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="VeS-pp-OoZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="lxC-S6-hQp">
-                            <rect key="frame" x="0.0" y="364" width="600" height="0.0"/>
+                            <rect key="frame" x="0.0" y="192" width="600" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
-                        <sections>
-                            <tableViewSection id="LYK-Q5-Ng4">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="lGZ-19-HOM" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGZ-19-HOM" id="PF2-Vb-dBs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rNW-8z-lXk">
-                                                    <rect key="frame" x="18" y="8" width="118" height="84"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="118" id="KfQ-eZ-14G"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-H7-n4b">
-                                                    <rect key="frame" x="144" y="70" width="100" height="21"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="9hQ-wZ-SOS"/>
-                                                        <constraint firstAttribute="width" constant="100" id="XaA-vd-dHZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痛苦来的太快，我还想多美几秒" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1S-aK-8yO">
-                                                    <rect key="frame" x="144" y="8" width="439" height="54"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="100" id="lGZ-19-HOM" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGZ-19-HOM" id="PF2-Vb-dBs">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rNW-8z-lXk">
+                                            <rect key="frame" x="18" y="8" width="118" height="84"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="rNW-8z-lXk" firstAttribute="top" secondItem="M1S-aK-8yO" secondAttribute="top" id="1ky-tk-ey6"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="M1S-aK-8yO" secondAttribute="trailing" constant="9" id="EsS-5X-9lk"/>
-                                                <constraint firstItem="qgw-H7-n4b" firstAttribute="leading" secondItem="rNW-8z-lXk" secondAttribute="trailing" constant="8" symbolic="YES" id="IFg-9z-nL7"/>
-                                                <constraint firstItem="M1S-aK-8yO" firstAttribute="top" secondItem="PF2-Vb-dBs" secondAttribute="topMargin" id="QGo-0Y-36x"/>
-                                                <constraint firstItem="rNW-8z-lXk" firstAttribute="centerY" secondItem="PF2-Vb-dBs" secondAttribute="centerY" id="QoN-RJ-lNr"/>
-                                                <constraint firstItem="qgw-H7-n4b" firstAttribute="top" secondItem="M1S-aK-8yO" secondAttribute="bottom" constant="8" id="awR-dC-GH3"/>
-                                                <constraint firstItem="rNW-8z-lXk" firstAttribute="leading" secondItem="PF2-Vb-dBs" secondAttribute="leadingMargin" constant="10" id="uV5-aT-bZb"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="qgw-H7-n4b" secondAttribute="bottom" constant="0.5" id="uWQ-bA-wZ3"/>
-                                                <constraint firstItem="M1S-aK-8yO" firstAttribute="leading" secondItem="rNW-8z-lXk" secondAttribute="trailing" constant="8" symbolic="YES" id="ulb-o9-mrB"/>
+                                                <constraint firstAttribute="width" constant="118" id="KfQ-eZ-14G"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="picImageView" destination="rNW-8z-lXk" id="Gmp-pN-pTm"/>
-                                            <outlet property="timeLabel" destination="qgw-H7-n4b" id="HE6-gh-b9W"/>
-                                            <outlet property="titleLabel" destination="M1S-aK-8yO" id="jhG-fX-R70"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="0GO-5z-ykr" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="164" width="600" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0GO-5z-ykr" id="Fv2-Sf-L30">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-2w-Pfo">
-                                                    <rect key="frame" x="18" y="8" width="118" height="84"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="118" id="Qbd-R9-YgQ"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhl-j8-2WN">
-                                                    <rect key="frame" x="144" y="70" width="100" height="21"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Aot-c2-Ex6"/>
-                                                        <constraint firstAttribute="width" constant="100" id="v5o-sy-udp"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痛苦来的太快，我还想多美几秒" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tQ-gL-7fN">
-                                                    <rect key="frame" x="144" y="8" width="439" height="54"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-H7-n4b">
+                                            <rect key="frame" x="144" y="70" width="100" height="21"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="hfh-2w-Pfo" firstAttribute="centerY" secondItem="Fv2-Sf-L30" secondAttribute="centerY" id="5GF-32-oQB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9tQ-gL-7fN" secondAttribute="trailing" constant="9" id="5eJ-B5-BOG"/>
-                                                <constraint firstItem="hfh-2w-Pfo" firstAttribute="top" secondItem="9tQ-gL-7fN" secondAttribute="top" id="ANs-i3-L8Z"/>
-                                                <constraint firstItem="9tQ-gL-7fN" firstAttribute="leading" secondItem="hfh-2w-Pfo" secondAttribute="trailing" constant="8" symbolic="YES" id="Cdw-S5-bnI"/>
-                                                <constraint firstItem="hfh-2w-Pfo" firstAttribute="leading" secondItem="Fv2-Sf-L30" secondAttribute="leadingMargin" constant="10" id="EUy-o5-ITe"/>
-                                                <constraint firstItem="9tQ-gL-7fN" firstAttribute="top" secondItem="Fv2-Sf-L30" secondAttribute="topMargin" id="OSl-Ji-Vbs"/>
-                                                <constraint firstItem="yhl-j8-2WN" firstAttribute="leading" secondItem="hfh-2w-Pfo" secondAttribute="trailing" constant="8" symbolic="YES" id="T2z-KS-nuh"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yhl-j8-2WN" secondAttribute="bottom" constant="0.5" id="Uoy-a9-n6r"/>
-                                                <constraint firstItem="yhl-j8-2WN" firstAttribute="top" secondItem="9tQ-gL-7fN" secondAttribute="bottom" constant="8" id="ZDK-D3-KKU"/>
+                                                <constraint firstAttribute="height" constant="21" id="9hQ-wZ-SOS"/>
+                                                <constraint firstAttribute="width" constant="100" id="XaA-vd-dHZ"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="picImageView" destination="hfh-2w-Pfo" id="03t-6f-dga"/>
-                                            <outlet property="timeLabel" destination="yhl-j8-2WN" id="V0B-wX-QXV"/>
-                                            <outlet property="titleLabel" destination="9tQ-gL-7fN" id="iyq-cj-xqk"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="9Vp-cp-EPW" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="264" width="600" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Vp-cp-EPW" id="HTk-sd-w0j">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-AZ-L3V">
-                                                    <rect key="frame" x="18" y="8" width="118" height="84"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="118" id="Jae-x8-bel"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7Q-OH-SKi">
-                                                    <rect key="frame" x="144" y="70" width="100" height="21"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Jhv-ZJ-D2z"/>
-                                                        <constraint firstAttribute="width" constant="100" id="l2O-tp-bQD"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痛苦来的太快，我还想多美几秒" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkS-Ie-f66">
-                                                    <rect key="frame" x="144" y="8" width="439" height="54"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痛苦来的太快，我还想多美几秒" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1S-aK-8yO">
+                                            <rect key="frame" x="144" y="8" width="439" height="54"/>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstItem="mOx-AZ-L3V" firstAttribute="top" secondItem="PkS-Ie-f66" secondAttribute="top" id="8kc-id-oDa"/>
-                                                <constraint firstItem="mOx-AZ-L3V" firstAttribute="leading" secondItem="HTk-sd-w0j" secondAttribute="leadingMargin" constant="10" id="9Kk-qz-UZ0"/>
-                                                <constraint firstItem="PkS-Ie-f66" firstAttribute="leading" secondItem="mOx-AZ-L3V" secondAttribute="trailing" constant="8" symbolic="YES" id="BLa-rS-ZXg"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="b7Q-OH-SKi" secondAttribute="bottom" constant="0.5" id="E2J-iK-dwe"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="PkS-Ie-f66" secondAttribute="trailing" constant="9" id="GQg-1j-pFX"/>
-                                                <constraint firstItem="b7Q-OH-SKi" firstAttribute="top" secondItem="PkS-Ie-f66" secondAttribute="bottom" constant="8" id="Gsp-XS-pwt"/>
-                                                <constraint firstItem="mOx-AZ-L3V" firstAttribute="centerY" secondItem="HTk-sd-w0j" secondAttribute="centerY" id="V9B-cO-I09"/>
-                                                <constraint firstItem="b7Q-OH-SKi" firstAttribute="leading" secondItem="mOx-AZ-L3V" secondAttribute="trailing" constant="8" symbolic="YES" id="eNk-1m-Q7b"/>
-                                                <constraint firstItem="PkS-Ie-f66" firstAttribute="top" secondItem="HTk-sd-w0j" secondAttribute="topMargin" id="ytF-mS-VDh"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="picImageView" destination="mOx-AZ-L3V" id="5ZA-5h-jA5"/>
-                                            <outlet property="timeLabel" destination="b7Q-OH-SKi" id="CEc-eC-Wyz"/>
-                                            <outlet property="titleLabel" destination="PkS-Ie-f66" id="qQi-ho-xIz"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="rNW-8z-lXk" firstAttribute="top" secondItem="M1S-aK-8yO" secondAttribute="top" id="1ky-tk-ey6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="M1S-aK-8yO" secondAttribute="trailing" constant="9" id="EsS-5X-9lk"/>
+                                        <constraint firstItem="qgw-H7-n4b" firstAttribute="leading" secondItem="rNW-8z-lXk" secondAttribute="trailing" constant="8" symbolic="YES" id="IFg-9z-nL7"/>
+                                        <constraint firstItem="M1S-aK-8yO" firstAttribute="top" secondItem="PF2-Vb-dBs" secondAttribute="topMargin" id="QGo-0Y-36x"/>
+                                        <constraint firstItem="rNW-8z-lXk" firstAttribute="centerY" secondItem="PF2-Vb-dBs" secondAttribute="centerY" id="QoN-RJ-lNr"/>
+                                        <constraint firstItem="qgw-H7-n4b" firstAttribute="top" secondItem="M1S-aK-8yO" secondAttribute="bottom" constant="8" id="awR-dC-GH3"/>
+                                        <constraint firstItem="rNW-8z-lXk" firstAttribute="leading" secondItem="PF2-Vb-dBs" secondAttribute="leadingMargin" constant="10" id="uV5-aT-bZb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qgw-H7-n4b" secondAttribute="bottom" constant="0.5" id="uWQ-bA-wZ3"/>
+                                        <constraint firstItem="M1S-aK-8yO" firstAttribute="leading" secondItem="rNW-8z-lXk" secondAttribute="trailing" constant="8" symbolic="YES" id="ulb-o9-mrB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="picImageView" destination="rNW-8z-lXk" id="Gmp-pN-pTm"/>
+                                    <outlet property="timeLabel" destination="qgw-H7-n4b" id="HE6-gh-b9W"/>
+                                    <outlet property="titleLabel" destination="M1S-aK-8yO" id="jhG-fX-R70"/>
+                                    <segue destination="VQg-7E-9FM" kind="show" identifier="toPlayVideo" id="2pi-cm-pGx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="5qB-c8-CaC" id="X5e-6z-HSe"/>
                             <outlet property="delegate" destination="5qB-c8-CaC" id="Fce-3f-KeZ"/>
