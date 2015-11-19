@@ -15,6 +15,7 @@
 		AB03C8151BD6A09A00F0A37C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8141BD6A09A00F0A37C /* Assets.xcassets */; };
 		AB03C8181BD6A09A00F0A37C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8161BD6A09A00F0A37C /* LaunchScreen.storyboard */; };
 		AB03E0361BDA3225000F8D6C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB03E0351BDA3225000F8D6C /* AVKit.framework */; };
+		AB0C68041BFD855100FA9261 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C68031BFD855100FA9261 /* DOFavoriteButton.swift */; };
 		AB0CA1531BE5B9E700134F1E /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */; };
 		AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */; };
 		AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */; };
@@ -121,6 +122,7 @@
 		AB03C8171BD6A09A00F0A37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB03C8191BD6A09A00F0A37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB03E0351BDA3225000F8D6C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		AB0C68031BFD855100FA9261 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
 		AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 		AB58EFA01BD6A26800E2B428 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AB0C68031BFD855100FA9261 /* DOFavoriteButton.swift */,
 				AB42A0B41BF9A4B800A2162E /* Constants.swift */,
 				AB0CA1581BE6439B00134F1E /* SimpleButton */,
 				AB2EF2CE1BE22C5B008E96CC /* Snap */,
@@ -888,6 +891,7 @@
 				AB1494081BD74721004A9F43 /* PeriscopyNavBarExtension.swift in Sources */,
 				AB2EF2E21BE22C69008E96CC /* ViewController+SnapKit.swift in Sources */,
 				ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */,
+				AB0C68041BFD855100FA9261 /* DOFavoriteButton.swift in Sources */,
 				AB42A0B51BF9A4B800A2162E /* Constants.swift in Sources */,
 				AB2EF2E41BE22C69008E96CC /* EdgeInsets.swift in Sources */,
 				ABDA830B1BFC653600BBAF74 /* UserFavorite.swift in Sources */,

@@ -58,9 +58,6 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="5qB-c8-CaC" kind="show" id="2IB-SW-zeu"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="4Ea-jC-s3T" imageView="gQw-qo-Aev" rowHeight="45" style="IBUITableViewCellStyleDefault" id="tAB-id-8OO">
                                         <rect key="frame" x="0.0" y="144" width="600" height="45"/>
@@ -476,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Htq-DN-bvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1565" y="4211"/>
+            <point key="canvasLocation" x="-2461" y="2187"/>
         </scene>
         <!--Register User View Controller-->
         <scene sceneID="hC7-KR-WVL">
@@ -699,7 +696,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5n-YK-9Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-880" y="4211"/>
+            <point key="canvasLocation" x="-1776" y="2187"/>
         </scene>
         <!--playVideoView-->
         <scene sceneID="qCA-9P-w5T">
@@ -722,14 +719,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="lxC-S6-hQp">
-                            <rect key="frame" x="0.0" y="192" width="600" height="0.0"/>
+                            <rect key="frame" x="0.0" y="128" width="600" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="100" id="lGZ-19-HOM" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGZ-19-HOM" id="PF2-Vb-dBs">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>

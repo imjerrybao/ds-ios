@@ -13,7 +13,7 @@ import Kingfisher
 
 class PlayVideoInfoViewController: UIViewController {
     @IBOutlet weak var videoTitleLabel: UILabel!
-
+    
     @IBOutlet weak var videoInfoLable: UITextView!
     
     var videoTitle:String = ""
@@ -28,31 +28,44 @@ class PlayVideoInfoViewController: UIViewController {
     var isCollectStatus = 0;
     
     var alamofireManager : Manager?
-
+    
     
     @IBOutlet weak var collectUIButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.videoTitleLabel.text = videoTitle
+        let bb = userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
         
         //判断用户是否收藏过
         if isCollectStatus == 0  {
             //没有收藏过
-        }else{
-            if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
-                != nil{
+            if bb != nil {
+                if bb as! Bool {
                     isC = true
                     collectUIButton.setImage(UIImage(named: "cloud"), forState:.Normal)
-
+                    
+                }
             }
+            
+        }else{
+            if bb != nil {
+                if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)") as! Bool {
+                    isC = true
+                    collectUIButton.setImage(UIImage(named: "cloud"), forState:.Normal)
+                    
+                    
+                }
+            }
+            
         }
         
+        
         self.alamofireManager =  Manager.sharedInstanceAndTimeOut
- 
+        
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,7 +73,7 @@ class PlayVideoInfoViewController: UIViewController {
     
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var collectButton: UIButton!
-     
+    
     var isC = false
     
     /**
@@ -114,12 +127,8 @@ class PlayVideoInfoViewController: UIViewController {
                                 .Normal)
                             self.isC = false
                             print("取消收藏成功")
-                            if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
-                                != nil{
-                                    
-                                    userAndVideoDefaults.removeObjectForKey("\(self.userId)+\(self.videoId)")
-                            }
-
+                            userAndVideoDefaults.setObject(false, forKey: "\(self.userId)+\(self.videoId)")
+                            
                         }
                         
                     }
@@ -129,7 +138,7 @@ class PlayVideoInfoViewController: UIViewController {
                 }
                 
             }
-             //请求取消收藏
+            //请求取消收藏
         }
         
     }
@@ -149,20 +158,20 @@ class PlayVideoInfoViewController: UIViewController {
         UMSocialData.defaultData().extConfig.title = "ddd"
         UMSocialData.defaultData().extConfig.qqData.url = "http://www.itjh.net/aa.html"
         UMSocialData.defaultData().extConfig.qzoneData.url = "http://www.itjh.net/aa.html"
-  
+        
         UMSocialData.defaultData().extConfig.wechatSessionData.url = "http://www.itjh.net/aa.html";
         UMSocialData.defaultData().extConfig.wechatTimelineData.url = "http://www.itjh.net/aa.html";
-
+        
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

@@ -148,6 +148,33 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         
         
     }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.section == 0 && indexPath.row == 0{
+            print("点击了我的收藏")
+            //判断用户是否登录
+            let user =  userDefaults.objectForKey("userInfo")
+            let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
+            
+            if (user == nil) {
+                //弹窗登录
+               
+                let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
+                self.navigationController?.pushViewController(loginTableView, animated: true)
+                
+            }else{
+                
+                let myUserFavoriteTableViewController =  aStoryboard.instantiateViewControllerWithIdentifier("MyCollect") as! MyUserFavoriteTableViewController
+                myUserFavoriteTableViewController.userId = user!.objectForKey("id") as! Int
+                self.navigationController?.pushViewController(myUserFavoriteTableViewController, animated: true)
+
+            }
+        }
+        
+        
+    }
 
     // MARK: - Table view data source
 
@@ -213,11 +240,27 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-//        if segue.identifier == "toLoginView" {
-//              let loginView =  segue.destinationViewController
-//            self.navigationController?.pushViewController(loginView, animated: true)
-//        }
-//        
+        if segue.identifier == "toUserFavorite" {
+            
+            //判断用户是否登录
+            let user =  userDefaults.objectForKey("userInfo")
+            
+            if (user == nil) {
+                //弹窗登录
+                let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
+                
+                let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
+                self.navigationController?.pushViewController(loginTableView, animated: true)
+
+            }else{
+                
+                let myUserFavoriteTableViewController =  segue.destinationViewController as! MyUserFavoriteTableViewController
+                myUserFavoriteTableViewController.userId = user!.objectForKey("id") as! Int
+                
+            }
+
+        }
+//
     }
     
 

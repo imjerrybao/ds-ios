@@ -107,16 +107,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RD-Gm-zXk">
-                                <rect key="frame" x="490" y="33" width="32" height="32"/>
-                                <animations/>
-                                <state key="normal" image="cloud_d"/>
-                                <state key="selected" image="cloud_d"/>
-                                <state key="highlighted" image="cloud" backgroundImage="cloud"/>
-                                <connections>
-                                    <action selector="collectVideo:" destination="YFI-yH-Aoq" eventType="touchUpInside" id="5Zo-6K-dEK"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVb-Y0-CMb">
                                 <rect key="frame" x="548" y="33" width="32" height="32"/>
                                 <animations/>
@@ -136,6 +126,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RD-Gm-zXk">
+                                <rect key="frame" x="490" y="33" width="32" height="32"/>
+                                <animations/>
+                                <state key="normal" image="cloud_d"/>
+                                <state key="selected" image="cloud_d"/>
+                                <state key="highlighted" image="cloud" backgroundImage="cloud"/>
+                                <connections>
+                                    <action selector="collectVideo:" destination="YFI-yH-Aoq" eventType="touchUpInside" id="5Zo-6K-dEK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.94901961088180542" green="0.94901961088180542" blue="0.96078431606292725" alpha="1" colorSpace="calibratedRGB"/>

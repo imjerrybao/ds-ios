@@ -73,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ds-ios/LoginViewController.swift"
-            timestampString = "469439664.502204"
+            filePath = "ds-ios/PlayVideoViewController.swift"
+            timestampString = "469605818.261055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "qqLogin(_:)"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "collectVideo()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

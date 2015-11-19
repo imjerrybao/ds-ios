@@ -8,6 +8,8 @@
 
 import UIKit
 import AVKit
+import Alamofire
+
 
 class PlayVideoViewController: UIViewController {
     
@@ -24,15 +26,13 @@ class PlayVideoViewController: UIViewController {
     //是否收藏
     var isCollectStatus = 0;
     
+    var isC = false
+
+    
     var videoController = KrVideoPlayerController()
     
     var pageMenu : CAPSPageMenu?
-    
-    
-    func initVideoUrlString(videoUrlString: String){
-        
-        self.videoUrlString = videoUrlString
-    }
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,17 @@ class PlayVideoViewController: UIViewController {
         
         let url = NSURL(string: videoUrlString)
         self.addVideoPlayerWithURL(url!)
+        
+        //判断用户是否收藏过
+        if isCollectStatus == 0  {
+            //没有收藏过
+        }else{
+            
+            if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)") as! Bool {
+                isC = true
+            }
+            
+        }
     }
     
     //完全进入视图 才播放
@@ -69,7 +80,7 @@ class PlayVideoViewController: UIViewController {
         
         self.navigationController?.navigationBar.hidden = true
         
-        self.videoController.play()
+//        self.videoController.play()
         
     }
     
@@ -186,41 +197,23 @@ class PlayVideoViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    //    override func previewActionItems() -> [UIPreviewActionItem] {
-    //
-    //        let action1 = UIPreviewAction(title: "赞", style: .Default) { (_, _) -> Void in
-    //
-    //            print("点击了赞")
-    //
-    //        }
-    //
-    ////        let action2 = UIPreviewAction(title: "分享", style: .Default) { (_, _) -> Void in
-    ////
-    ////            print("点击了分享")
-    ////        }
-    //
-    //        let actionQQ = UIPreviewAction(title: "QQ", style: .Default) { (_, _) -> Void in
-    //
-    //            print("点击了QQ分享")
-    //        }
-    //        let actionWeixin = UIPreviewAction(title: "微信", style: .Default) { (_, _) -> Void in
-    //
-    //            print("点击了微信分享")
-    //        }
-    //
-    //        let action3  = UIPreviewActionGroup(title: "分享", style: .Default, actions: [actionQQ, actionWeixin])
-    //
-    //
-    //        let actions = [action1,action3]
-    //
-    //        return actions
-    //
-    //    }
+    
     
     // MARK: - Preview action items.
     lazy var previewDetailsActions: [UIPreviewActionItem] = {
         func previewActionForTitle(title: String, style: UIPreviewActionStyle = .Default) -> UIPreviewAction {
             return UIPreviewAction(title: title, style: style) { previewAction, viewController in
+                
+                
+                if "收藏" == title {
+                    print("点击了收藏 ->3D Touch")
+                    self.collectVideo()
+                }
+                
+                if "QQ" == title {
+                    print("点击了QQ分享 ->3D Touch")
+                }
+                
                 guard let detailViewController = viewController as? PlayVideoViewController,
                     item = detailViewController.detailTitle else { return }
                 
@@ -228,7 +221,8 @@ class PlayVideoViewController: UIViewController {
             }
         }
         
-        let actionDefault = previewActionForTitle("赞")
+        let actionDefault = previewActionForTitle("收藏")
+        
         let actionDestructive = previewActionForTitle("分享", style: .Destructive)
         
         let subActionGoTo = previewActionForTitle("QQ")
@@ -252,6 +246,61 @@ class PlayVideoViewController: UIViewController {
     // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    func collectVideo(){
+        let userFavorite:UserFavorite = UserFavorite(id: 0, userId: userId, videoId: videoId, status: 1)
+        
+        if !isC {
+            //请求收藏
+            alamofireManager.request(HttpClientByUserAndVideo.DSRouter.addUserFavoriteVideo(userFavorite)).responseJSON { (request, response, result) -> Void in
+                switch result {
+                case .Success:
+                    
+                    if let JSON = result.value {
+                        let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
+                        
+                        if statusCode == 200{
+                            self.isC = true
+                            print("收藏成功")
+                            userAndVideoDefaults.setObject(true, forKey: "\(self.userId)+\(self.videoId)")
+                        }
+                        
+                    }
+                    
+                case .Failure(let error):
+                    print(error)
+                }
+                
+            }
+            
+        }else{
+            print("取消收藏")
+            //请求收藏
+            alamofireManager.request(HttpClientByUserAndVideo.DSRouter.deleteByUserIdAndVideoId(userId, videoId)).responseJSON { (request, response, result) -> Void in
+                switch result {
+                case .Success:
+                    
+                    if let JSON = result.value {
+                        let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
+                        
+                        if statusCode == 200{ 
+                            self.isC = false
+                            print("取消收藏成功")
+                            userAndVideoDefaults.setObject(false, forKey: "\(self.userId)+\(self.videoId)")
+                            
+                        }
+                        
+                    }
+                    
+                case .Failure(let error):
+                    print(error)
+                }
+                
+            }
+            //请求取消收藏
+        }
+    }
     
 }
 

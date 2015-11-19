@@ -348,7 +348,7 @@ class VideoTableViewController: UITableViewController {
             playVideoViewController.videoTitleLabel = videoInfo.title
             playVideoViewController.videoInfoLable  = videoInfo.title
             playVideoViewController.isCollectStatus = videoInfo.isCollectStatus
-            playVideoViewController.initVideoUrlString(videoInfo.url)
+            playVideoViewController.videoUrlString = videoInfo.url
             playVideoViewController.userId = userId
             playVideoViewController.videoId = videoInfo.id
         }
