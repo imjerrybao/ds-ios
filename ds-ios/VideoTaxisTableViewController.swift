@@ -1,19 +1,19 @@
 //
-//  MyUserFavoriteTableViewController.swift
-//  ds-ios 用户收藏table
+//  VideoTaxisTableViewController.swift
+//  ds-ios
 //
-//  Created by 宋立君 on 15/11/18.
+//  Created by 宋立君 on 15/11/20.
 //  Copyright © 2015年 Songlijun. All rights reserved.
 //
 
 import UIKit
+
 import Alamofire
 import MJRefresh
 import Kingfisher
 
-class MyUserFavoriteTableViewController: UITableViewController {
-    
-    
+class VideoTaxisTableViewController: UITableViewController {
+
     //视频集合
     var videos  = NSMutableOrderedSet()
     
@@ -23,7 +23,6 @@ class MyUserFavoriteTableViewController: UITableViewController {
     // 起始页码
     var currentPage = 0
     
-    @IBOutlet var topView: UIView!
     
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
     
@@ -34,16 +33,15 @@ class MyUserFavoriteTableViewController: UITableViewController {
     
     
     var userId = 0
- 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.title = "我的收藏"
+        self.navigationController?.title = "排行榜"
         self.navigationController?.navigationBar.tintColor = UIColor(rgba:"#f0a22a")
         
         setNav()
-
         
         //设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
         self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
@@ -53,22 +51,30 @@ class MyUserFavoriteTableViewController: UITableViewController {
         
         self.tableView.mj_header.beginRefreshing()
         //
-        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
-            self.loadMoreData()
-            
-        })
-        self.tableView.mj_footer.hidden = true
- 
-
+//        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
+//            self.loadMoreData()
+//            
+//        })
+//        self.tableView.mj_footer.hidden = true
+        
+        //        let user =  userDefaults.objectForKey("userInfo")
+        //
+        //        if (user != nil) {
+        //            userId = user!.objectForKey("id") as! Int
+        //
+        //        }else{
+        //            //弹窗登录
+        //
+        //        }
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
-        self.navigationController?.navigationBar.hidden = false
-
-      }
+     }
     
     /**
      视图全部加载完 出现
@@ -77,10 +83,11 @@ class MyUserFavoriteTableViewController: UITableViewController {
      */
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.hidden = false
+        
         
     }
 
-    
     
     
     // MARK: - Table view data source
@@ -92,7 +99,7 @@ class MyUserFavoriteTableViewController: UITableViewController {
             return
         }
         populatingVideo = true
-        alamofireManager.request(HttpClientByUserAndVideo.DSRouter.getVideosByUserId(userId, currentPage, 20)).responseJSON { (request, response, result) -> Void in
+        alamofireManager.request(HttpClientByVideo.DSRouter.getVideoTaxis()).responseJSON { (request, response, result) -> Void in
             print("请求")
             switch result {
             case .Success:
@@ -127,7 +134,7 @@ class MyUserFavoriteTableViewController: UITableViewController {
             
             self.populatingVideo = false
             //停止计时
-//            self.ti?.invalidate()
+            //            self.ti?.invalidate()
         }
         
         
@@ -135,50 +142,12 @@ class MyUserFavoriteTableViewController: UITableViewController {
     
     
     
-    /**
-     上拉加载更多数据
-     */
-    func loadMoreData() {
-        
-        
-        if populatingVideo {
-            return
-        }
-        
-        populatingVideo = true
-        alamofireManager.request(HttpClientByUserAndVideo.DSRouter.getVideosByUserId(userId, currentPage, 20)).responseJSON { (request, response, result) -> Void in
-            switch result {
-            case .Success:
-                if let JSON = result.value {
-                    let videoInfos:[AnyObject];
-                    
-                    videoInfos = ((JSON as! NSDictionary).valueForKey("content") as! [NSDictionary]).map { VideoInfo(id: $0["id"] as! String,title: $0["title"] as! String,pic: $0["pic"] as! String,url: $0["videoUrl"] as! String,cTime: $0["pushTime"] as! String,isCollectStatus: $0["isCollectStatus"] as! Int)}
-                    
-                    self.videos.addObjectsFromArray(videoInfos)
-                    
-                    self.tableView.reloadData()
-                    
-                }
-                self.tableView.mj_footer.endRefreshing();
-                
-                self.currentPage = Int( (self.videos.lastObject as! VideoInfo).id)!
-            case .Failure(let error):
-                print(error)
-                self.tableView.mj_footer.endRefreshing()
-                
-                
-            }
-            self.populatingVideo = false
-            
-        }
-    }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     // MARK: - Table view data source
     
@@ -217,43 +186,43 @@ class MyUserFavoriteTableViewController: UITableViewController {
     }
     
     
-
+    
     
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    // Return false if you do not want the specified item to be editable.
+    return true
     }
     */
-
+    
     /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    if editingStyle == .Delete {
+    // Delete the row from the data source
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    } else if editingStyle == .Insert {
+    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
     }
     */
-
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
     }
     */
-
+    
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    // Return false if you do not want the item to be re-orderable.
+    return true
     }
     */
-
+    
     /*
     // MARK: - Navigation
     */
@@ -276,5 +245,7 @@ class MyUserFavoriteTableViewController: UITableViewController {
             playVideoViewController.videoId = videoInfo.id
         }
     }
+    
+
 
 }

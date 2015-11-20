@@ -103,6 +103,9 @@
 		AB76C6A11BEF09140002F138 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB76C6A01BEF09140002F138 /* User.swift */; };
 		AB853CC11BFB29E600695616 /* TableViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */; };
 		ABA09EF21BE4C34D009C8A85 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */; };
+		ABBF64F41BFF64E0002E879F /* ExceptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBF64F31BFF64E0002E879F /* ExceptionsViewController.swift */; };
+		ABBF64F61BFF6C24002E879F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBF64F51BFF6C24002E879F /* AboutViewController.swift */; };
+		ABBF64F81BFF70C9002E879F /* VideoTaxisTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBF64F71BFF70C9002E879F /* VideoTaxisTableViewController.swift */; };
 		ABC3FBE01BD93390003300C9 /* RoundImageViewPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */; };
 		ABC4B5821BF7708C00B2CC24 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3264841BEB8E860099D02D /* libz.tbd */; };
 		ABCF395B1BDF6D0E00C18508 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF395A1BDF6D0E00C18508 /* VideoTableViewController.swift */; };
@@ -247,6 +250,9 @@
 		AB76C6A01BEF09140002F138 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewController-Extension.swift"; sourceTree = "<group>"; };
 		ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		ABBF64F31BFF64E0002E879F /* ExceptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExceptionsViewController.swift; sourceTree = "<group>"; };
+		ABBF64F51BFF6C24002E879F /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		ABBF64F71BFF70C9002E879F /* VideoTaxisTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTaxisTableViewController.swift; sourceTree = "<group>"; };
 		ABC3FBDF1BD93390003300C9 /* RoundImageViewPro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageViewPro.swift; sourceTree = "<group>"; };
 		ABCF395A1BDF6D0E00C18508 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		ABCF395C1BDF6F6C00C18508 /* DSHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSHttpClient.swift; sourceTree = "<group>"; };
@@ -600,6 +606,7 @@
 			children = (
 				AB1493F31BD72901004A9F43 /* FindMainTableViewController.swift */,
 				AB3264861BEB8FD80099D02D /* HotAppViewController.swift */,
+				ABBF64F71BFF70C9002E879F /* VideoTaxisTableViewController.swift */,
 			);
 			name = Find;
 			sourceTree = "<group>";
@@ -714,6 +721,8 @@
 				AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */,
 				ABE6843E1BED95AB004B2BBD /* RegisterUserViewController.swift */,
 				ABDA830E1BFC809900BBAF74 /* MyUserFavoriteTableViewController.swift */,
+				ABBF64F31BFF64E0002E879F /* ExceptionsViewController.swift */,
+				ABBF64F51BFF6C24002E879F /* AboutViewController.swift */,
 			);
 			name = My;
 			sourceTree = "<group>";
@@ -927,6 +936,8 @@
 				AB2EF2E01BE22C69008E96CC /* ConstraintMaker.swift in Sources */,
 				AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */,
 				AB2ED0491BE37261002CE2E2 /* MyMainTableViewController.swift in Sources */,
+				ABBF64F81BFF70C9002E879F /* VideoTaxisTableViewController.swift in Sources */,
+				ABBF64F61BFF6C24002E879F /* AboutViewController.swift in Sources */,
 				AB3264871BEB8FD80099D02D /* HotAppViewController.swift in Sources */,
 				AB2CBAAA1BDB680000EE0672 /* PlayVideoCommentTableViewController.swift in Sources */,
 				ABCF395B1BDF6D0E00C18508 /* VideoTableViewController.swift in Sources */,
@@ -941,6 +952,7 @@
 				AB0C68041BFD855100FA9261 /* DOFavoriteButton.swift in Sources */,
 				AB42A0B51BF9A4B800A2162E /* Constants.swift in Sources */,
 				AB2EF2E41BE22C69008E96CC /* EdgeInsets.swift in Sources */,
+				ABBF64F41BFF64E0002E879F /* ExceptionsViewController.swift in Sources */,
 				ABDA830B1BFC653600BBAF74 /* UserFavorite.swift in Sources */,
 				AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */,
 				AB76C6A11BEF09140002F138 /* User.swift in Sources */,

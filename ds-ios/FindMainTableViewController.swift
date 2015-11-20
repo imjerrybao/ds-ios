@@ -158,7 +158,7 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 1
     }
 
     
@@ -167,20 +167,20 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         
         cell.titleLabel.textColor = UIColor(rgba:"#f0a22a")
         
+//        if indexPath.row == 0 {
+//            cell.titleLabel.text = "热门标签"
+//            cell.cellImageView.image =  UIImage(named: "tag")
+//        }
+//        
         if indexPath.row == 0 {
-            cell.titleLabel.text = "热门标签"
-            cell.cellImageView.image =  UIImage(named: "tag")
-        }
-        
-        if indexPath.row == 1 {
             cell.titleLabel.text = "排行榜"
             cell.cellImageView.image =  UIImage(named: "sort")
         }
         
-        if indexPath.row == 2 {
-            cell.titleLabel.text = "精彩应用"
-            cell.cellImageView.image =  UIImage(named: "store")
-        }
+//        if indexPath.row == 2 {
+//            cell.titleLabel.text = "精彩应用"
+//            cell.cellImageView.image =  UIImage(named: "store")
+//        }
         
 
         //分割线
@@ -235,12 +235,18 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "toHotApp" { //点击了热门app
+//        if segue.identifier == "toHotApp" { //点击了热门app
+//            
+//            print("点击了热门app")
+//            
+//        }
+        
+        if segue.identifier == "toVideoTaxis" {
             
-            print("点击了热门app")
-            
-        }
-            
+          let videoTaxisTableViewController =  segue.destinationViewController as! VideoTaxisTableViewController
+            videoTaxisTableViewController.title = "排行榜"
+         }
+        
         
     }
 

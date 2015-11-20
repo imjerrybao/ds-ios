@@ -78,10 +78,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //设置3d touch
         
         if #available(iOS 9.1, *) {
-            let firstItemIcon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Cloud)
+            let firstItemIcon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Love)
             let firstItem = UIMutableApplicationShortcutItem(type: "1", localizedTitle: "我的收藏", localizedSubtitle: nil, icon: firstItemIcon, userInfo: nil)
             
-            application.shortcutItems = [firstItem]
+            let firstItem2Icon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Favorite)
+            let firstItem2 = UIMutableApplicationShortcutItem(type: "2", localizedTitle: "排行榜", localizedSubtitle: nil, icon: firstItem2Icon, userInfo: nil)
+            
+            
+            application.shortcutItems = [firstItem,firstItem2]
             
         } else {
             // Fallback on earlier versions
@@ -108,21 +112,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
         var handled = false
         //Get type string from shortcutItem
+        // 获取当前页面TabBar
+        let tabBar = UIApplication.sharedApplication().keyWindow?.rootViewController as! UITabBarController
+        
+        // 获取当前TabBar Nav
+        let nav = tabBar.selectedViewController as! UINavigationController
+        
         if shortcutItem.type == "1" {
             
             // My视图
             let storyMy = UIStoryboard(name: "My", bundle: nil)
-            
-            // 获取当前页面TabBar
-            let tabBar = UIApplication.sharedApplication().keyWindow?.rootViewController as! UITabBarController
-            
-            // 获取当前TabBar Nav
-            let nav = tabBar.selectedViewController as! UINavigationController
+           
             // 收藏列表页
-            let myOrdersVC = storyMy.instantiateViewControllerWithIdentifier("MyCollect")
+            let myCollectView = storyMy.instantiateViewControllerWithIdentifier("MyCollect") as! MyUserFavoriteTableViewController
+            myCollectView.title = "我的收藏"
             // 跳转
-            nav.pushViewController(myOrdersVC, animated: true)
+            nav.pushViewController(myCollectView, animated: true)
             
+            handled = true
+        }
+        if shortcutItem.type == "2" {
+            
+            // Find视图
+            let storyMy = UIStoryboard(name: "Find", bundle: nil)
+            
+            // 排行榜列表页
+            let videoTaxisView = storyMy.instantiateViewControllerWithIdentifier("VideoTaxisTableViewController") as! VideoTaxisTableViewController
+            videoTaxisView.title = "排行榜"
+            // 跳转
+            nav.pushViewController(videoTaxisView, animated: true)
             
             handled = true
         }

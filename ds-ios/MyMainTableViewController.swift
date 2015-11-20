@@ -10,7 +10,7 @@ import UIKit
 import VGParallaxHeader
 import APParallaxHeader
 
-class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
+class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var headerView: UIView!
     
@@ -79,7 +79,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
- 
+        self.navigationController?.navigationBar.hidden = true
        setHeadImage()
     }
     
@@ -172,13 +172,60 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
                 
                 let myUserFavoriteTableViewController =  aStoryboard.instantiateViewControllerWithIdentifier("MyCollect") as! MyUserFavoriteTableViewController
                 myUserFavoriteTableViewController.userId = user!.objectForKey("id") as! Int
-                self.navigationController?.pushViewController(myUserFavoriteTableViewController, animated: true)
+                 self.navigationController?.pushViewController(myUserFavoriteTableViewController, animated: true)
 
             }
         }
+        if indexPath.section == 1 && indexPath.row == 1{
+            print("意见反馈")
+            sendEmailAction()
+        }
         
+        if indexPath.section == 1 && indexPath.row == 0{
+            print("给个笑脸")
+            let evaluateString = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1044917946&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
+            UIApplication.sharedApplication().openURL(NSURL(string: evaluateString)!)
+            
+        }
+        
+//        if indexPath.section == 1 && indexPath.row == 0{
+//            print("朋友需要")
+//            let evaluateString = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1044917946&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
+//            UIApplication.sharedApplication().openURL(NSURL(string: evaluateString)!)
+//            
+//        }
+//        
         
     }
+    
+    
+    //发送邮件功能
+    func sendEmailAction(){
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        //设置收件人
+        mailComposerVC.setToRecipients(["iosdev@itjh.com.cn"])
+        //设置主题
+        mailComposerVC.setSubject("逗视意见反馈")
+        //邮件内容
+        let info:Dictionary = NSBundle.mainBundle().infoDictionary!
+        let appName = info["CFBundleName"] as! String
+        let appVersion = info["CFBundleShortVersionString"] as! String
+        mailComposerVC.setMessageBody("</br></br></br></br></br>基本信息：</br></br>\(appName)  \(appVersion)</br> \(UIDevice.currentDevice().name)</br>iOS \(UIDevice.currentDevice().systemVersion)", isHTML: true)
+        return mailComposerVC
+    }
+    // MARK: MFMailComposeViewControllerDelegate Method
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
 
     // MARK: - Table view data source
 
@@ -246,22 +293,8 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
         
         if segue.identifier == "toUserFavorite" {
             
-            //判断用户是否登录
-            let user =  userDefaults.objectForKey("userInfo")
-            
-            if (user == nil) {
-                //弹窗登录
-                let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
-                
-                let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
-                self.navigationController?.pushViewController(loginTableView, animated: true)
-
-            }else{
-                
                 let myUserFavoriteTableViewController =  segue.destinationViewController as! MyUserFavoriteTableViewController
-                myUserFavoriteTableViewController.userId = user!.objectForKey("id") as! Int
-                
-            }
+            
 
         }
 //

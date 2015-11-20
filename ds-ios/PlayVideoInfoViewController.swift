@@ -63,6 +63,12 @@ class PlayVideoInfoViewController: UIViewController {
             }
             
         }
+        if isCollectStatus == 1{
+            isC = true
+            collectUIButton.setImage(UIImage(named: "cloud"), forState:.Normal)
+
+            
+        }
         
         
         self.alamofireManager =  Manager.sharedInstanceAndTimeOut

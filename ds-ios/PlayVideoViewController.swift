@@ -47,16 +47,33 @@ class PlayVideoViewController: UIViewController {
         let url = NSURL(string: videoUrlString)
         self.addVideoPlayerWithURL(url!)
         
+        let bb = userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
+        
         //判断用户是否收藏过
         if isCollectStatus == 0  {
             //没有收藏过
-        }else{
+            if bb != nil {
+                if bb as! Bool {
+                    isC = true
+                    
+                }
+            }
             
-            if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)") as! Bool {
-                isC = true
+        }else{
+            if bb != nil {
+                if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)") as! Bool {
+                    isC = true
+                     
+                    
+                }
             }
             
         }
+        if isCollectStatus == 1{
+            isC = true
+
+        }
+
     }
     
     //完全进入视图 才播放
