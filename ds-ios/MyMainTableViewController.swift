@@ -20,9 +20,12 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     
     
     let loginButton = UIButton(frame: CGRectMake(0, 200, 80, 20))
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        
+        
         self.navigationController?.navigationBar.hidden  = true
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
@@ -76,6 +79,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+ 
        setHeadImage()
     }
     

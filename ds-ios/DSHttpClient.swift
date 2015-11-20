@@ -39,13 +39,16 @@ struct HttpClientByVideo {
         
         // 请求方法
         case VideosByType(Int,Int,Int,Int) //根据类型获取视频
-        
+        case getVideosByBanner() //获取发现Banner视频
+
         
         
         // 不同请求，对应不同请求类型
         var method: Alamofire.Method {
             switch self {
             case .VideosByType:
+                return .GET
+            case .getVideosByBanner:
                 return .GET
             }
         }
@@ -57,6 +60,8 @@ struct HttpClientByVideo {
                 switch self {
                 case .VideosByType(let vid, let count, let type,let userId):
                     return ("getVideosByType/\(vid)/\(count)/\(type)/\(userId)")
+                case .getVideosByBanner():
+                    return "getVideosByBanner"
                 }
             }()
             

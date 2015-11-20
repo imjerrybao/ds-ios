@@ -173,7 +173,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="lmE-2F-NRg">
+                            <tableViewSection headerTitle="" id="lmE-2F-NRg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8SJ-Tp-otx" imageView="TAD-eN-h4z" rowHeight="45" style="IBUITableViewCellStyleDefault" id="mbm-p4-lo9">
                                         <rect key="frame" x="0.0" y="400" width="600" height="45"/>
@@ -739,19 +739,8 @@
                                                 <constraint firstAttribute="width" constant="118" id="KfQ-eZ-14G"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-H7-n4b">
-                                            <rect key="frame" x="144" y="70" width="100" height="21"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="9hQ-wZ-SOS"/>
-                                                <constraint firstAttribute="width" constant="100" id="XaA-vd-dHZ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痛苦来的太快，我还想多美几秒" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1S-aK-8yO">
-                                            <rect key="frame" x="144" y="8" width="439" height="54"/>
+                                            <rect key="frame" x="144" y="23" width="439" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -760,21 +749,17 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="rNW-8z-lXk" firstAttribute="top" secondItem="M1S-aK-8yO" secondAttribute="top" id="1ky-tk-ey6"/>
+                                        <constraint firstItem="rNW-8z-lXk" firstAttribute="top" secondItem="M1S-aK-8yO" secondAttribute="top" constant="-15" id="1ky-tk-ey6"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="M1S-aK-8yO" secondAttribute="trailing" constant="9" id="EsS-5X-9lk"/>
-                                        <constraint firstItem="qgw-H7-n4b" firstAttribute="leading" secondItem="rNW-8z-lXk" secondAttribute="trailing" constant="8" symbolic="YES" id="IFg-9z-nL7"/>
-                                        <constraint firstItem="M1S-aK-8yO" firstAttribute="top" secondItem="PF2-Vb-dBs" secondAttribute="topMargin" id="QGo-0Y-36x"/>
+                                        <constraint firstItem="M1S-aK-8yO" firstAttribute="top" secondItem="PF2-Vb-dBs" secondAttribute="topMargin" constant="15" id="QGo-0Y-36x"/>
                                         <constraint firstItem="rNW-8z-lXk" firstAttribute="centerY" secondItem="PF2-Vb-dBs" secondAttribute="centerY" id="QoN-RJ-lNr"/>
-                                        <constraint firstItem="qgw-H7-n4b" firstAttribute="top" secondItem="M1S-aK-8yO" secondAttribute="bottom" constant="8" id="awR-dC-GH3"/>
                                         <constraint firstItem="rNW-8z-lXk" firstAttribute="leading" secondItem="PF2-Vb-dBs" secondAttribute="leadingMargin" constant="10" id="uV5-aT-bZb"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="qgw-H7-n4b" secondAttribute="bottom" constant="0.5" id="uWQ-bA-wZ3"/>
                                         <constraint firstItem="M1S-aK-8yO" firstAttribute="leading" secondItem="rNW-8z-lXk" secondAttribute="trailing" constant="8" symbolic="YES" id="ulb-o9-mrB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="picImageView" destination="rNW-8z-lXk" id="Gmp-pN-pTm"/>
-                                    <outlet property="timeLabel" destination="qgw-H7-n4b" id="HE6-gh-b9W"/>
                                     <outlet property="titleLabel" destination="M1S-aK-8yO" id="jhG-fX-R70"/>
                                     <segue destination="VQg-7E-9FM" kind="show" identifier="toPlayVideo" id="2pi-cm-pGx"/>
                                 </connections>
@@ -787,10 +772,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="506-84-BdP"/>
+                    <connections>
+                        <outlet property="topView" destination="TV8-V8-ilO" id="Y2G-9w-d8C"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPK-cd-dXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="TV8-V8-ilO">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" red="1" green="0.87021605560000004" blue="0.34280958080000001" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="-2926" y="2992"/>
+            <point key="canvasLocation" x="-2926" y="2958"/>
         </scene>
     </scenes>
     <resources>

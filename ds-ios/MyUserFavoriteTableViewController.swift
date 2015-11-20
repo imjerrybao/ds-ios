@@ -23,6 +23,7 @@ class MyUserFavoriteTableViewController: UITableViewController {
     // 起始页码
     var currentPage = 0
     
+    @IBOutlet var topView: UIView!
     
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
     
@@ -37,8 +38,10 @@ class MyUserFavoriteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//          topView.frame = CGRectMake(0.0, 0.0 ,self.view.frame.width, 20)
+//        self.view.addSubview(topView)
         
-        self.view.frame = CGRectMake(0, 20, self.tableView.frame.width, self.tableView.frame.height)
+//        self.view.frame = CGRectMake(0, 20, self.tableView.frame.width, self.tableView.frame.height)
 
         
         //设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
@@ -72,8 +75,7 @@ class MyUserFavoriteTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
-        
-     }
+      }
     
     
     
@@ -198,7 +200,6 @@ class MyUserFavoriteTableViewController: UITableViewController {
             let videoInfo = (videos.objectAtIndex(indexPath.row) as! VideoInfo)
             
             cell.titleLabel.text = videoInfo.title
-            cell.timeLabel.text = videoInfo.cTime
             cell.picImageView.kf_setImageWithURL(NSURL(string: videoInfo.pic)!)
             
         }

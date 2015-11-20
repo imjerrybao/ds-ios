@@ -234,7 +234,9 @@ class PlayVideoViewController: UIViewController {
         
         let groupedOptionsActions = UIPreviewActionGroup(title: "分享", style: .Default, actions: [subActionGoTo, subActionSave] )
         
-        return [actionDefault,   groupedOptionsActions]
+//        return [actionDefault,   groupedOptionsActions]
+        return [actionDefault]
+
     }()
     
     

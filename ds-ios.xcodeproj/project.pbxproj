@@ -24,6 +24,8 @@
 		AB0C68221BFEDA2B00FA9261 /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C681A1BFEDA2B00FA9261 /* UMSLoginViewController.xib */; };
 		AB0C68231BFEDA2B00FA9261 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C681B1BFEDA2B00FA9261 /* UMSnsAccountViewController.xib */; };
 		AB0C68241BFEDA2B00FA9261 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C681C1BFEDA2B00FA9261 /* UMSShareListController.xib */; };
+		AB0C68271BFF124F00FA9261 /* SendVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C68261BFF124E00FA9261 /* SendVideoViewController.swift */; };
+		AB0C682A1BFF127600FA9261 /* SendVideo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0C68281BFF127600FA9261 /* SendVideo.storyboard */; };
 		AB0CA1531BE5B9E700134F1E /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */; };
 		AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */; };
 		AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */; };
@@ -139,6 +141,8 @@
 		AB0C681A1BFEDA2B00FA9261 /* UMSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSLoginViewController.xib; sourceTree = "<group>"; };
 		AB0C681B1BFEDA2B00FA9261 /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
 		AB0C681C1BFEDA2B00FA9261 /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
+		AB0C68261BFF124E00FA9261 /* SendVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendVideoViewController.swift; sourceTree = "<group>"; };
+		AB0C68291BFF127600FA9261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SendVideo.storyboard; sourceTree = "<group>"; };
 		AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +370,14 @@
 			path = "ds-ios";
 			sourceTree = "<group>";
 		};
+		AB0C68251BFF122900FA9261 /* SendVideo */ = {
+			isa = PBXGroup;
+			children = (
+				AB0C68261BFF124E00FA9261 /* SendVideoViewController.swift */,
+			);
+			name = SendVideo;
+			sourceTree = "<group>";
+		};
 		AB0CA13F1BE5B23E00134F1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				AB03C80E1BD6A09A00F0A37C /* Main.storyboard */,
+				AB0C68281BFF127600FA9261 /* SendVideo.storyboard */,
 				ABCF395E1BE07E9D00C18508 /* My.storyboard */,
 				AB46FBC01BD927CE001C3C42 /* Find.storyboard */,
 				AB46FBBD1BD927AE001C3C42 /* Home.storyboard */,
@@ -563,6 +576,7 @@
 		AB58EF981BD6A1F800E2B428 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB0C68251BFF122900FA9261 /* SendVideo */,
 				AB58EF9B1BD6A22C00E2B428 /* Main */,
 				AB58EF991BD6A21200E2B428 /* Home */,
 				AB58EF9A1BD6A21C00E2B428 /* Find */,
@@ -822,6 +836,7 @@
 				AB0C681D1BFEDA2B00FA9261 /* UMSCommentDetailController.xib in Resources */,
 				AB0C68241BFEDA2B00FA9261 /* UMSShareListController.xib in Resources */,
 				AB58EFC11BD6A41A00E2B428 /* kr-video-player-point@3x.png in Resources */,
+				AB0C682A1BFF127600FA9261 /* SendVideo.storyboard in Resources */,
 				AB46FBC21BD927CE001C3C42 /* Find.storyboard in Resources */,
 				AB58EFBA1BD6A41A00E2B428 /* kr-video-player-fullscreen@2x.png in Resources */,
 				AB03C8181BD6A09A00F0A37C /* LaunchScreen.storyboard in Resources */,
@@ -934,6 +949,7 @@
 				AB58EF8F1BD6A19A00E2B428 /* HomeViewController.swift in Sources */,
 				ABF6AEE61BE0D42800448D75 /* ParallaxHeaderView.m in Sources */,
 				ABDA830D1BFC72D300BBAF74 /* ResponseEntity.swift in Sources */,
+				AB0C68271BFF124F00FA9261 /* SendVideoViewController.swift in Sources */,
 				ABCF395D1BDF6F6C00C18508 /* DSHttpClient.swift in Sources */,
 				AB58EF921BD6A19A00E2B428 /* PlayVideoViewController.swift in Sources */,
 				AB2EF2DE1BE22C69008E96CC /* Constraint.swift in Sources */,
@@ -971,6 +987,14 @@
 				AB03C8171BD6A09A00F0A37C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AB0C68281BFF127600FA9261 /* SendVideo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB0C68291BFF127600FA9261 /* Base */,
+			);
+			name = SendVideo.storyboard;
 			sourceTree = "<group>";
 		};
 		AB46FBBD1BD927AE001C3C42 /* Home.storyboard */ = {

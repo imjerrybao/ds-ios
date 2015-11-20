@@ -18,53 +18,12 @@
                     <connections>
                         <segue destination="QjB-Rr-sLd" kind="relationship" relationship="viewControllers" id="sAi-XE-fX7"/>
                         <segue destination="8Gh-nM-bSK" kind="relationship" relationship="viewControllers" id="1vm-3O-pyr"/>
-                        <segue destination="fY8-1v-gVA" kind="relationship" relationship="viewControllers" id="EAA-1l-4Kq"/>
                         <segue destination="S37-2X-W1z" kind="relationship" relationship="viewControllers" id="0wu-av-0Ef"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1D-i5-lQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4351" y="1434"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="0TJ-BC-BBP">
-            <objects>
-                <viewController id="kA2-8k-gUM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Lgx-cr-Bnr"/>
-                        <viewControllerLayoutGuide type="bottom" id="cmk-LQ-3JL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Mk-TO-376">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="69M-UF-34A"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bm0-kL-p3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3657" y="3198"/>
-        </scene>
-        <!--发布-->
-        <scene sceneID="NtT-g0-7cj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fY8-1v-gVA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="发布" image="add" id="el2-F8-iFj"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PXD-Uw-58Y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kA2-8k-gUM" kind="relationship" relationship="rootViewController" id="duk-jR-Tsb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sp6-xC-b9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3657" y="2454"/>
         </scene>
         <!--UINavigationController-OxP-gU-fvi-->
         <scene sceneID="MEm-fN-acj">
@@ -90,7 +49,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="PopVideoTableViewController" storyboardName="Home" referencedIdentifier="PopVideoTableViewController" id="C34-f3-egK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2y-cF-Qv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-446" y="388"/>
+            <point key="canvasLocation" x="-2350.5" y="796"/>
         </scene>
         <!--HotVideoTableViewController-->
         <scene sceneID="aGU-qR-8KW">
@@ -120,8 +79,15 @@
             </objects>
             <point key="canvasLocation" x="-2697" y="2246"/>
         </scene>
+        <!--SendVideo-->
+        <scene sceneID="Koq-Ye-1c5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SendVideo" id="hT0-9h-49Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yPx-c0-PBW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJ4-yC-fuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3657" y="2454"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="add" width="32" height="32"/>
-    </resources>
 </document>
