@@ -42,6 +42,7 @@ extension VideoTableViewController: UIViewControllerPreviewingDelegate{
         playVideoViewController.isCollectStatus = videoInfo.isCollectStatus
         playVideoViewController.userId = userId
         playVideoViewController.videoId = videoInfo.id
+        playVideoViewController.videoPic = videoInfo.pic
 
         let cellFrame = tableView.cellForRowAtIndexPath(indexPath)!.frame
         

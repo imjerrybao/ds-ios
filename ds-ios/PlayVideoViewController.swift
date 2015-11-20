@@ -19,6 +19,8 @@ class PlayVideoViewController: UIViewController {
     
     var videoInfoLable = ""
     
+    var videoPic = ""
+    
     var videoId = ""
     
     var userId = 0
@@ -140,6 +142,8 @@ class PlayVideoViewController: UIViewController {
         playVideoInfoViewController.isCollectStatus = isCollectStatus
         playVideoInfoViewController.userId = userId
         playVideoInfoViewController.videoId = videoId
+        playVideoInfoViewController.videoPic = videoPic
+        playVideoInfoViewController.videoUrl = videoUrlString
         
         controllerArray.append(playVideoInfoViewController)
         

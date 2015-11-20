@@ -16,6 +16,14 @@
 		AB03C8181BD6A09A00F0A37C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB03C8161BD6A09A00F0A37C /* LaunchScreen.storyboard */; };
 		AB03E0361BDA3225000F8D6C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB03E0351BDA3225000F8D6C /* AVKit.framework */; };
 		AB0C68041BFD855100FA9261 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C68031BFD855100FA9261 /* DOFavoriteButton.swift */; };
+		AB0C681D1BFEDA2B00FA9261 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C68151BFEDA2B00FA9261 /* UMSCommentDetailController.xib */; };
+		AB0C681E1BFEDA2B00FA9261 /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C68161BFEDA2B00FA9261 /* UMSCommentInputController.xib */; };
+		AB0C681F1BFEDA2B00FA9261 /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C68171BFEDA2B00FA9261 /* UMSCommentInputControlleriPad.xib */; };
+		AB0C68201BFEDA2B00FA9261 /* UMShareEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C68181BFEDA2B00FA9261 /* UMShareEditViewController.xib */; };
+		AB0C68211BFEDA2B00FA9261 /* UMShareEditViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C68191BFEDA2B00FA9261 /* UMShareEditViewControlleriPad.xib */; };
+		AB0C68221BFEDA2B00FA9261 /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C681A1BFEDA2B00FA9261 /* UMSLoginViewController.xib */; };
+		AB0C68231BFEDA2B00FA9261 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C681B1BFEDA2B00FA9261 /* UMSnsAccountViewController.xib */; };
+		AB0C68241BFEDA2B00FA9261 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0C681C1BFEDA2B00FA9261 /* UMSShareListController.xib */; };
 		AB0CA1531BE5B9E700134F1E /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */; };
 		AB0CA1551BE5BA8200134F1E /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */; };
 		AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */; };
@@ -123,6 +131,14 @@
 		AB03C8191BD6A09A00F0A37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB03E0351BDA3225000F8D6C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		AB0C68031BFD855100FA9261 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
+		AB0C68151BFEDA2B00FA9261 /* UMSCommentDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentDetailController.xib; sourceTree = "<group>"; };
+		AB0C68161BFEDA2B00FA9261 /* UMSCommentInputController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputController.xib; sourceTree = "<group>"; };
+		AB0C68171BFEDA2B00FA9261 /* UMSCommentInputControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputControlleriPad.xib; sourceTree = "<group>"; };
+		AB0C68181BFEDA2B00FA9261 /* UMShareEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewController.xib; sourceTree = "<group>"; };
+		AB0C68191BFEDA2B00FA9261 /* UMShareEditViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewControlleriPad.xib; sourceTree = "<group>"; };
+		AB0C681A1BFEDA2B00FA9261 /* UMSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSLoginViewController.xib; sourceTree = "<group>"; };
+		AB0C681B1BFEDA2B00FA9261 /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
+		AB0C681C1BFEDA2B00FA9261 /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		AB0CA1521BE5B9E700134F1E /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		AB0CA1541BE5BA8200134F1E /* CustomButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		AB0CA1561BE60C3D00134F1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -490,6 +506,14 @@
 		AB50ADE51BF5F243008A1819 /* SocialSDKXib */ = {
 			isa = PBXGroup;
 			children = (
+				AB0C68151BFEDA2B00FA9261 /* UMSCommentDetailController.xib */,
+				AB0C68161BFEDA2B00FA9261 /* UMSCommentInputController.xib */,
+				AB0C68171BFEDA2B00FA9261 /* UMSCommentInputControlleriPad.xib */,
+				AB0C68181BFEDA2B00FA9261 /* UMShareEditViewController.xib */,
+				AB0C68191BFEDA2B00FA9261 /* UMShareEditViewControlleriPad.xib */,
+				AB0C681A1BFEDA2B00FA9261 /* UMSLoginViewController.xib */,
+				AB0C681B1BFEDA2B00FA9261 /* UMSnsAccountViewController.xib */,
+				AB0C681C1BFEDA2B00FA9261 /* UMSShareListController.xib */,
 			);
 			path = SocialSDKXib;
 			sourceTree = "<group>";
@@ -790,8 +814,13 @@
 				ABCF39601BE07E9D00C18508 /* My.storyboard in Resources */,
 				AB58EFBE1BD6A41A00E2B428 /* kr-video-player-play@2x.png in Resources */,
 				AB58EFB91BD6A41A00E2B428 /* kr-video-player-close@3x.png in Resources */,
+				AB0C68221BFEDA2B00FA9261 /* UMSLoginViewController.xib in Resources */,
 				AB58EFBF1BD6A41A00E2B428 /* kr-video-player-play@3x.png in Resources */,
+				AB0C68201BFEDA2B00FA9261 /* UMShareEditViewController.xib in Resources */,
+				AB0C68211BFEDA2B00FA9261 /* UMShareEditViewControlleriPad.xib in Resources */,
 				AB58EFBB1BD6A41A00E2B428 /* kr-video-player-fullscreen@3x.png in Resources */,
+				AB0C681D1BFEDA2B00FA9261 /* UMSCommentDetailController.xib in Resources */,
+				AB0C68241BFEDA2B00FA9261 /* UMSShareListController.xib in Resources */,
 				AB58EFC11BD6A41A00E2B428 /* kr-video-player-point@3x.png in Resources */,
 				AB46FBC21BD927CE001C3C42 /* Find.storyboard in Resources */,
 				AB58EFBA1BD6A41A00E2B428 /* kr-video-player-fullscreen@2x.png in Resources */,
@@ -807,7 +836,10 @@
 				AB58EFBC1BD6A41A00E2B428 /* kr-video-player-pause@2x.png in Resources */,
 				AB50ADFD1BF5F243008A1819 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				AB58EFC01BD6A41A00E2B428 /* kr-video-player-point@2x.png in Resources */,
+				AB0C68231BFEDA2B00FA9261 /* UMSnsAccountViewController.xib in Resources */,
 				AB46FBBF1BD927AE001C3C42 /* Home.storyboard in Resources */,
+				AB0C681E1BFEDA2B00FA9261 /* UMSCommentInputController.xib in Resources */,
+				AB0C681F1BFEDA2B00FA9261 /* UMSCommentInputControlleriPad.xib in Resources */,
 				AB50ADF71BF5F243008A1819 /* UMSocialLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

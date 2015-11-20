@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMSocialData.setAppKey("563b6bdc67e58e73ee002acd")
         
         UMSocialQQHandler.setQQWithAppId("1104864621", appKey: "AQKpnMRxELiDWHwt", url: "www.itjh.net")
+        
         UMSocialQQHandler.setSupportWebView(true)
         
         UMSocialSinaHandler.openSSOWithRedirectURL("http://sns.whalecloud.com/sina2/callback")
@@ -84,11 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else {
             // Fallback on earlier versions
-        }
-        
-
-        
-        
+        } 
         return true
     }
     

@@ -351,6 +351,7 @@ class VideoTableViewController: UITableViewController {
             playVideoViewController.videoUrlString = videoInfo.url
             playVideoViewController.userId = userId
             playVideoViewController.videoId = videoInfo.id
+            playVideoViewController.videoPic = videoInfo.pic
         }
     }
 

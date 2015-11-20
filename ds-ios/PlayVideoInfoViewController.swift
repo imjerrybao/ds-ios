@@ -20,7 +20,11 @@ class PlayVideoInfoViewController: UIViewController {
     
     var videoInfo:String = ""
     
+    var videoPic = ""
+    
     var videoId = ""
+    
+    var videoUrl = ""
     
     var userId = 0
     
@@ -153,16 +157,33 @@ class PlayVideoInfoViewController: UIViewController {
         
         print("点击了分享")
         
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText: "fensss ，www.umeng.com/social", shareImage: UIImage(named: "BruceLee"), shareToSnsNames: [UMShareToSina,UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline], delegate: nil)
+//        https://api.doushi.me/share.html?title=我是逗视&pic=http://dlqncdn.miaopai.com/stream/W5uteYTTs4zO1-l3OEDjKA___m.jpg&videourl=http://gslb.miaopai.com/stream/W5uteYTTs4zO1-l3OEDjKA__.mp4
+        let share = "https://api.doushi.me/share.html?title=\(videoTitle)&pic=\(videoPic)&url=\(videoUrl)"
         
-        UMSocialData.defaultData().extConfig.title = "ddd"
-        UMSocialData.defaultData().extConfig.qqData.url = "http://www.itjh.net/aa.html"
-        UMSocialData.defaultData().extConfig.qzoneData.url = "http://www.itjh.net/aa.html"
         
-        UMSocialData.defaultData().extConfig.wechatSessionData.url = "http://www.itjh.net/aa.html";
-        UMSocialData.defaultData().extConfig.wechatTimelineData.url = "http://www.itjh.net/aa.html";
         
-    }
+        let shareImage = UIImageView()
+        
+        shareImage.kf_setImageWithURL(NSURL(string: videoPic)!)
+        
+        
+        UMSocialData.defaultData().extConfig.title = videoTitle
+        
+        UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "\(share)")
+        
+//
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText: "有趣的视频，分享自逗视 ", shareImage: shareImage.image, shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone], delegate: nil)
+        
+        UMSocialData.defaultData().extConfig.wechatSessionData.shareImage = shareImage.image
+        UMSocialData.defaultData().extConfig.wechatTimelineData.shareImage = shareImage.image
+        
+        UMSocialData.defaultData().extConfig.qqData.shareImage = shareImage.image
+        UMSocialData.defaultData().extConfig.qzoneData.shareImage = shareImage.image
+        
+        UMSocialData.defaultData().extConfig.sinaData.shareImage = shareImage.image
+        UMSocialData.defaultData().extConfig.sinaData.shareText = videoTitle + videoUrl
+        
+     }
     
     /*
     // MARK: - Navigation
