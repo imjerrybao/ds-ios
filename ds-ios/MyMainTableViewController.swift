@@ -239,25 +239,19 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MF
             print("朋友需要")
             let share = "https://itunes.apple.com/cn/app/id1044917946"
             
-            let shareImage = UIImageView()
             
+            
+            UMSocialData.defaultData().extConfig.title = "搞笑,恶搞视频全聚合,尽在逗视App"
             
             UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "\(share)")
             
-            UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText: "搞笑,逗比的视频，赶紧下载逗视吧", shareImage: UIImage(named: "doushi_icon"), shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone], delegate: nil)
             
-            UMSocialData.defaultData().extConfig.wechatSessionData.shareImage = UIImage(named: "doushi_icon")
-            UMSocialData.defaultData().extConfig.wechatTimelineData.shareImage = UIImage(named: "doushi_icon")
+            let snsArray = [UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToQzone,UMShareToSina,UMShareToFacebook,UMShareToTwitter,UMShareToEmail]
             
-            UMSocialData.defaultData().extConfig.qqData.url = share
             
-            UMSocialData.defaultData().extConfig.qzoneData.url = share
-            
-            UMSocialData.defaultData().extConfig.qzoneData.shareImage = UIImage(named: "doushi_icon")
-            UMSocialData.defaultData().extConfig.sinaData.shareText = "搞笑,逗比的视频，赶紧下载逗视吧" + share
-            
-        }
-//
+            UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText:"搞笑,恶搞视频全聚合,尽在逗视App   " + share, shareImage: UIImage(named: "doushi_icon"), shareToSnsNames: snsArray, delegate: nil)
+             
+         }
         
     }
     

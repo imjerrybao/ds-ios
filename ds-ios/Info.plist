@@ -18,6 +18,49 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+    
+    <key>UIApplicationShortcutItems</key>
+    <array>
+        <dict>
+            <key>UIApplicationShortcutItemIconType</key>
+            <string>UIApplicationShortcutIconTypeSearch</string>
+            
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>收藏的搞笑视频</string>
+            
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>我的收藏</string>
+            
+            <key>UIApplicationShortcutItemType</key>
+            <string>1</string>
+            
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>hearts</string>
+            
+            
+        </dict>
+        <dict>
+            <key>UIApplicationShortcutItemIconType</key>
+            <string>UIApplicationShortcutIconTypeShare</string>
+            
+            <key>UIApplicationShortcutItemSubtitle</key>
+            <string>搞笑视频排行榜</string>
+            
+            <key>UIApplicationShortcutItemTitle</key>
+            <string>排行榜</string>
+            
+            <key>UIApplicationShortcutItemType</key>
+            <string>2</string>
+            
+            
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>sort</string>
+            
+        </dict>
+    </array>
+    
+    
+    
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

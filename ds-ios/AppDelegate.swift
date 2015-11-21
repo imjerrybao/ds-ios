@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import Alamofire
+
 
 
 @UIApplicationMain
@@ -38,58 +40,76 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "www.doushi.me")
         
         
+        
+        
         //Share SMS
         SMSSDK.registerApp("c06e0d3b9ec2", withSecret: "ad02d765bad19681273e61a5c570a145")
         
         //推送
-        UMessage.startWithAppkey("563b6bdc67e58e73ee002acd", launchOptions: launchOptions)
+//        UMessage.startWithAppkey("563b6bdc67e58e73ee002acd", launchOptions: launchOptions)
+//        
+//         let action1 = UIMutableUserNotificationAction()
+//        
+//        action1.identifier = "toPlayVideo"
+//        action1.title = "Accept"
+//        action1.activationMode = UIUserNotificationActivationMode.Foreground//当点击的时候启动程序
+//        
+//       let action2 =  UIMutableUserNotificationAction()
+//            action2.identifier =  "action2_identifier";
+//            action2.title = "Reject";
+//            action2.activationMode = UIUserNotificationActivationMode.Background;//当点击的时候不启动程序，在后台处理
+//            action2.authenticationRequired = true;//需要解锁才能处理，如果        //
+//        
+//        
+//        let categorys = UIMutableUserNotificationCategory()
+//        categorys.identifier = "category1"
+//        categorys.setActions([action1,action2], forContext: UIUserNotificationActionContext.Default)
+//        
+//    
+//        let seta =  NSSet(object: categorys)
+//        
+//        let userSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories: seta as? Set<UIUserNotificationCategory>)
+//        
+//    
+//        UMessage.registerRemoteNotificationAndUserNotificationSettings(userSettings)
+//        UMessage.setLogEnabled(false)
         
         
-        let action1 = UIMutableUserNotificationAction()
+        
+        print("项目启动了")
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 1
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         
         
-        action1.identifier = "toPlayVideo"
-        action1.title = "Accept"
-        action1.activationMode = UIUserNotificationActivationMode.Foreground//当点击的时候启动程序
+        // Required
         
-       let action2 =  UIMutableUserNotificationAction()
-            action2.identifier =  "action2_identifier";
-            action2.title = "Reject";
-            action2.activationMode = UIUserNotificationActivationMode.Background;//当点击的时候不启动程序，在后台处理
-            action2.authenticationRequired = true;//需要解锁才能处理，如果        //
-        
-        
-        let categorys = UIMutableUserNotificationCategory()
-        categorys.identifier = "category1"
-        categorys.setActions([action1,action2], forContext: UIUserNotificationActionContext.Default)
-        
-    
-        let seta =  NSSet(object: categorys)
-        
-        let userSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories: seta as? Set<UIUserNotificationCategory>)
+        APService.registerForRemoteNotificationTypes(UIUserNotificationType.Badge.rawValue | UIUserNotificationType.Badge.rawValue | UIUserNotificationType.Alert.rawValue , categories: nil)
         
         
         
-    
-        UMessage.registerRemoteNotificationAndUserNotificationSettings(userSettings)
-        UMessage.setLogEnabled(false)
+        
+        // Required
+        APService.setupWithOption(launchOptions)
+        
+        
         
         
         //设置3d touch
         
-        if #available(iOS 9.1, *) {
-            let firstItemIcon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Love)
-            let firstItem = UIMutableApplicationShortcutItem(type: "1", localizedTitle: "我的收藏", localizedSubtitle: nil, icon: firstItemIcon, userInfo: nil)
-            
-            let firstItem2Icon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Favorite)
-            let firstItem2 = UIMutableApplicationShortcutItem(type: "2", localizedTitle: "排行榜", localizedSubtitle: nil, icon: firstItem2Icon, userInfo: nil)
-            
-            
-            application.shortcutItems = [firstItem,firstItem2]
-            
-        } else {
-            // Fallback on earlier versions
-        } 
+//        if #available(iOS 9.0, *) {
+//            let firstItemIcon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Compose)
+//            let firstItem = UIMutableApplicationShortcutItem(type: "1", localizedTitle: "我的收藏", localizedSubtitle: nil, icon: firstItemIcon, userInfo: nil)
+//            
+//            let firstItem2Icon:UIApplicationShortcutIcon =  UIApplicationShortcutIcon(type: .Pause)
+//            let firstItem2 = UIMutableApplicationShortcutItem(type: "2", localizedTitle: "排行榜", localizedSubtitle: nil, icon: firstItem2Icon, userInfo: nil)
+//            
+//            
+//            application.shortcutItems = [firstItem,firstItem2]
+//            
+//        } else {
+//            // Fallback on earlier versions
+//        } 
         return true
     }
     
@@ -149,12 +169,79 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        UMessage.registerDeviceToken(deviceToken)
+//        UMessage.registerDeviceToken(deviceToken)
+        
+        // Required
+//        [APService registerDeviceToken:deviceToken];
+        print("deviceToken ->  \(deviceToken)" )
+
+        APService.registerDeviceToken(deviceToken)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-//        print("userInfo ->  \(userInfo)" )
-        UMessage.didReceiveRemoteNotification(userInfo)
+        print("userInfo ->  \(userInfo)" )
+//        UMessage.didReceiveRemoteNotification(userInfo)
+        
+        APService.handleRemoteNotification(userInfo)
+        
+       print(userInfo[1])
+        
+       let userInfoDict =  userInfo as NSDictionary
+        
+        // 获取当前页面TabBar
+        let tabBar = UIApplication.sharedApplication().keyWindow?.rootViewController as! UITabBarController
+        
+        // 获取当前TabBar Nav
+        let nav = tabBar.selectedViewController as! UINavigationController
+        
+        //播放
+        let aStoryboard = UIStoryboard(name: "Home", bundle:NSBundle.mainBundle())
+        let playVideoViewController = aStoryboard.instantiateViewControllerWithIdentifier("playVideoView") as! PlayVideoViewController
+        
+        let videoId =  userInfoDict["videoId"] as! String
+        
+        var userId = 0
+        
+        if (user != nil) {
+            userId = user!.objectForKey("id") as! Int
+        }
+
+        
+        alamofireManager.request(HttpClientByVideo.DSRouter.getVideosById(videoId, userId)).responseJSON { (request, response, result) -> Void in
+            print("请求")
+            switch result {
+            case .Success:
+                print("Validation Successful")
+                if let JSON = result.value {
+                    if response?.statusCode == 200 {
+                     
+                    let videoDict = (JSON as! NSDictionary).valueForKey("content") as! NSDictionary
+                     
+                        playVideoViewController.videoTitleLabel = videoDict["title"] as! String
+                        
+                        playVideoViewController.videoInfoLable  = videoDict["title"] as! String
+                        
+                        playVideoViewController.isCollectStatus = videoDict["isCollectStatus"] as! Int
+                        
+                        playVideoViewController.videoUrlString = videoDict["videoUrl"] as! String
+                        
+                        playVideoViewController.userId = userId
+                        
+                        playVideoViewController.videoId = videoDict["id"] as! String
+                        
+                        playVideoViewController.videoPic = videoDict["pic"] as! String
+                        
+                        nav.pushViewController(playVideoViewController, animated: true)
+                        
+                    }
+                    
+                    
+                }
+                
+            case .Failure(let error):
+                print(error)
+                }
+            }
     }
     
     
@@ -177,6 +264,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        print("applicationWillEnterForeground")
+        
+        
+//        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+//        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 1
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
     }
 
     func applicationDidBecomeActive(application: UIApplication) {

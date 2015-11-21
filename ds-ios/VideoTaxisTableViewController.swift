@@ -88,18 +88,27 @@ class VideoTaxisTableViewController: UITableViewController {
         
     }
 
-    
+    let user =  userDefaults.objectForKey("userInfo")
+
     
     // MARK: - Table view data source
     // 加载新数据
     func loadNewData(){
+        
+       
         
         self.currentPage = 0
         if populatingVideo {
             return
         }
         populatingVideo = true
-        alamofireManager.request(HttpClientByVideo.DSRouter.getVideoTaxis()).responseJSON { (request, response, result) -> Void in
+        
+        if (user != nil) {
+            userId = user!.objectForKey("id") as! Int
+            
+        }
+        
+        alamofireManager.request(HttpClientByVideo.DSRouter.getVideoTaxis(userId)).responseJSON { (request, response, result) -> Void in
             print("请求")
             switch result {
             case .Success:

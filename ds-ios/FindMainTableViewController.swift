@@ -73,14 +73,15 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         
     }
     
+    var userId = 0
+    let user =  userDefaults.objectForKey("userInfo")
+    
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
         print("点击了\(index) 张图片")
         let videoInfo = (self.videos.objectAtIndex(index) as! VideoInfo)
         
-        let user =  userDefaults.objectForKey("userInfo")
-        var userId = 0
         if (user == nil) {
-            userId =   user!.objectForKey("id") as! Int
+            userId = user!.objectForKey("id") as! Int
 
         }
         //播放
@@ -98,12 +99,16 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         
     }
     
+    
     func loadData(){
         
         let view = self.navigationController!.navigationBar.startLoadingAnimation()
-
+        if (user != nil) {
+            userId = user!.objectForKey("id") as! Int
+            
+        }
         //请求数据
-        alamofireManager.request(HttpClientByVideo.DSRouter.getVideosByBanner()).responseJSON { (request, response, result) -> Void in
+        alamofireManager.request(HttpClientByVideo.DSRouter.getVideosByBanner(userId)).responseJSON { (request, response, result) -> Void in
             switch result {
             case .Success:
                 if let JSON = result.value {

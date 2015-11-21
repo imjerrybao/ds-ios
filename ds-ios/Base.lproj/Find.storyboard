@@ -120,7 +120,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痛苦来的太快，我还想多美几秒" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPX-mu-Qd4">
-                                            <rect key="frame" x="144" y="23" width="439" height="21"/>
+                                            <rect key="frame" x="144" y="23" width="439" height="54"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,6 +133,7 @@
                                         <constraint firstItem="tXP-cV-O4M" firstAttribute="leading" secondItem="bFC-CI-V6b" secondAttribute="leadingMargin" constant="10" id="JyS-4c-2FB"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="PPX-mu-Qd4" secondAttribute="trailing" constant="9" id="VcP-lj-cMX"/>
                                         <constraint firstItem="tXP-cV-O4M" firstAttribute="centerY" secondItem="bFC-CI-V6b" secondAttribute="centerY" id="oEm-DF-e4V"/>
+                                        <constraint firstAttribute="bottom" secondItem="PPX-mu-Qd4" secondAttribute="bottom" constant="22.5" id="ofV-rF-rM1"/>
                                         <constraint firstItem="PPX-mu-Qd4" firstAttribute="leading" secondItem="tXP-cV-O4M" secondAttribute="trailing" constant="8" symbolic="YES" id="q0u-v1-Zbu"/>
                                         <constraint firstItem="PPX-mu-Qd4" firstAttribute="top" secondItem="bFC-CI-V6b" secondAttribute="topMargin" constant="15" id="y23-5O-E7Y"/>
                                     </constraints>

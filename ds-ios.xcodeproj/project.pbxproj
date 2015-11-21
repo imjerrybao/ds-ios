@@ -64,6 +64,13 @@
 		AB3509AB1BF60840003C27D2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */; };
 		AB3509AF1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3509AD1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a */; };
 		AB37A9C11C00118300C57283 /* DOAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A9C01C00118300C57283 /* DOAlertController.swift */; };
+		AB37A9C41C007B4200C57283 /* libPushSDK-1.8.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB37A9C31C007B4200C57283 /* libPushSDK-1.8.8.a */; };
+		AB37A9C61C007B9200C57283 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB37A9C51C007B9200C57283 /* CFNetwork.framework */; };
+		AB37A9C81C007B9B00C57283 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB37A9C71C007B9B00C57283 /* CoreFoundation.framework */; };
+		AB37A9CA1C007BB400C57283 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB37A9C91C007BB400C57283 /* CoreGraphics.framework */; };
+		AB37A9CC1C007BBF00C57283 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB37A9CB1C007BBF00C57283 /* Foundation.framework */; };
+		AB37A9CD1C007BCE00C57283 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3263EA1BE8AEAB0099D02D /* Security.framework */; };
+		AB37A9CF1C007C4B00C57283 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB37A9CE1C007C4B00C57283 /* PushConfig.plist */; };
 		AB42A0B51BF9A4B800A2162E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB42A0B41BF9A4B800A2162E /* Constants.swift */; };
 		AB46FBBF1BD927AE001C3C42 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBBD1BD927AE001C3C42 /* Home.storyboard */; };
 		AB46FBC21BD927CE001C3C42 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBC01BD927CE001C3C42 /* Find.storyboard */; };
@@ -191,6 +198,13 @@
 		AB3509AD1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.0.a; sourceTree = "<group>"; };
 		AB3509AE1BF6B820003C27D2 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		AB37A9C01C00118300C57283 /* DOAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOAlertController.swift; sourceTree = "<group>"; };
+		AB37A9C21C007B4200C57283 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APService.h; sourceTree = "<group>"; };
+		AB37A9C31C007B4200C57283 /* libPushSDK-1.8.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPushSDK-1.8.8.a"; sourceTree = "<group>"; };
+		AB37A9C51C007B9200C57283 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AB37A9C71C007B9B00C57283 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		AB37A9C91C007BB400C57283 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB37A9CB1C007BBF00C57283 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB37A9CE1C007C4B00C57283 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
 		AB42A0B41BF9A4B800A2162E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB46FBBE1BD927AE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		AB46FBC11BD927CE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Find.storyboard; sourceTree = "<group>"; };
@@ -280,6 +294,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB37A9CD1C007BCE00C57283 /* Security.framework in Frameworks */,
+				AB37A9CC1C007BBF00C57283 /* Foundation.framework in Frameworks */,
+				AB37A9CA1C007BB400C57283 /* CoreGraphics.framework in Frameworks */,
+				AB3264C61BEBB0110099D02D /* SystemConfiguration.framework in Frameworks */,
+				AB3264C71BEBB9AA0099D02D /* CoreTelephony.framework in Frameworks */,
+				AB37A9C81C007B9B00C57283 /* CoreFoundation.framework in Frameworks */,
+				AB37A9C61C007B9200C57283 /* CFNetwork.framework in Frameworks */,
 				ABC4B5821BF7708C00B2CC24 /* libz.tbd in Frameworks */,
 				AB50ADFB1BF5F243008A1819 /* libSocialQQ.a in Frameworks */,
 				ABE114991BF0A64E00027708 /* MobileCoreServices.framework in Frameworks */,
@@ -288,9 +309,7 @@
 				AB3263E11BE8AE530099D02D /* libstdc++.tbd in Frameworks */,
 				AB3509AF1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a in Frameworks */,
 				ABE6843D1BED92CF004B2BBD /* SMS_SDK.framework in Frameworks */,
-				AB3264C71BEBB9AA0099D02D /* CoreTelephony.framework in Frameworks */,
 				AB50ADFF1BF5F243008A1819 /* libWeChatSDK.a in Frameworks */,
-				AB3264C61BEBB0110099D02D /* SystemConfiguration.framework in Frameworks */,
 				AB3263F41BE8AEE80099D02D /* MessageUI.framework in Frameworks */,
 				AB50ADFA1BF5F243008A1819 /* libSocialSina.a in Frameworks */,
 				AB3263F21BE8AEDE0099D02D /* libsqlite3.tbd in Frameworks */,
@@ -305,6 +324,7 @@
 				AB03E0361BDA3225000F8D6C /* AVKit.framework in Frameworks */,
 				4D27B1C84096D8EC738422AE /* Pods.framework in Frameworks */,
 				AB50ADFC1BF5F243008A1819 /* TencentOpenAPI.framework in Frameworks */,
+				AB37A9C41C007B4200C57283 /* libPushSDK-1.8.8.a in Frameworks */,
 				AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +335,10 @@
 		10EBB73AC5FA1091404FD628 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB37A9CB1C007BBF00C57283 /* Foundation.framework */,
+				AB37A9C91C007BB400C57283 /* CoreGraphics.framework */,
+				AB37A9C71C007B9B00C57283 /* CoreFoundation.framework */,
+				AB37A9C51C007B9200C57283 /* CFNetwork.framework */,
 				ABE114981BF0A64E00027708 /* MobileCoreServices.framework */,
 				AB3264841BEB8E860099D02D /* libz.tbd */,
 				AB3264811BEB8E4E0099D02D /* CoreLocation.framework */,
@@ -476,6 +500,9 @@
 		AB3263A21BE8AA2B0099D02D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AB37A9CE1C007C4B00C57283 /* PushConfig.plist */,
+				AB37A9C21C007B4200C57283 /* APService.h */,
+				AB37A9C31C007B4200C57283 /* libPushSDK-1.8.8.a */,
 				AB3509AC1BF6B820003C27D2 /* UMessage_Sdk_1.2.0 */,
 				AB50ADD41BF5F243008A1819 /* UMSocial_Sdk_4.3 */,
 				ABE684351BED92CF004B2BBD /* SMS_SDK */,
@@ -852,6 +879,7 @@
 				AB46FBC21BD927CE001C3C42 /* Find.storyboard in Resources */,
 				AB58EFBA1BD6A41A00E2B428 /* kr-video-player-fullscreen@2x.png in Resources */,
 				AB03C8181BD6A09A00F0A37C /* LaunchScreen.storyboard in Resources */,
+				AB37A9CF1C007C4B00C57283 /* PushConfig.plist in Resources */,
 				AB03C8151BD6A09A00F0A37C /* Assets.xcassets in Resources */,
 				AB03C8101BD6A09A00F0A37C /* Main.storyboard in Resources */,
 				AB46FBC51BD92811001C3C42 /* Play.storyboard in Resources */,
@@ -1158,6 +1186,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ds-ios",
@@ -1177,6 +1206,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "me.doushi.ds-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ds-ios/ds-ios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1189,6 +1219,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ds-ios",
@@ -1208,6 +1239,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "me.doushi.ds-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ds-ios/ds-ios-Bridging-Header.h";
 			};
 			name = Release;

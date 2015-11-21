@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         setNav();
         
         var controllerArray : [UIViewController] = []

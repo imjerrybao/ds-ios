@@ -163,25 +163,21 @@ class PlayVideoInfoViewController: UIViewController {
         
         print("点击了分享")
         let share = "https://api.doushi.me/share.html?id=\(videoId)"
-        let shareImage = UIImageView()
+       
         
-        shareImage.kf_setImageWithURL(NSURL(string: videoPic)!)
+        let saimg = UIImage(data: NSData(contentsOfURL: NSURL(string: videoPic)!)!)
+        
         UMSocialData.defaultData().extConfig.title = videoTitle
         
         UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "\(share)")
-  
-        UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText: "搞笑,逗比的视频，分享自逗视 ", shareImage: shareImage.image, shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone], delegate: nil)
-        
-        UMSocialData.defaultData().extConfig.wechatSessionData.shareImage = shareImage.image
-        UMSocialData.defaultData().extConfig.wechatTimelineData.shareImage = shareImage.image
-        
-        UMSocialData.defaultData().extConfig.qqData.url = share
         
         
-        UMSocialData.defaultData().extConfig.qzoneData.url = share
-        UMSocialData.defaultData().extConfig.qzoneData.shareImage = shareImage.image
-        UMSocialData.defaultData().extConfig.sinaData.shareText = videoTitle + share
+        let snsArray = [UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToQzone,UMShareToSina,UMShareToFacebook,UMShareToTwitter,UMShareToEmail]
         
+        
+        UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText:videoTitle + "   " + share, shareImage: saimg, shareToSnsNames: snsArray, delegate: nil)
+
+                 
      }
     
     /*

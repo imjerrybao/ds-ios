@@ -51,6 +51,8 @@
 #import <Qiniu/QiniuSDK.h>
 
 
+#import "APService.h"
+
  
 
  

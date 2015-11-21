@@ -63,7 +63,6 @@ class PlayVideoViewController: UIViewController {
             if bb != nil {
                 if userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)") as! Bool {
                     isC = true
-                     
                     
                 }
             }
