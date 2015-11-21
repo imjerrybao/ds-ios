@@ -55,7 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidChange(textField: UITextField){
         
         
-        print("我正在输入 \(textField.tag)")
+//        print("我正在输入 \(textField.tag)")
         
         
         let phoneRule = ValidationRuleLength(min: 11, max: 11, failureError: ValidationError(message: "😫"))
@@ -66,16 +66,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         switch textField.tag{
         case 1://手机号
-            print("手机号")
-            result = textField.text!.validate(rule: phoneRule)
+             result = textField.text!.validate(rule: phoneRule)
             if result.isValid {
                 phoneResultUILabel.text = "😀"
             }else{
                 phoneResultUILabel.text = "😫"
             }
         case 2://密码
-            print("密码")
-            result = textField.text!.validate(rule: pwdRule)
+             result = textField.text!.validate(rule: pwdRule)
             if result.isValid {
                 pwdResultUILabel.text = "😀"
                 
@@ -128,7 +126,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let error_detail = (JSON as! NSDictionary).valueForKey("error_detail") as! String
                     
                      let error = (JSON as! NSDictionary).valueForKey("error") as! String
-                    print("\(error_detail)")
+//                    print("\(error_detail)")
                     
                     let title = error
                     let message = error_detail
@@ -175,7 +173,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 let qqUser:UMSocialAccountEntity =  snsAccount[UMShareToQQ] as! UMSocialAccountEntity
                 
-                print("QQ用户数据\(qqUser)")
+//                print("QQ用户数据\(qqUser)")
                 
                 let user = User()
                 user.phone = ""
@@ -195,9 +193,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         
                         switch result {
                         case .Success:
-                            print("HTTP 状态码->\(response?.statusCode)")
+//                            print("HTTP 状态码->\(response?.statusCode)")
                             print("注册成功")
-                            print(result.value)
+//                            print(result.value)
                             let JSON = result.value
                             let userDictionary = (JSON as! NSDictionary).valueForKey("content") as! NSDictionary
                             //将用户信息保存到内存中
@@ -235,7 +233,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 var snsAccount = UMSocialAccountManager.socialAccountDictionary()
                 
                 let weiBoUser:UMSocialAccountEntity =  snsAccount[UMShareToSina] as! UMSocialAccountEntity
-                print("微博用户数据\(weiBoUser)")
+//                print("微博用户数据\(weiBoUser)")
                 
                 let user = User()
                 user.phone = ""
@@ -255,7 +253,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         
                         switch result {
                         case .Success:
-                            print("HTTP 状态码->\(response?.statusCode)")
+//                            print("HTTP 状态码->\(response?.statusCode)")
                             print("注册成功")
                             print(result.value)
                             let JSON = result.value

@@ -106,77 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ds-ios/AppDelegate.swift"
-            timestampString = "469804603.27509"
+            timestampString = "469810777.953294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "application(_:didReceiveRemoteNotification:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ds-ios/AppDelegate.swift"
-            timestampString = "469804603.27509"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "application(_:didReceiveRemoteNotification:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ds-ios/AppDelegate.swift"
-            timestampString = "469804603.27509"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "application(_:didReceiveRemoteNotification:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ds_ios.AppDelegate.application (ds_ios.AppDelegate)(__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;__ObjC.NSObject, Swift.AnyObject&gt;) -&gt; ()"
-                  moduleName = "ds-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/songlijun/Dropbox/work/itjh/ds/project/ds-ios/ds-ios/AppDelegate.swift"
-                  timestampString = "469806613.121289"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "2396">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[4] = Dead, Arg[5] = Value Promoted from InOut&gt; of ds_ios.AppDelegate.(application (ds_ios.AppDelegate) -&gt; (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;__ObjC.NSObject, Swift.AnyObject&gt;) -&gt; ()).(closure #1)"
-                  moduleName = "ds-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/songlijun/Dropbox/work/itjh/ds/project/ds-ios/ds-ios/AppDelegate.swift"
-                  timestampString = "469806613.121491"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

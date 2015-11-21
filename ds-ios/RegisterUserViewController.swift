@@ -68,7 +68,7 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
     func textFieldDidChange(textField: UITextField){
         
         
-        print("我正在输入 \(textField.tag)")
+//        print("我正在输入 \(textField.tag)")
         
         
         let phoneRule = ValidationRuleLength(min: 11, max: 11, failureError: ValidationError(message: "😫"))
@@ -79,16 +79,14 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
          
         switch textField.tag{
         case 1://手机号
-            print("手机号")
-            result = textField.text!.validate(rule: phoneRule)
+             result = textField.text!.validate(rule: phoneRule)
             if result.isValid {
                 resultUILabel.text = "😀"
              }else{
                 resultUILabel.text = "😫"
             }
         case 2://密码
-            print("密码")
-            result = textField.text!.validate(rule: pwdRule)
+             result = textField.text!.validate(rule: pwdRule)
             if result.isValid {
                 pwdResultUILabel.text = "😀"
  
@@ -322,14 +320,14 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
                         upManager.putData(imageData, key: nil, token:((JSON as! NSDictionary).valueForKey("content") as! String) , complete: { (info, key, resp) -> Void in
                             
                             if info.statusCode == 200 {
-                                print("图片上传成功 key－> \(resp["key"] as! String)" )
-                                print("img url -> http://img.itjh.com.cn/\(resp["key"] as! String)")
+//                                print("图片上传成功 key－> \(resp["key"] as! String)" )
+//                                print("img url -> http://img.itjh.com.cn/\(resp["key"] as! String)")
                                 userDefaults.setValue("http://img.itjh.com.cn/\(resp["key"] as! String)", forKey: "userHeadImage")
                             }
                             
 //                            print("info-> \(info)")
                             
-                            print("resp-> \(resp)")
+//                            print("resp-> \(resp)")
                             
                             }, option: nil)
 

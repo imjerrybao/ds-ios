@@ -48,7 +48,7 @@ class VideoTableViewController: UITableViewController {
         self.view.addSubview(otherView)
         
         //调整tableview frame
-        print(self.view.frame)
+//        print(self.view.frame)
         
         self.view.frame = CGRectMake(0, 64, self.tableView.frame.width, self.tableView.frame.height)
          

@@ -489,7 +489,7 @@ class DOAlertController : UIViewController, UITextFieldDelegate, UIViewControlle
             var textFieldContainerHeight: CGFloat = 0.0
             
             // TextFields
-            for (i, obj) in (textFields!).enumerate() {
+            for (_, obj) in (textFields!).enumerate() {
                 let textField = obj as! UITextField
                 textField.frame = CGRectMake(0.0, textFieldContainerHeight, innerContentWidth, textField.frame.height)
                 textFieldContainerHeight += textField.frame.height + 0.5

@@ -177,7 +177,7 @@ class PlayVideoInfoViewController: UIViewController {
         
         UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText:videoTitle + "   " + share, shareImage: saimg, shareToSnsNames: snsArray, delegate: nil)
 
-                 
+        
      }
     
     /*

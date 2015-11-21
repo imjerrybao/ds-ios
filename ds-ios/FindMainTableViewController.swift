@@ -77,7 +77,7 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
     let user =  userDefaults.objectForKey("userInfo")
     
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
-        print("点击了\(index) 张图片")
+//        print("点击了\(index) 张图片")
         let videoInfo = (self.videos.objectAtIndex(index) as! VideoInfo)
         
         if (user == nil) {
