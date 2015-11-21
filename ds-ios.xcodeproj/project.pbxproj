@@ -129,6 +129,7 @@
 		ABE6843F1BED95AB004B2BBD /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE6843E1BED95AB004B2BBD /* RegisterUserViewController.swift */; };
 		ABF6AEE51BE0D42800448D75 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF6AEE21BE0D42800448D75 /* UIImage+ImageEffects.m */; };
 		ABF6AEE61BE0D42800448D75 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF6AEE41BE0D42800448D75 /* ParallaxHeaderView.m */; };
+		ABFA54AD1C00D1EE00F25498 /* AboutView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFA54AB1C00D1EE00F25498 /* AboutView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -286,6 +287,7 @@
 		ABF6AEE21BE0D42800448D75 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		ABF6AEE31BE0D42800448D75 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
 		ABF6AEE41BE0D42800448D75 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		ABFA54AC1C00D1EE00F25498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutView.storyboard; sourceTree = "<group>"; };
 		D9C98F2E301BB341C3C310AC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -448,6 +450,7 @@
 				AB03C80E1BD6A09A00F0A37C /* Main.storyboard */,
 				AB0C68281BFF127600FA9261 /* SendVideo.storyboard */,
 				ABCF395E1BE07E9D00C18508 /* My.storyboard */,
+				ABFA54AB1C00D1EE00F25498 /* AboutView.storyboard */,
 				AB46FBC01BD927CE001C3C42 /* Find.storyboard */,
 				AB46FBBD1BD927AE001C3C42 /* Home.storyboard */,
 				AB46FBC31BD92811001C3C42 /* Play.storyboard */,
@@ -896,6 +899,7 @@
 				AB0C681E1BFEDA2B00FA9261 /* UMSCommentInputController.xib in Resources */,
 				AB0C681F1BFEDA2B00FA9261 /* UMSCommentInputControlleriPad.xib in Resources */,
 				AB50ADF71BF5F243008A1819 /* UMSocialLocalizable.strings in Resources */,
+				ABFA54AD1C00D1EE00F25498 /* AboutView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,6 +1093,14 @@
 				ABE6843A1BED92CF004B2BBD /* zh-Hans */,
 			);
 			name = SMS_SDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		ABFA54AB1C00D1EE00F25498 /* AboutView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABFA54AC1C00D1EE00F25498 /* Base */,
+			);
+			name = AboutView.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

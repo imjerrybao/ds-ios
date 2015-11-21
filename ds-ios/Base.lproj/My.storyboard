@@ -176,7 +176,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="oIO-ql-hvm" kind="show" id="QLT-DS-NpX"/>
+                                            <segue destination="BGM-zA-Zx0" kind="show" id="0M7-jQ-7pz"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="6gR-3T-kcb" imageView="8UY-xi-8sN" rowHeight="45" style="IBUITableViewCellStyleDefault" id="VQQ-Zv-SqK">
@@ -247,86 +247,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSn-Ed-NgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4951" y="3109"/>
-        </scene>
-        <!--About View Controller-->
-        <scene sceneID="J4g-Wx-ySf">
-            <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="oIO-ql-hvm" customClass="AboutViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IUY-WG-ZQN"/>
-                        <viewControllerLayoutGuide type="bottom" id="QZF-fY-S4I"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qaL-QS-DWm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="zge-fb-wR1">
-                                <rect key="frame" x="201" y="127" width="198" height="292"/>
-                                <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="doushi_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vg9-Dy-dap" customClass="RoundImageView" customModule="RoundImageView">
-                                        <rect key="frame" x="14" y="0.0" width="170" height="170"/>
-                                        <animations/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="80"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逗视－搞笑视频的聚集地" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZW-fU-Gdf">
-                                        <rect key="frame" x="0.0" y="270" width="198" height="22"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="fgR-Kj-DrJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="vg9-Dy-dap" secondAttribute="trailing" constant="14" id="50r-Ys-2S0"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="centerX" secondItem="zge-fb-wR1" secondAttribute="centerX" id="Aot-3h-BTS"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="centerX" secondItem="2ZW-fU-Gdf" secondAttribute="centerX" id="D5X-E3-Opr"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="top" secondItem="zge-fb-wR1" secondAttribute="topMargin" id="E35-wt-mi4"/>
-                                    <constraint firstAttribute="bottom" secondItem="2ZW-fU-Gdf" secondAttribute="bottom" id="ESN-g4-vrb"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leading" constant="14" id="FdG-pN-4sW"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="top" secondItem="zge-fb-wR1" secondAttribute="top" id="ItV-Gb-6ST"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="centerX" secondItem="zge-fb-wR1" secondAttribute="centerX" id="PFo-Ac-2Ft"/>
-                                    <constraint firstAttribute="bottom" secondItem="2ZW-fU-Gdf" secondAttribute="bottom" id="Pkv-ui-jXC"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leading" id="RVB-Re-xG1"/>
-                                    <constraint firstAttribute="trailing" secondItem="2ZW-fU-Gdf" secondAttribute="trailing" id="S6E-Pf-TOa"/>
-                                    <constraint firstAttribute="bottom" secondItem="2ZW-fU-Gdf" secondAttribute="bottom" id="VPO-yI-3D2"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leading" constant="14" id="VvC-wY-M2A"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leading" id="YVO-a3-wJk"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leading" id="Z7e-8u-r0z"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="top" secondItem="zge-fb-wR1" secondAttribute="top" id="c1p-3Y-Als"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leading" constant="14" id="cka-IH-9w7"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="top" secondItem="zge-fb-wR1" secondAttribute="top" id="dln-zC-afU"/>
-                                    <constraint firstItem="vg9-Dy-dap" firstAttribute="top" secondItem="zge-fb-wR1" secondAttribute="top" id="dmI-tW-GBz"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="top" secondItem="zge-fb-wR1" secondAttribute="top" constant="270" id="ekv-E5-fs8"/>
-                                    <constraint firstAttribute="trailing" secondItem="2ZW-fU-Gdf" secondAttribute="trailing" id="gwi-9P-EsJ"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="trailing" secondItem="zge-fb-wR1" secondAttribute="trailingMargin" id="i6z-b4-OPD"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leading" id="jTu-ha-p3i"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="bottom" secondItem="zge-fb-wR1" secondAttribute="bottomMargin" id="myO-Uo-lDI"/>
-                                    <constraint firstItem="2ZW-fU-Gdf" firstAttribute="leading" secondItem="zge-fb-wR1" secondAttribute="leadingMargin" id="sje-AY-Bzn"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="zge-fb-wR1" firstAttribute="centerY" secondItem="qaL-QS-DWm" secondAttribute="centerY" constant="-27" id="Tq2-bT-Npg"/>
-                            <constraint firstItem="zge-fb-wR1" firstAttribute="centerX" secondItem="qaL-QS-DWm" secondAttribute="centerX" id="U2A-bY-tph"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rev-U8-E0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-5481" y="4017"/>
         </scene>
         <!--Exceptions View Controller-->
         <scene sceneID="Hp4-A8-HrZ">
@@ -1170,12 +1090,19 @@
             </objects>
             <point key="canvasLocation" x="-4088" y="3135"/>
         </scene>
+        <!--AboutViewController-->
+        <scene sceneID="my5-Ai-JQU">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AboutViewController" storyboardName="AboutView" referencedIdentifier="AboutViewController" id="BGM-zA-Zx0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djA-NF-N3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5481" y="4017"/>
+        </scene>
     </scenes>
     <resources>
         <image name="comedy" width="32" height="32"/>
         <image name="default-user" width="165" height="165"/>
         <image name="delete" width="32" height="32"/>
-        <image name="doushi_icon" width="170" height="170"/>
         <image name="hearts" width="32" height="32"/>
         <image name="message" width="32" height="32"/>
         <image name="nook" width="32" height="32"/>

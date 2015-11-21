@@ -142,7 +142,7 @@
                                 <connections>
                                     <outlet property="picImageView" destination="tXP-cV-O4M" id="0NE-eN-6d8"/>
                                     <outlet property="titleLabel" destination="PPX-mu-Qd4" id="dFa-04-EG8"/>
-                                    <segue destination="vnK-du-9Bg" kind="show" id="chq-Fm-jiG"/>
+                                    <segue destination="vnK-du-9Bg" kind="show" identifier="toPlayVideo" id="chq-Fm-jiG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,13 +16,101 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="VVd-jW-v8u">
+                                <rect key="frame" x="201" y="154" width="198" height="292"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="doushi_icon" translatesAutoresizingMaskIntoConstraints="NO" id="sQG-Zd-Mxp">
+                                        <rect key="frame" x="14" y="0.0" width="170" height="170"/>
+                                        <animations/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逗视－搞笑视频的聚集地" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8C-qi-IpL">
+                                        <rect key="frame" x="0.0" y="270" width="198" height="22"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="4og-EI-DWi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="k8C-qi-IpL" secondAttribute="bottom" id="8dd-KZ-Bu9"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="top" secondItem="VVd-jW-v8u" secondAttribute="top" id="IC9-Ed-l0J"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="top" secondItem="VVd-jW-v8u" secondAttribute="top" id="Iu4-gR-8rs"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="centerX" secondItem="VVd-jW-v8u" secondAttribute="centerX" id="J1B-H4-WO1"/>
+                                    <constraint firstAttribute="trailing" secondItem="k8C-qi-IpL" secondAttribute="trailing" id="MON-VD-J4Y"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="top" secondItem="VVd-jW-v8u" secondAttribute="topMargin" id="MZ0-2Y-tSR"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="top" secondItem="VVd-jW-v8u" secondAttribute="top" id="N95-Eb-p3y"/>
+                                    <constraint firstAttribute="trailing" secondItem="sQG-Zd-Mxp" secondAttribute="trailing" constant="14" id="Nse-DK-156"/>
+                                    <constraint firstAttribute="bottom" secondItem="k8C-qi-IpL" secondAttribute="bottom" id="O3X-ij-k79"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leading" constant="14" id="Pav-mq-i7K"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leading" id="Q7h-pI-JGa"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leading" constant="14" id="QGw-M2-2YU"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="bottom" secondItem="VVd-jW-v8u" secondAttribute="bottomMargin" id="VFn-cs-Bj7"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="top" secondItem="VVd-jW-v8u" secondAttribute="top" id="ZXu-Yz-vSd"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leadingMargin" id="Zox-ML-qX9"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="trailing" secondItem="VVd-jW-v8u" secondAttribute="trailingMargin" id="bmL-3K-Alw"/>
+                                    <constraint firstAttribute="trailing" secondItem="k8C-qi-IpL" secondAttribute="trailing" id="ejI-Nm-5LS"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leading" constant="14" id="fQU-4h-VaK"/>
+                                    <constraint firstAttribute="bottom" secondItem="k8C-qi-IpL" secondAttribute="bottom" id="fan-zY-8cn"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="top" secondItem="VVd-jW-v8u" secondAttribute="top" constant="270" id="l28-4C-xa8"/>
+                                    <constraint firstItem="sQG-Zd-Mxp" firstAttribute="centerX" secondItem="k8C-qi-IpL" secondAttribute="centerX" id="nPZ-lC-5JQ"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leading" id="oAo-sn-o7u"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leading" id="vsZ-S2-WGu"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="leading" secondItem="VVd-jW-v8u" secondAttribute="leading" id="wAP-QC-y1G"/>
+                                    <constraint firstItem="k8C-qi-IpL" firstAttribute="centerX" secondItem="VVd-jW-v8u" secondAttribute="centerX" id="yAa-CO-wkn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.99149471521377563" green="0.90077459812164307" blue="0.0024340201634913683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.81568627450980391" blue="0.043137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VVd-jW-v8u" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0qF-VF-OHW"/>
+                            <constraint firstItem="VVd-jW-v8u" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Z9K-TF-OAm"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="149" y="79"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="z7m-wy-Egp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EeK-Oe-GL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="0mo-Hb-Ggx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gc9-ys-IRM"/>
+                        <viewControllerLayoutGuide type="bottom" id="IIw-px-VxW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4cf-xq-8lC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逗视来了" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-zt-sOj">
+                                <rect key="frame" x="248.5" y="282" width="104" height="36.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="26"/>
+                                <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="highlightedColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.99149471519999999" green="0.90077459810000005" blue="0.0024340201630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tYj-zt-sOj" firstAttribute="centerY" secondItem="4cf-xq-8lC" secondAttribute="centerY" id="B6Q-9l-Umm"/>
+                            <constraint firstItem="tYj-zt-sOj" firstAttribute="centerX" secondItem="4cf-xq-8lC" secondAttribute="centerX" id="V5e-Hf-rHG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-572" y="1253"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="doushi_icon" width="170" height="170"/>
+    </resources>
 </document>
