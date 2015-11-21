@@ -15,12 +15,15 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MF
     @IBOutlet weak var headerView: UIView!
     
     var mybkImage: UIImageView!
+    @IBOutlet weak var loginStatusLabel: UILabel!
 
     let userCircle = UIImageView(frame: CGRectMake(0,0,70,70))
     
     
     let loginButton = UIButton(frame: CGRectMake(0, 200, 80, 20))
  
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -133,8 +136,9 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MF
     
     
     func setHeadImage(){
-        let user =  userDefaults.objectForKey("userInfo")
         
+        let user =  userDefaults.objectForKey("userInfo")
+
         if (user != nil) {
             let headImageUrl = user!.objectForKey("headImage") as! String
             let nickName = user!.objectForKey("nickName") as! String
@@ -143,11 +147,17 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MF
                 loginButton.setTitle(nickName, forState: .Normal)
                 //禁止点击
                 loginButton.enabled = false
+            loginStatusLabel.text = "退出当前用户"
+            loginStatusLabel.textColor = UIColor.redColor()
+            
  
         }else{
             loginButton.setTitle("立即登录", forState: .Normal)
+            loginButton.enabled = true
             userCircle.image = UIImage(named: "picture-default")
-
+            loginStatusLabel.text = "立即登录"
+            loginStatusLabel.textColor = UIColor.greenColor()
+            
         }
         
         
@@ -188,13 +198,66 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MF
             
         }
         
-//        if indexPath.section == 1 && indexPath.row == 0{
-//            print("朋友需要")
-//            let evaluateString = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1044917946&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
-//            UIApplication.sharedApplication().openURL(NSURL(string: evaluateString)!)
-//            
-//        }
-//        
+        if indexPath.section == 3 && indexPath.row == 0 {
+            let user =  userDefaults.objectForKey("userInfo")
+
+            if user != nil{
+                print("登出")
+                //确定按钮
+                let alertController = UIAlertController(title: "确定要退出吗？", message: "", preferredStyle: .Alert)
+                
+                let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { (action) in
+                 }
+                alertController.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "确定", style: .Default) { (action) in
+                    
+                    self.loginStatusLabel.text = "立即登录"
+                    self.loginStatusLabel.textColor = UIColor.greenColor()
+                    userDefaults.removeObjectForKey("userInfo")
+                    self.setHeadImage()
+
+                }
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                 }
+            }else{
+                print("登录")
+                loginStatusLabel.text = "退出当前用户"
+                loginStatusLabel.textColor = UIColor.redColor()
+                let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
+                
+                let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
+                self.navigationController?.pushViewController(loginTableView, animated: true)
+                setHeadImage()
+
+            }
+        }
+        
+        if indexPath.section == 2 && indexPath.row == 1 {
+            print("朋友需要")
+            let share = "https://itunes.apple.com/cn/app/id1044917946"
+            
+            let shareImage = UIImageView()
+            
+            
+            UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "\(share)")
+            
+            UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText: "搞笑,逗比的视频，赶紧下载逗视吧", shareImage: UIImage(named: "doushi_icon"), shareToSnsNames: [UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone], delegate: nil)
+            
+            UMSocialData.defaultData().extConfig.wechatSessionData.shareImage = UIImage(named: "doushi_icon")
+            UMSocialData.defaultData().extConfig.wechatTimelineData.shareImage = UIImage(named: "doushi_icon")
+            
+            UMSocialData.defaultData().extConfig.qqData.url = share
+            
+            UMSocialData.defaultData().extConfig.qzoneData.url = share
+            
+            UMSocialData.defaultData().extConfig.qzoneData.shareImage = UIImage(named: "doushi_icon")
+            UMSocialData.defaultData().extConfig.sinaData.shareText = "搞笑,逗比的视频，赶紧下载逗视吧" + share
+            
+        }
+//
         
     }
     

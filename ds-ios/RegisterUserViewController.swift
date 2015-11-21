@@ -123,7 +123,7 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
     private var timer: NSTimer?
     private var timeLabel: UILabel!
     private var disabledText: String!
-    private var remainingSeconds = 3
+    private var remainingSeconds = 60
 
     
     /**
@@ -176,9 +176,10 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
             if ((error == nil)) {
                 print("验证成功")
                 let user = User()
-                user.nickName = "未填写"
+                user.nickName = "我是逗视 \(Int(arc4random()%1000)+1)"
                 
                 if (userDefaults.stringForKey("userHeadImage") == nil){
+                    
                     userDefaults.setObject("http://img.itjh.com.cn/FtXmR6PCXm1WgUyl4kvI6zJIFY6C", forKey: "userHeadImage")
                 }
                 

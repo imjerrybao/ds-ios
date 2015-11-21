@@ -63,6 +63,7 @@
 		AB3264C71BEBB9AA0099D02D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3263E41BE8AE890099D02D /* CoreTelephony.framework */; };
 		AB3509AB1BF60840003C27D2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */; };
 		AB3509AF1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3509AD1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a */; };
+		AB37A9C11C00118300C57283 /* DOAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A9C01C00118300C57283 /* DOAlertController.swift */; };
 		AB42A0B51BF9A4B800A2162E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB42A0B41BF9A4B800A2162E /* Constants.swift */; };
 		AB46FBBF1BD927AE001C3C42 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBBD1BD927AE001C3C42 /* Home.storyboard */; };
 		AB46FBC21BD927CE001C3C42 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB46FBC01BD927CE001C3C42 /* Find.storyboard */; };
@@ -189,6 +190,7 @@
 		AB3264861BEB8FD80099D02D /* HotAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotAppViewController.swift; sourceTree = "<group>"; };
 		AB3509AD1BF6B820003C27D2 /* libUMessage_Sdk_1.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.0.a; sourceTree = "<group>"; };
 		AB3509AE1BF6B820003C27D2 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		AB37A9C01C00118300C57283 /* DOAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOAlertController.swift; sourceTree = "<group>"; };
 		AB42A0B41BF9A4B800A2162E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB46FBBE1BD927AE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		AB46FBC11BD927CE001C3C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Find.storyboard; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 		AB58EFA01BD6A26800E2B428 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AB37A9C01C00118300C57283 /* DOAlertController.swift */,
 				AB0C68031BFD855100FA9261 /* DOFavoriteButton.swift */,
 				AB42A0B41BF9A4B800A2162E /* Constants.swift */,
 				AB0CA1581BE6439B00134F1E /* SimpleButton */,
@@ -933,6 +936,7 @@
 				AB1494091BD74721004A9F43 /* PeriscopyTitleView.swift in Sources */,
 				AB58EF901BD6A19A00E2B428 /* HttpClient.swift in Sources */,
 				AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */,
+				AB37A9C11C00118300C57283 /* DOAlertController.swift in Sources */,
 				AB2EF2E01BE22C69008E96CC /* ConstraintMaker.swift in Sources */,
 				AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */,
 				AB2ED0491BE37261002CE2E2 /* MyMainTableViewController.swift in Sources */,

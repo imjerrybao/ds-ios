@@ -95,27 +95,28 @@ struct HttpClientByUser {
         
         // 请求方法
         case registerUser(User) //注册用户
+        case loginUser(String,String) //用户登录
+        
         
         // 不同请求，对应不同请求类型
         var method: Alamofire.Method {
             switch self {
             case .registerUser:
                 return .POST
+            case .loginUser:
+                return .GET
             }
         }
         
         var URLRequest: NSMutableURLRequest {
-            let (user) : (User) = {
-                switch self {
-                case .registerUser(let user):
-                    return user
-                }
-            }()
+          
             
             let (path) : (String) = {
                 switch self {
                 case .registerUser(_):
                     return "registerUser"
+                case .loginUser(let phone,let password):
+                    return "loginUser/\(phone)/\(password)"
                 }
                 
             }()
@@ -124,13 +125,19 @@ struct HttpClientByUser {
             let URLRequest = NSMutableURLRequest(URL: URL!.URLByAppendingPathComponent(path))
             URLRequest.HTTPMethod = method.rawValue
             
-            URLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            //用户参数
-            let parameters = ["nickName": user.nickName,"headImage": user.headImage,"phone":user.phone,"platformId":user.platformId,"platformName":user.platformName,"password":user.password,"gender":user.gender]
-            do {
-                URLRequest.HTTPBody = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions())
-            } catch {
-            }
+            switch self {
+            case .registerUser(let user):
+                URLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                //用户参数
+                let parameters = ["nickName": user.nickName,"headImage": user.headImage,"phone":user.phone,"platformId":user.platformId,"platformName":user.platformName,"password":user.password,"gender":user.gender]
+                do {
+                    URLRequest.HTTPBody = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions())
+                } catch {
+                }
+            default: break
+                
+            } 
+            
             let encoding = Alamofire.ParameterEncoding.URL
             return encoding.encode(URLRequest, parameters: nil).0
         }

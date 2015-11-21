@@ -166,8 +166,6 @@ class PlayVideoInfoViewController: UIViewController {
         let shareImage = UIImageView()
         
         shareImage.kf_setImageWithURL(NSURL(string: videoPic)!)
-        
-        
         UMSocialData.defaultData().extConfig.title = videoTitle
         
         UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "\(share)")

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v0A-F1-Kkg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--发现-->
@@ -41,7 +42,7 @@
                                 <connections>
                                     <outlet property="cellImageView" destination="oOY-Qp-rJg" id="AoO-xZ-nL0"/>
                                     <outlet property="titleLabel" destination="URt-sN-uMq" id="akw-U1-eXN"/>
-                                    <segue destination="z5w-CB-HRb" kind="show" identifier="toHotApp" id="AEr-0d-l7T"/>
+                                    <segue destination="IBQ-1a-8kQ" kind="show" identifier="toVideoTaxis" id="6fD-Fh-s6x"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,26 +69,6 @@
             </objects>
             <point key="canvasLocation" x="-2058" y="1842"/>
         </scene>
-        <!--Hot App View Controller-->
-        <scene sceneID="vuq-bB-9Km">
-            <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="z5w-CB-HRb" customClass="HotAppViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ORX-B1-3Ke"/>
-                        <viewControllerLayoutGuide type="bottom" id="b8f-JM-8fq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SHk-fb-Man">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="amP-ck-bOz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WUc-FU-SFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1431" y="1842"/>
-        </scene>
         <!--发现-->
         <scene sceneID="vcN-Dv-3CV">
             <objects>
@@ -106,6 +87,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoZ-c0-WSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2938" y="1842"/>
+        </scene>
+        <!--排行榜-->
+        <scene sceneID="I8J-KN-jgX">
+            <objects>
+                <tableViewController storyboardIdentifier="VideoTaxisTableViewController" title="排行榜" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IBQ-1a-8kQ" customClass="VideoTaxisTableViewController" customModule="ds_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="cVM-Ps-Jjh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="oEn-CV-UxA">
+                            <rect key="frame" x="0.0" y="192" width="600" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="100" id="Bep-9Q-gWs" customClass="VideoTableViewCell" customModule="ds_ios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bep-9Q-gWs" id="bFC-CI-V6b">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tXP-cV-O4M">
+                                            <rect key="frame" x="18" y="8" width="118" height="84"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="118" id="rdT-Kk-NBr"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="痛苦来的太快，我还想多美几秒" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPX-mu-Qd4">
+                                            <rect key="frame" x="144" y="23" width="439" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="tXP-cV-O4M" firstAttribute="top" secondItem="PPX-mu-Qd4" secondAttribute="top" constant="-15" id="JCr-BL-hP2"/>
+                                        <constraint firstItem="tXP-cV-O4M" firstAttribute="leading" secondItem="bFC-CI-V6b" secondAttribute="leadingMargin" constant="10" id="JyS-4c-2FB"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="PPX-mu-Qd4" secondAttribute="trailing" constant="9" id="VcP-lj-cMX"/>
+                                        <constraint firstItem="tXP-cV-O4M" firstAttribute="centerY" secondItem="bFC-CI-V6b" secondAttribute="centerY" id="oEm-DF-e4V"/>
+                                        <constraint firstItem="PPX-mu-Qd4" firstAttribute="leading" secondItem="tXP-cV-O4M" secondAttribute="trailing" constant="8" symbolic="YES" id="q0u-v1-Zbu"/>
+                                        <constraint firstItem="PPX-mu-Qd4" firstAttribute="top" secondItem="bFC-CI-V6b" secondAttribute="topMargin" constant="15" id="y23-5O-E7Y"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="picImageView" destination="tXP-cV-O4M" id="0NE-eN-6d8"/>
+                                    <outlet property="titleLabel" destination="PPX-mu-Qd4" id="dFa-04-EG8"/>
+                                    <segue destination="vnK-du-9Bg" kind="show" id="chq-Fm-jiG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="IBQ-1a-8kQ" id="SaU-mV-mxS"/>
+                            <outlet property="delegate" destination="IBQ-1a-8kQ" id="2C6-aV-nwa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9iF-gA-ZL1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZxK-eL-cmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1262" y="1842"/>
+        </scene>
+        <!--playVideoView-->
+        <scene sceneID="i2N-2J-W5O">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="playVideoView" storyboardName="Play" referencedIdentifier="playVideoView" id="vnK-du-9Bg" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="XzS-jS-vR2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vf9-zG-02g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-675.5" y="1752"/>
         </scene>
     </scenes>
     <resources>

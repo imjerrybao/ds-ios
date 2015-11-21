@@ -39,8 +39,7 @@ class MyUserFavoriteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.title = "我的收藏"
-        self.navigationController?.navigationBar.tintColor = UIColor(rgba:"#f0a22a")
+         self.navigationController?.navigationBar.tintColor = UIColor(rgba:"#f0a22a")
         
         setNav()
 
