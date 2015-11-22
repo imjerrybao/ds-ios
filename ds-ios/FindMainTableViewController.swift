@@ -41,6 +41,9 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         
         loadData()
         
+        self.navigationController?.navigationBar.tintColor = UIColor(rgba:"#f0a22a")
+
+        
         tableHeardView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
         
         
@@ -80,7 +83,7 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
 //        print("点击了\(index) 张图片")
         let videoInfo = (self.videos.objectAtIndex(index) as! VideoInfo)
         
-        if (user == nil) {
+        if (user != nil) {
             userId = user!.objectForKey("id") as! Int
 
         }
@@ -197,6 +200,18 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 90
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+         self.navigationController?.navigationBar.hidden = false
+        
     }
 
     /*

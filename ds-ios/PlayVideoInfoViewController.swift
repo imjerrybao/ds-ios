@@ -38,6 +38,13 @@ class PlayVideoInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let user =  userDefaults.objectForKey("userInfo")
+        
+        if user != nil{
+            userId = user!.objectForKey("id") as! Int
+        }
+        
         self.videoTitleLabel.text = videoTitle
         let bb = userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
         
@@ -66,8 +73,6 @@ class PlayVideoInfoViewController: UIViewController {
         if isCollectStatus == 1{
             isC = true
             collectUIButton.setImage(UIImage(named: "cloud"), forState:.Normal)
-
-            
         }
         
         
@@ -94,63 +99,101 @@ class PlayVideoInfoViewController: UIViewController {
     @IBAction func collectVideo(sender: UIButton) {
         print("点击了收藏")
         
-        let userFavorite:UserFavorite = UserFavorite(id: 0, userId: userId, videoId: videoId, status: 1)
+        //判断当前是否登录状态
         
-        if !isC {
-            //请求收藏
-            self.alamofireManager!.request(HttpClientByUserAndVideo.DSRouter.addUserFavoriteVideo(userFavorite)).responseJSON { (request, response, result) -> Void in
-                switch result {
-                case .Success:
-                    
-                    if let JSON = result.value {
-                        let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
-                        
-                        if statusCode == 200{
-                            
-                            sender.setImage(UIImage(named: "cloud"), forState:
-                                .Normal)
-                            self.isC = true
-                            print("收藏成功")
-                            userAndVideoDefaults.setObject(true, forKey: "\(self.userId)+\(self.videoId)")
-                        }
-                        
-                    }
-                    
-                case .Failure(let error):
-                    print(error)
-                }
+        let user =  userDefaults.objectForKey("userInfo")
+        let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
+        
+        if (user == nil) {
+            //弹窗登录
+            let title = "您还没有登录"
+            let message = "收藏功能需要用户登录，进行云同步."
+            let cancelButtonTitle = "看得正起劲"
+            let otherButtonTitle = "去登录"
+            
+            let alertCotroller = DOAlertController(title: title, message: message, preferredStyle: .Alert)
+            
+            // Create the actions.
+            let cancelAction = DOAlertAction(title: cancelButtonTitle, style: .Cancel) { action in
+                NSLog("The \"Okay/Cancel\" alert's cancel action occured.")
+            }
+            
+            let otherAction = DOAlertAction(title: otherButtonTitle, style: .Default) { action in
+                print("登录")
+                let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
+                self.navigationController?.pushViewController(loginTableView, animated: true)
                 
             }
             
+            // Add the actions.
+            alertCotroller.addAction(cancelAction)
+            alertCotroller.addAction(otherAction)
+            
+            presentViewController(alertCotroller, animated: true, completion: nil)
+            
         }else{
-            print("取消收藏")
-            //请求收藏
-            self.alamofireManager!.request(HttpClientByUserAndVideo.DSRouter.deleteByUserIdAndVideoId(userId, videoId)).responseJSON { (request, response, result) -> Void in
-                switch result {
-                case .Success:
-                    
-                    if let JSON = result.value {
-                        let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
+            
+            if user != nil{
+                userId = user!.objectForKey("id") as! Int
+            }
+            
+            let userFavorite:UserFavorite = UserFavorite(id: 0, userId: userId, videoId: videoId, status: 1)
+            
+            if !isC {
+                //请求收藏
+                self.alamofireManager!.request(HttpClientByUserAndVideo.DSRouter.addUserFavoriteVideo(userFavorite)).responseJSON { (request, response, result) -> Void in
+                    switch result {
+                    case .Success:
                         
-                        if statusCode == 200{
-                            sender.setImage(UIImage(named: "cloud_d"), forState:
-                                .Normal)
-                            self.isC = false
-                            print("取消收藏成功")
-                            userAndVideoDefaults.setObject(false, forKey: "\(self.userId)+\(self.videoId)")
+                        if let JSON = result.value {
+                            let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
+                            
+                            if statusCode == 200{
+                                
+                                sender.setImage(UIImage(named: "cloud"), forState:
+                                    .Normal)
+                                self.isC = true
+                                print("收藏成功")
+                                userAndVideoDefaults.setObject(true, forKey: "\(self.userId)+\(self.videoId)")
+                            }
                             
                         }
                         
+                    case .Failure(let error):
+                        print(error)
                     }
                     
-                case .Failure(let error):
-                    print(error)
                 }
                 
+            }else{
+                print("取消收藏")
+                //请求收藏
+                self.alamofireManager!.request(HttpClientByUserAndVideo.DSRouter.deleteByUserIdAndVideoId(userId, videoId)).responseJSON { (request, response, result) -> Void in
+                    switch result {
+                    case .Success:
+                        if response?.statusCode == 200 {
+                            if let JSON = result.value {
+                                let statusCode = (JSON as! NSDictionary).valueForKey("statusCode") as! Int
+                                
+                                if statusCode == 200{
+                                    sender.setImage(UIImage(named: "cloud_d"), forState:
+                                        .Normal)
+                                    self.isC = false
+                                    print("取消收藏成功")
+                                    userAndVideoDefaults.setObject(false, forKey: "\(self.userId)+\(self.videoId)")
+                                    
+                                }
+                                
+                            }
+                        }
+                    case .Failure(let error):
+                        print(error)
+                    }
+                    
+                }
+                //请求取消收藏
             }
-            //请求取消收藏
         }
-        
     }
     
     /**
@@ -163,7 +206,7 @@ class PlayVideoInfoViewController: UIViewController {
         
         print("点击了分享")
         let share = "https://api.doushi.me/share.html?id=\(videoId)"
-       
+        
         
         let saimg = UIImage(data: NSData(contentsOfURL: NSURL(string: videoPic)!)!)
         
@@ -176,9 +219,9 @@ class PlayVideoInfoViewController: UIViewController {
         
         
         UMSocialSnsService.presentSnsIconSheetView(self, appKey: "563b6bdc67e58e73ee002acd", shareText:videoTitle + "   " + share, shareImage: saimg, shareToSnsNames: snsArray, delegate: nil)
-
         
-     }
+        
+    }
     
     /*
     // MARK: - Navigation

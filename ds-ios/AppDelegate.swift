@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
  
-        NSThread.sleepForTimeInterval(2.0)
+        NSThread.sleepForTimeInterval(1.0)
         //设置TabBar 选中背景色
         UITabBar.appearance().tintColor = UIColor(rgba:"#f0a22a")
         

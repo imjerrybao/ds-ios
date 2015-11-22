@@ -30,7 +30,7 @@ class MainTabBarViewController: UITabBarController {
 
 //        
          if (self.selectedIndex == 1 && self.selectedIndex == item.tag ) {
-            print("双击了\(item.tag)")
+//            print("双击了\(item.tag)")
 
         }
         self.selectedIndex = item.tag;
