@@ -154,7 +154,7 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
             self.timer!.invalidate()
             sendCodeButton.enabled = true
             sendCodeButton.alpha = 1
-            remainingSeconds = 3
+            remainingSeconds = 60
 
         }
         sendCodeButton.setTitle("\(remainingSeconds)s", forState: .Disabled)
@@ -193,15 +193,36 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
                     
                     switch result {
                     case .Success:
-                        print("HTTP 状态码->\(response?.statusCode)")
-                        print("注册成功")
-                        print(result.value)
+//                        print(result.value)
                         let JSON = result.value
-                        let userDictionary = (JSON as! NSDictionary).valueForKey("content") as! NSDictionary
-                        //将用户信息保存到内存中
-                        userDefaults.setObject(userDictionary, forKey: "userInfo")
-                        //返回my页面
-                        self.navigationController?.popToRootViewControllerAnimated(true)
+                        print("HTTP 状态码->\(response?.statusCode)")
+                        if response?.statusCode == 401 {
+                            print("此手机号已经注册")
+                             let message = (JSON as! NSDictionary).valueForKey("message") as! String
+                            
+                            let cancelButtonTitle = "OK"
+                            
+                            let alertController = DOAlertController(title: message, message: "此手机号已经注册,请更换其他手机号", preferredStyle: .Alert)
+                            
+                            // Create the action.
+                            let cancelAction = DOAlertAction(title: cancelButtonTitle, style: .Destructive) { action in
+                                NSLog("The simple alert's cancel action occured.")
+                            }
+                            
+                            // Add the action.
+                            alertController.addAction(cancelAction)
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                            
+                        }else{
+                            print("注册成功")
+                            let userDictionary = (JSON as! NSDictionary).valueForKey("content") as! NSDictionary
+                            //将用户信息保存到内存中
+                            userDefaults.setObject(userDictionary, forKey: "userInfo")
+                            //返回my页面
+                            self.navigationController?.popToRootViewControllerAnimated(true)
+                        }
+                        
                         
                     case .Failure(let error):
                         print(error)
@@ -210,6 +231,21 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
                 })
             }else{
                 print("验证码错误")
+                let message = "验证码错误"
+                
+                let cancelButtonTitle = "OK"
+                
+                let alertController = DOAlertController(title: message, message: "", preferredStyle: .Alert)
+                
+                // Create the action.
+                let cancelAction = DOAlertAction(title: cancelButtonTitle, style: .Destructive) { action in
+                    NSLog("The simple alert's cancel action occured.")
+                }
+                
+                // Add the action.
+                alertController.addAction(cancelAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
         }
     }

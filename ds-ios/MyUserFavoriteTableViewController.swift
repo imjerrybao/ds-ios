@@ -42,21 +42,60 @@ class MyUserFavoriteTableViewController: UITableViewController {
          self.navigationController?.navigationBar.tintColor = UIColor(rgba:"#f0a22a")
         
         setNav()
+        
+        let user =  userDefaults.objectForKey("userInfo")
+        let aStoryboard = UIStoryboard(name: "My", bundle:NSBundle.mainBundle())
+        
+        if (user == nil) {
+            //弹窗登录
+            let title = "您还没有登录"
+            let message = "收藏功能需要用户登录，进行云同步."
+            let cancelButtonTitle = "看得正起劲"
+            let otherButtonTitle = "去登录"
+            
+            let alertCotroller = DOAlertController(title: title, message: message, preferredStyle: .Alert)
+            
+            // Create the actions.
+            let cancelAction = DOAlertAction(title: cancelButtonTitle, style: .Cancel) { action in
+                NSLog("The \"Okay/Cancel\" alert's cancel action occured.")
+            }
+            
+            let otherAction = DOAlertAction(title: otherButtonTitle, style: .Default) { action in
+                print("登录")
+                let loginTableView = aStoryboard.instantiateViewControllerWithIdentifier("LoginView")
+                self.navigationController?.pushViewController(loginTableView, animated: true)
+                
+            }
+            
+            // Add the actions.
+//            alertCotroller.addAction(cancelAction)
+            alertCotroller.addAction(otherAction)
+            
+            presentViewController(alertCotroller, animated: true, completion: nil)
+            
+        }else {
+            
+            if user != nil{
+                userId = user!.objectForKey("id") as! Int
+            }
+            
+            //设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+            self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+                self.loadNewData()
+                
+            })
+            
+            self.tableView.mj_header.beginRefreshing()
+            //
+            self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
+                self.loadMoreData()
+                
+            })
+            self.tableView.mj_footer.hidden = true
+        }
 
         
-        //设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
-        self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
-            self.loadNewData()
-            
-        })
-        
-        self.tableView.mj_header.beginRefreshing()
-        //
-        self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
-            self.loadMoreData()
-            
-        })
-        self.tableView.mj_footer.hidden = true
+       
  
 
     }

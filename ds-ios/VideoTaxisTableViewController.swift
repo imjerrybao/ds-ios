@@ -74,6 +74,8 @@ class VideoTaxisTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        self.navigationController?.navigationBar.hidden = false
+
      }
     
     /**
@@ -82,8 +84,7 @@ class VideoTaxisTableViewController: UITableViewController {
      - parameter animated: animated description
      */
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.hidden = false
+        super.viewDidAppear(animated) 
         
         
     }
@@ -190,10 +191,10 @@ class VideoTaxisTableViewController: UITableViewController {
     }
     
     
+    
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         return 100
     }
-    
     
     
     
@@ -245,11 +246,12 @@ class VideoTaxisTableViewController: UITableViewController {
             let videoInfo = (videos.objectAtIndex(path.row) as! VideoInfo)
             
             let playVideoViewController =  segue.destinationViewController as! PlayVideoViewController
-            
+                        
             playVideoViewController.videoTitleLabel = videoInfo.title
             playVideoViewController.videoInfoLable  = videoInfo.title
             playVideoViewController.isCollectStatus = videoInfo.isCollectStatus
             playVideoViewController.videoUrlString = videoInfo.url
+            playVideoViewController.videoPic = videoInfo.pic
             playVideoViewController.userId = userId
             playVideoViewController.videoId = videoInfo.id
         }

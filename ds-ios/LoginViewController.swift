@@ -125,7 +125,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print("登录失败")
                     let error_detail = (JSON as! NSDictionary).valueForKey("error_detail") as! String
                     
-                     let error = (JSON as! NSDictionary).valueForKey("error") as! String
+                    let error = (JSON as! NSDictionary).valueForKey("error") as! String
 //                    print("\(error_detail)")
                     
                     let title = error
