@@ -12,6 +12,8 @@ import MJRefresh
 import Kingfisher
 
 class PlayVideoInfoViewController: UIViewController {
+    
+    
     @IBOutlet weak var videoTitleLabel: UILabel!
     
     @IBOutlet weak var videoInfoLable: UITextView!
@@ -38,12 +40,7 @@ class PlayVideoInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let user =  userDefaults.objectForKey("userInfo")
-        
-        if user != nil{
-            userId = user!.objectForKey("id") as! Int
-        }
+         
         
         self.videoTitleLabel.text = videoTitle
         let bb = userAndVideoDefaults.objectForKey("\(self.userId)+\(self.videoId)")
@@ -78,6 +75,16 @@ class PlayVideoInfoViewController: UIViewController {
         
         self.alamofireManager =  Manager.sharedInstanceAndTimeOut
         
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let user =  userDefaults.objectForKey("userInfo")
+
+        if user != nil{
+            userId = user!.objectForKey("id") as! Int
+        }
     }
     
     
@@ -213,6 +220,8 @@ class PlayVideoInfoViewController: UIViewController {
         UMSocialData.defaultData().extConfig.title = videoTitle
         
         UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "\(share)")
+        
+        UMSocialQQHandler.setQQWithAppId("1104864621", appKey: "AQKpnMRxELiDWHwt", url: "\(share)")
         
         
         let snsArray = [UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToQzone,UMShareToSina,UMShareToFacebook,UMShareToTwitter,UMShareToEmail]

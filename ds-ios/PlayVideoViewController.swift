@@ -99,6 +99,11 @@ class PlayVideoViewController: UIViewController {
         self.navigationController?.navigationBar.hidden = true
         
 //        self.videoController.play()
+        let user =  userDefaults.objectForKey("userInfo")
+        
+        if user != nil{
+            userId = user!.objectForKey("id") as! Int
+        }
         
     }
     
@@ -271,6 +276,7 @@ class PlayVideoViewController: UIViewController {
     
     
     func collectVideo(){
+       
         let userFavorite:UserFavorite = UserFavorite(id: 0, userId: userId, videoId: videoId, status: 1)
         
         if !isC {

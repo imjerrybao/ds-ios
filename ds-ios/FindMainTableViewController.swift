@@ -44,7 +44,7 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         self.navigationController?.navigationBar.tintColor = UIColor(rgba:"#f0a22a")
 
         
-        tableHeardView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200))
+        tableHeardView = SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height / 2 - 80))
         
         
         tableHeardView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
@@ -56,7 +56,7 @@ class FindMainTableViewController: UITableViewController,SDCycleScrollViewDelega
         tableHeardView.autoScrollTimeInterval = 5
         
         
-        self.tableView.addParallaxWithView(tableHeardView, andHeight: 200)
+        self.tableView.addParallaxWithView(tableHeardView, andHeight: self.view.frame.height / 2 - 80)
         self.tableView.parallaxView.delegate = self
         
  

@@ -72,6 +72,7 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MF
         //添加tableHeaderView
         let headerView_v: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(mybkImage) as! ParallaxHeaderView
         
+        
         self.tableView.tableHeaderView = headerView_v
         
         /// 用户头像
@@ -245,6 +246,8 @@ class MyMainTableViewController: UITableViewController,APParallaxViewDelegate,MF
             
             UMSocialWechatHandler.setWXAppId("wxfd23fac852a54c97", appSecret: "d4624c36b6795d1d99dcf0547af5443d", url: "\(share)")
             
+            UMSocialQQHandler.setQQWithAppId("1104864621", appKey: "AQKpnMRxELiDWHwt", url: "\(share)")
+
             
             let snsArray = [UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToQzone,UMShareToSina,UMShareToFacebook,UMShareToTwitter,UMShareToEmail]
             
