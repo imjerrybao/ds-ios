@@ -79,11 +79,7 @@ class VideoTableViewController: UITableViewController {
         //注册3DTouch
         registerForPreviewingWithDelegate(self, sourceView: view)
         
-        //判断用户缓存中是否存在
-        if (user != nil) {
-            userId = user!.objectForKey("id") as! Int
-            
-        }
+       
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -144,6 +140,12 @@ class VideoTableViewController: UITableViewController {
         // 隐藏scroll indicators
         self.tableView.showsHorizontalScrollIndicator = false
         self.tableView.showsVerticalScrollIndicator = false
+        
+        //判断用户缓存中是否存在
+        if (user != nil) {
+            userId = user!.objectForKey("id") as! Int
+            
+        }
         //检测3D Touch
 //        check3DTouch()
     }
@@ -352,6 +354,7 @@ class VideoTableViewController: UITableViewController {
             playVideoViewController.userId = userId
             playVideoViewController.videoId = videoInfo.id
             playVideoViewController.videoPic = videoInfo.pic
+            
         }
     }
 

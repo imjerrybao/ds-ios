@@ -108,6 +108,7 @@
 		AB58EFC41BD6A41A00E2B428 /* KrVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB41BD6A41A00E2B428 /* KrVideoPlayerController.m */; };
 		AB58EFC51BD6A41A00E2B428 /* KrVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */; };
 		AB58EFCA1BD6A51800E2B428 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB58EFC91BD6A51800E2B428 /* MapKit.framework */; };
+		AB6312201C043D3500D857AD /* ParamUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63121F1C043D3500D857AD /* ParamUtil.swift */; };
 		AB76C6A11BEF09140002F138 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB76C6A01BEF09140002F138 /* User.swift */; };
 		AB853CC11BFB29E600695616 /* TableViewController-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */; };
 		ABA09EF21BE4C34D009C8A85 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */; };
@@ -264,6 +265,7 @@
 		AB58EFB61BD6A41A00E2B428 /* KrVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KrVideoPlayerControlView.m; sourceTree = "<group>"; };
 		AB58EFC91BD6A51800E2B428 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB58EFCD1BD6A89F00E2B428 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AB63121F1C043D3500D857AD /* ParamUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamUtil.swift; sourceTree = "<group>"; };
 		AB76C6A01BEF09140002F138 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableViewController-Extension.swift"; sourceTree = "<group>"; };
 		ABA09EF11BE4C34D009C8A85 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 				AB58EF881BD6A19A00E2B428 /* UIColor-Extension.swift */,
 				AB58EF891BD6A19A00E2B428 /* UIViewController-Extension.swift */,
 				AB853CC01BFB29E600695616 /* TableViewController-Extension.swift */,
+				AB63121F1C043D3500D857AD /* ParamUtil.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				AB58EF901BD6A19A00E2B428 /* HttpClient.swift in Sources */,
 				AB58EF8C1BD6A19A00E2B428 /* CAPSPageMenu.swift in Sources */,
 				AB37A9C11C00118300C57283 /* DOAlertController.swift in Sources */,
+				AB6312201C043D3500D857AD /* ParamUtil.swift in Sources */,
 				AB2EF2E01BE22C69008E96CC /* ConstraintMaker.swift in Sources */,
 				AB0CA1571BE60C3D00134F1E /* LoginViewController.swift in Sources */,
 				AB2ED0491BE37261002CE2E2 /* MyMainTableViewController.swift in Sources */,
