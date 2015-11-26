@@ -15,7 +15,7 @@ import Validator
 
 
 
-class RegisterUserViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UITextFieldDelegate {
+class RegisterUserViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UITextFieldDelegate,UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var resultUILabel: UILabel!
     
@@ -263,6 +263,7 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
     */
     func uploadHeadImage(recognizer: UITapGestureRecognizer) {
         
+        
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
         let cancelAction = UIAlertAction(title: "取消", style: .Cancel) { (action) in
@@ -284,10 +285,46 @@ class RegisterUserViewController: UIViewController,UIImagePickerControllerDelega
         }
         alertController.addAction(destroyAction)
         
+        
+        
+//        //判断是否为pad
+//        let decive = UIDevice.currentDevice().model
+//        
+//        if decive.isEmpty {
+//            if decive == "iPhone" {
+//                
+//                self.presentViewController(alertController, animated: true) {
+//                    
+//                }
+//            }else{
+//                
+//                let popOver =  UIPopoverController(contentViewController: alertController)
+//                
+//             
+//            }
+//        }
+        
+        
+//        UIPopoverPresentationController *popPresenter = [alertController
+//            popoverPresentationController];
+//        popPresenter.sourceView = button;
+//        popPresenter.sourceRect = button.bounds;
+        
+        
+        
+        
+
+        // 判断是否为pad 弹出样式
+        if let popPresenter = alertController.popoverPresentationController {
+            popPresenter.sourceView = recognizer.view;
+            popPresenter.sourceRect = (recognizer.view?.bounds)!;
+        }
+        
         self.presentViewController(alertController, animated: true) {
             
-        }
-    }
+                            }
+        
+     }
     
     
     func initWithImagePickView(type:NSString){
