@@ -547,21 +547,6 @@
                                     <action selector="getCode:" destination="pNw-Qi-P3a" eventType="touchUpInside" id="FuA-6O-i62"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-uD-pmR" customClass="CornerRadiusButtonByRes" customModule="ds_ios">
-                                <rect key="frame" x="60" y="434" width="480" height="34"/>
-                                <animations/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="registerUser:" destination="pNw-Qi-P3a" eventType="touchUpInside" id="pOP-Nb-NqO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mN-ui-ddy">
                                 <rect key="frame" x="285" y="72" width="30" height="30"/>
                                 <animations/>
@@ -650,26 +635,31 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIH-1I-M4I">
-                                <rect key="frame" x="558" y="366" width="22" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-uD-pmR" customClass="CornerRadiusButtonByRes" customModule="ds_ios">
+                                <rect key="frame" x="60" y="434" width="480" height="34"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerUser:" destination="pNw-Qi-P3a" eventType="touchUpInside" id="pOP-Nb-NqO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QI4-jB-Iot" firstAttribute="centerX" secondItem="Y0j-kz-Gfh" secondAttribute="centerX" id="168-Hw-zIR"/>
-                            <constraint firstItem="CIH-1I-M4I" firstAttribute="leading" secondItem="DFH-dz-bIj" secondAttribute="leading" id="5kl-Cr-D2e"/>
                             <constraint firstItem="eIx-lV-9Nn" firstAttribute="top" secondItem="hL4-MH-jiF" secondAttribute="bottom" constant="157" id="5zi-SK-zhW"/>
-                            <constraint firstItem="CIH-1I-M4I" firstAttribute="centerY" secondItem="e55-6x-09D" secondAttribute="centerY" id="BJj-wl-HqS"/>
                             <constraint firstItem="QI4-jB-Iot" firstAttribute="centerX" secondItem="9mN-ui-ddy" secondAttribute="centerX" id="BVp-a2-f5S"/>
                             <constraint firstItem="QI4-jB-Iot" firstAttribute="top" secondItem="hL4-MH-jiF" secondAttribute="bottom" constant="52" id="Bws-ja-6XJ"/>
                             <constraint firstItem="eIx-lV-9Nn" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="40" id="FZK-5d-gYm"/>
                             <constraint firstItem="eIx-lV-9Nn" firstAttribute="top" secondItem="QI4-jB-Iot" secondAttribute="bottom" constant="30" id="G5R-vs-Slo"/>
-                            <constraint firstItem="CIH-1I-M4I" firstAttribute="top" secondItem="DFH-dz-bIj" secondAttribute="bottom" constant="74" id="NFS-sC-o7S"/>
                             <constraint firstAttribute="trailing" secondItem="5BA-h6-Paz" secondAttribute="trailing" constant="40" id="NSF-a9-mYa"/>
                             <constraint firstItem="QI4-jB-Iot" firstAttribute="top" secondItem="hL4-MH-jiF" secondAttribute="bottom" constant="29" id="Pof-7x-5fw"/>
                             <constraint firstItem="DFH-dz-bIj" firstAttribute="top" secondItem="oGD-1l-mYh" secondAttribute="bottom" constant="54" id="QyB-Pq-HjZ"/>
@@ -685,7 +675,6 @@
                             <constraint firstItem="5BA-h6-Paz" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="40" id="fjS-M9-H8L"/>
                             <constraint firstAttribute="trailing" secondItem="ebc-uD-pmR" secondAttribute="trailing" constant="60" id="i0a-Ce-rvV"/>
                             <constraint firstItem="ebc-uD-pmR" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="60" id="jYI-mr-W7d"/>
-                            <constraint firstItem="CIH-1I-M4I" firstAttribute="baseline" secondItem="Weq-cR-rrE" secondAttribute="baseline" id="krd-Ey-rJZ"/>
                             <constraint firstItem="5BA-h6-Paz" firstAttribute="top" secondItem="eIx-lV-9Nn" secondAttribute="bottom" constant="15" id="mBo-xc-198"/>
                             <constraint firstItem="Weq-cR-rrE" firstAttribute="top" secondItem="5BA-h6-Paz" secondAttribute="bottom" constant="22" id="nVk-uH-SCJ"/>
                             <constraint firstItem="Weq-cR-rrE" firstAttribute="leading" secondItem="Y0j-kz-Gfh" secondAttribute="leading" constant="40" id="pa1-eH-4BE"/>
@@ -702,7 +691,6 @@
                     <navigationItem key="navigationItem" id="iDl-id-WCS"/>
                     <connections>
                         <outlet property="code" destination="Weq-cR-rrE" id="YFU-uj-gKk"/>
-                        <outlet property="codeUILabel" destination="CIH-1I-M4I" id="VO6-D7-B5L"/>
                         <outlet property="headImageView" destination="QI4-jB-Iot" id="I6i-c1-VEf"/>
                         <outlet property="passwordTextField" destination="5BA-h6-Paz" id="KzD-jG-fLR"/>
                         <outlet property="phoneTextField" destination="eIx-lV-9Nn" id="fGg-Jw-FrU"/>
